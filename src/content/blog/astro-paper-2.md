@@ -1,6 +1,6 @@
 ---
 author: Sat Naing
-pubDatetime: 2023-01-30T15:57:52.737Z
+date_published: 2023-01-30T15:57:52.737Z
 title: AstroPaper 2.0
 postSlug: astro-paper-2
 featured: true
@@ -51,7 +51,7 @@ The following frontmatter properties are renamed.
 
 | Old Names | New Names   |
 | --------- | ----------- |
-| datetime  | pubDatetime |
+| datetime  | date_published |
 | slug      | postSlug    |
 
 ### Default Tag for blog post
