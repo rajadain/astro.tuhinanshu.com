@@ -1,5 +1,5 @@
 ---
-title: "Conversation: Between James and Terence, 4.30.10"
+title: "Conversation - Between James and Terence, 4:30:10"
 postSlug: anterence-blogspot-com-conversation-between-james-and-terence
 date_published: 2010-04-30T20:55:00.000Z
 date_updated: 2021-02-20T06:17:19.000Z

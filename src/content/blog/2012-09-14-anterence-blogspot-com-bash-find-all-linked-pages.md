@@ -1,5 +1,5 @@
 ---
-title: "Bash: Find All Linked Pages"
+title: "Bash - Find All Linked Pages"
 postSlug: anterence-blogspot-com-bash-find-all-linked-pages
 date_published: 2012-09-14T04:05:00.000Z
 date_updated: 2021-02-28T01:19:07.000Z

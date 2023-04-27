@@ -1,5 +1,5 @@
 ---
-title: Ubuntu Lucid, Karmic WPA / WPA2 WiFi Dropping Solved
+title: Ubuntu Lucid, Karmic WPA or WPA2 WiFi Dropping Solved
 postSlug: anterence-blogspot-com-ubuntu-lucid-karmic-wpa-wpa2-wifi-dropping-solved
 date_published: 2010-10-08T04:54:00.000Z
 date_updated: 2021-02-28T01:07:24.000Z

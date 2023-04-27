@@ -1,5 +1,5 @@
 ---
-title: Finding Short Twitter Handles / Usernames
+title: Finding Short Twitter Handles or Usernames
 postSlug: anterence-blogspot-com-finding-short-twitter-handles-usernames
 date_published: 2011-05-19T00:55:00.000Z
 date_updated: 2021-02-28T01:13:37.000Z
