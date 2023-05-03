@@ -1,10 +1,10 @@
 import type { Site, SocialObjects } from "./types";
 
 export const SITE: Site = {
-  website: "https://astro-paper.pages.dev/",
-  author: "Sat Naing",
-  desc: "A minimal, responsive and SEO-friendly Astro blog theme.",
-  title: "AstroPaper",
+  website: "https://astro.tuhinanshu.com/",
+  author: "Terence Tuhinanshu",
+  desc: "Personal site and blog of poet, thinker, designer, and developer Terence Tuhinanshu",
+  title: "Terence Tuhinanshu",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
   postPerPage: 3,
@@ -20,26 +20,32 @@ export const LOGO_IMAGE = {
 export const SOCIALS: SocialObjects = [
   {
     name: "Github",
-    href: "https://github.com/satnaing/astro-paper",
+    href: "https://github.com/rajadain",
     linkTitle: ` ${SITE.title} on Github`,
     active: true,
   },
   {
-    name: "Facebook",
-    href: "https://github.com/satnaing/astro-paper",
-    linkTitle: `${SITE.title} on Facebook`,
+    name: "Twitter",
+    href: "https://twitter.com/rajadain",
+    linkTitle: `${SITE.title} on Twitter`,
     active: true,
   },
   {
     name: "Instagram",
-    href: "https://github.com/satnaing/astro-paper",
+    href: "https://instagram.com/rajadain",
     linkTitle: `${SITE.title} on Instagram`,
     active: true,
   },
   {
     name: "LinkedIn",
-    href: "https://github.com/satnaing/astro-paper",
+    href: "https://linkedin.com/in/tuhinanshu",
     linkTitle: `${SITE.title} on LinkedIn`,
+    active: true,
+  },
+  {
+    name: "Facebook",
+    href: "https://facebook.com/tuhinanshu",
+    linkTitle: `${SITE.title} on Facebook`,
     active: true,
   },
   {
@@ -49,14 +55,8 @@ export const SOCIALS: SocialObjects = [
     active: false,
   },
   {
-    name: "Twitter",
-    href: "https://github.com/satnaing/astro-paper",
-    linkTitle: `${SITE.title} on Twitter`,
-    active: false,
-  },
-  {
     name: "Twitch",
-    href: "https://github.com/satnaing/astro-paper",
+    href: "https://twitch.com/rajadain",
     linkTitle: `${SITE.title} on Twitch`,
     active: false,
   },
