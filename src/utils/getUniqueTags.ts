@@ -1,18 +1,19 @@
 import { slugifyStr } from "./slugify";
 import type { CollectionEntry } from "astro:content";
 
-const getUniqueTags = (posts: CollectionEntry<"blog">[]) => {
-  let tags: string[] = [];
+const getUniqueTags = (posts: CollectionEntry<"blog">[]): string[] => {
+  const tagCountMap: { [tag: string]: number } = {};
   const filteredPosts = posts.filter(({ data }) => !data.draft);
   filteredPosts.forEach(post => {
-    tags = [...tags, ...post.data.tags]
-      .map(tag => slugifyStr(tag))
-      .filter(
-        (value: string, index: number, self: string[]) =>
-          self.indexOf(value) === index
-      );
+    post.data.tags.forEach(t => (tagCountMap[t] = (tagCountMap[t] || 0) + 1));
   });
-  return tags;
+
+  // Sort tags by frequency in descending order
+  const sortedTags = Object.keys(tagCountMap).sort(
+    (a, b) => tagCountMap[b] - tagCountMap[a]
+  );
+
+  return sortedTags.map(slugifyStr);
 };
 
 export default getUniqueTags;
