@@ -13,7 +13,10 @@ export default function Card({ href, frontmatter, secHeading = true }: Props) {
     <li className="my-6 flex items-center">
       {ogImage ? (
         <a className="mr-4 shrink-0 basis-20" href={href}>
-          <img className="h-20 w-20 rounded object-cover" src={ogImage} />
+          <img
+            className="h-20 w-20 rounded-lg object-cover drop-shadow-lg"
+            src={ogImage}
+          />
         </a>
       ) : (
         <div className="mr-4 h-20 shrink-0 basis-20"></div>
