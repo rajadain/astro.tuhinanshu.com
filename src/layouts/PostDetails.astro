@@ -1,16 +1,20 @@
 ---
+import Card from "@components/Card";
 import Layout from "@layouts/Layout.astro";
 import Header from "@components/Header.astro";
+import Hr from "@components/Hr.astro";
 import Footer from "@components/Footer.astro";
 import Tag from "@components/Tag.astro";
 import Datetime from "@components/Datetime";
+import slugify from "@utils/slugify";
 import type { CollectionEntry } from "astro:content";
 
 export interface Props {
   post: CollectionEntry<"blog">;
+  similarPosts: CollectionEntry<"blog">[];
 }
 
-const { post } = Astro.props;
+const { post, similarPosts } = Astro.props;
 
 const { title, author, description, ogImage, date_published, tags } = post.data;
 
@@ -32,6 +36,21 @@ const ogUrl = new URL(ogImage ? ogImage : `${title}.png`, Astro.url.origin)
     <ul class="tags-container">
       {tags.map(tag => <Tag name={tag} />)}
     </ul>
+    {
+      similarPosts.length > 0 && (
+        <>
+          <Hr noPadding={true} />
+          <aside class="similar-posts">
+            <h2>Similar posts</h2>
+            <ul>
+              {similarPosts.map(({ data }) => (
+                <Card href={`/posts/${slugify(data)}`} frontmatter={data} />
+              ))}
+            </ul>
+          </aside>
+        </>
+      )
+    }
   </main>
   <Footer />
 </Layout>
@@ -45,5 +64,11 @@ const ogUrl = new URL(ogImage ? ogImage : `${title}.png`, Astro.url.origin)
   }
   .tags-container {
     @apply my-8;
+  }
+  .similar-posts {
+    @apply pt-8;
+  }
+  .similar-posts h2 {
+    @apply text-3xl font-semibold sm:text-2xl;
   }
 </style>
