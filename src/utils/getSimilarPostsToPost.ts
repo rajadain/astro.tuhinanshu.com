@@ -5,6 +5,10 @@ const getSimilarPostsToPost = (
   givenPost: CollectionEntry<"blog">,
   numPosts: number = 3
 ): CollectionEntry<"blog">[] => {
+  if (!givenPost || givenPost.data.tags.length === 0) {
+    return [];
+  }
+
   // Calculate Jaccard similarity for each post
   const similarityScores = posts.map(post => {
     const commonTags = post.data.tags.filter(tag =>
