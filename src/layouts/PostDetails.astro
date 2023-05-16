@@ -1,5 +1,5 @@
 ---
-import Card from "@components/Card";
+import Card from "@components/Card.astro";
 import Layout from "@layouts/Layout.astro";
 import Header from "@components/Header.astro";
 import Hr from "@components/Hr.astro";
@@ -66,9 +66,9 @@ const ogUrl = new URL(ogImage ? ogImage : `${title}.png`, Astro.url.origin)
     @apply my-8;
   }
   .similar-posts {
-    @apply pt-8;
+    @apply pt-12;
   }
   .similar-posts h2 {
-    @apply text-3xl font-semibold sm:text-2xl;
+    @apply text-2xl font-semibold italic sm:text-xl;
   }
 </style>
