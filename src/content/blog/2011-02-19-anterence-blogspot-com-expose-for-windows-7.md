@@ -5,7 +5,7 @@ date_published: 2011-02-19T07:34:00.000Z
 date_updated: 2021-02-28T01:11:19.000Z
 tags:
   - archive
-  - anterence.blogspot.com
+  - anterenceblogspotcom
 ---
 
 There are many things of Mac OS X that I find superfluous, contrarian (the window buttons on the wrong side), downright annoying even (task management). However, they do have many things that I wish Windows had. Right now I talk of one of from the latter group, namely [Exposé](http://www.apple.com/macosx/what-is-macosx/expose.html). In a recent video of Microsoft's new [Touch Mouse](http://www.microsoft.com/hardware/touch-mouse/) (the proper discussion of which probably requires a whole separate post), attached here, showcases similar functionality in response to a certain gesture. You can see the functionality at the 1:33 mark in this video:
@@ -26,7 +26,7 @@ So I set about looking for a way to make an exe which would simulate a keystroke
 
 If you know of a way this can be done, or any other way (I even looked at other Symantec driver options to see if any configuration allows other settings for application gestures, again with no success) to do this, I would be obliged to hear about it. In the meanwhile, I'll keep looking, and if I find a way to do this I will update this post with my solution.
 
-So now I have a solution. I found this cool library, [Windows Input Simulator](http://inputsimulator.codeplex.com/),  which let me make a simple C# console application which simulates Windows + ~, which is the default shortcut to "expose" windows. You can download my package from [here](http://omescribe.com/ter/switcherHelper.zip). It has the Windows Input Simulator dll (required), and my switcher.exe file. Just make your Synaptics configurator point to that file in your system and enjoy Exposé for Windows 7!
+So now I have a solution. I found this cool library, [Windows Input Simulator](http://inputsimulator.codeplex.com/), which let me make a simple C# console application which simulates Windows + ~, which is the default shortcut to "expose" windows. You can download my package from [here](http://omescribe.com/ter/switcherHelper.zip). It has the Windows Input Simulator dll (required), and my switcher.exe file. Just make your Synaptics configurator point to that file in your system and enjoy Exposé for Windows 7!
 
 UPDATE:
 

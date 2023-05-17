@@ -5,7 +5,7 @@ date_published: 2010-05-13T17:16:00.000Z
 date_updated: 2021-02-20T06:25:46.000Z
 tags:
   - archive
-  - anterence.blogspot.com
+  - anterenceblogspotcom
 ---
 
 The best one: [http://www.factorypattern.com/how-to-create-jar-files-from-ant/](http://www.factorypattern.com/how-to-create-jar-files-from-ant/)

@@ -5,7 +5,7 @@ date_published: 2010-06-03T04:19:00.000Z
 date_updated: 2021-02-28T00:58:52.000Z
 tags:
   - archive
-  - anterence.blogspot.com
+  - anterenceblogspotcom
 ---
 
 Just posted my patch into Ant. You can see it [here](https://issues.apache.org/bugzilla/show_bug.cgi?id=16131).

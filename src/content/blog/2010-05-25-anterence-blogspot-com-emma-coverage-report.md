@@ -5,7 +5,7 @@ date_published: 2010-05-26T00:41:00.000Z
 date_updated: 2021-02-23T02:19:49.000Z
 tags:
   - archive
-  - anterence.blogspot.com
+  - anterenceblogspotcom
 ---
 
 So I got Ant working using [Jim's tip](http://jimchy.blogspot.com/2010/05/fetchxml-pulls-down-dependent-jars.html) on fetch.xml, which brought down all the dependencies. I'd tracked down all of them myself, but some of them were redundant and others confusing. This was a cleaner list with precisely what was needed.

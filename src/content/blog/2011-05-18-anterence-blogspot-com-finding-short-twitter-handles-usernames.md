@@ -5,10 +5,10 @@ date_published: 2011-05-19T00:55:00.000Z
 date_updated: 2021-02-28T01:13:37.000Z
 tags:
   - archive
-  - anterence.blogspot.com
+  - anterenceblogspotcom
 ---
 
-Since the Twitter username (or *handle*, as it is known) is used frequently in communication, it is an important tool for branding; as important as a domain name, or a Facebook page name. Anyone who squatted the big usernames initially (such as [@Microsoft](https://twitter.com/Microsoft) or [@Google](https://twitter.com/google)) was probably paid dearly, or made to.
+Since the Twitter username (or _handle_, as it is known) is used frequently in communication, it is an important tool for branding; as important as a domain name, or a Facebook page name. Anyone who squatted the big usernames initially (such as [@Microsoft](https://twitter.com/Microsoft) or [@Google](https://twitter.com/google)) was probably paid dearly, or made to.
 
 In contrast to the trend of long handles that encompass the brand or message ([@OmenadNet](https://twitter.com/omenadnet), [@StartupJobsNY](https://twitter.com/startupjobsny)) short Twitter handles are also of value. Whether it be the SEO friendliness, preservation of space in tweets (which was my main concern), or just the coolness factor, short handles are [in demand](http://stevenbullen.com/blog/642/want-a-short-twitter-screen-name-not-a-chance/).
 
@@ -16,9 +16,9 @@ In fact, there was some [talk and analysis](http://twitterfacts.blogspot.com/200
 
 While I have requested (repeatedly) Twitter to suspend one of those accounts and give me access, I have not received an affirmative response so far. Eager to start tweeting, however, I decided to create a simple PHP script to find the shortest alphanumeric handle I could find. The script is given below:
 
-Loading Source Code ... 
+Loading Source Code ...
 
-We simply query each twitter handle in the format of *a99*, where *a* is any letter from a–z, and *9* is any numeral from 0–9. I found a couple of options (which nicely highlight in red, as opposed to the grey duds), but they were unavailable to register. The first I found was [@G64](http://twitter.com/g64), and that’s what I have now. Follow me if you will!
+We simply query each twitter handle in the format of _a99_, where _a_ is any letter from a–z, and _9_ is any numeral from 0–9. I found a couple of options (which nicely highlight in red, as opposed to the grey duds), but they were unavailable to register. The first I found was [@G64](http://twitter.com/g64), and that’s what I have now. Follow me if you will!
 
 My research for this did reveal some interesting discussions. I’ve linked most in the relevant sections of this post, but am including them here (with description) if you missed any:
 

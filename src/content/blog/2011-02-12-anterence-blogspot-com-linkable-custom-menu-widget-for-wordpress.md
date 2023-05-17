@@ -5,7 +5,7 @@ date_published: 2011-02-13T03:20:00.000Z
 date_updated: 2021-02-28T01:09:17.000Z
 tags:
   - archive
-  - anterence.blogspot.com
+  - anterenceblogspotcom
 ---
 
 I'm working on several Wordpress based projects, including [Omescribe](http://omescribe.com/), which is one of a family of sites including [Omenad](http://omenad.net/) and [Madhukali](http://madhukali.org/blog). Because these sites are related, I wanted them to fetch the latest posts from each other. Madhukali is running on Wordpress, so I used the [RSS Feed Widget](http://wordpress.org/extend/plugins/simple-rss-feeds-widget/) to fetch its posts. Omenad, however, is still an old site with individual HTML pages. I wanted to create a menu that led to Omenad and its salient sections, namely [Articles](http://omenad.net/base_art.htm), [Queries](http://omenad.net/base_queries.htm), [Raga Rang](http://omenad.net/base_ragrang.htm) and [In My View](http://omenad.net/base_theories.htm#inmyview). This was also easily accomplished with the Custom Menu Widget. But I wanted to have the title link to Omenad.

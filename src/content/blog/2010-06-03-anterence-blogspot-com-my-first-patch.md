@@ -5,7 +5,7 @@ date_published: 2010-06-03T04:13:00.000Z
 date_updated: 2021-02-28T00:56:57.000Z
 tags:
   - archive
-  - anterence.blogspot.com
+  - anterenceblogspotcom
 ---
 
 I created a patch for my bug! Well, the solution to the bug I chose. You can see it here: [http://omescribe.com/ant/dontPrintBuildSuccessful.patch](http://omescribe.com/ant/dontPrintBuildSuccessful.patch)

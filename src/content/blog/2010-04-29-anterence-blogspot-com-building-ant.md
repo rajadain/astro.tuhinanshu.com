@@ -5,7 +5,7 @@ date_published: 2010-04-29T16:05:00.000Z
 date_updated: 2021-02-20T06:17:13.000Z
 tags:
   - archive
-  - anterence.blogspot.com
+  - anterenceblogspotcom
 ---
 
 Today I decided to download and build Ant: probably the first baby step to be taken in the direction of any development. In order to verify the download, I was advised (by the website instructions) to use the program [pgp](http://www.pgpi.org/) to do it. I had to install pgp using: `sudo apt-get install pgpgpg` which took a while to get right (too many p's and g's).
@@ -14,10 +14,12 @@ The first time I built it (using the shell command `sh build.sh -Ddist.dir=[dire
 
 Eclipse, of course, couldn't build it either. On perusal of the errors, the first one I found was "Type A is already defined". About three different files named A.java existed, each with content similar to this:
 
-    public class A {
-        static private class Inner extends B {
-        }
+```java
+public class A {
+    static private class Inner extends B {
     }
+}
+```
 
 Code that is, quite honestly, baffling. It seems as if it is a sandbox testing file, perhaps once made by a developer to prove a point or demonstrate a technique to a fellow coder. Its purpose in the grand scheme of things is still arcane to me, especially when there are so many (again reminiscent of 'A'gent Smith).
 

@@ -5,7 +5,7 @@ date_published: 2010-06-12T19:44:00.000Z
 date_updated: 2021-02-28T01:02:26.000Z
 tags:
   - archive
-  - anterence.blogspot.com
+  - anterenceblogspotcom
 ---
 
 I got this comment on my bug:

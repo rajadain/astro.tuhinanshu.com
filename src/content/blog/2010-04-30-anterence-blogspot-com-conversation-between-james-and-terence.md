@@ -5,7 +5,7 @@ date_published: 2010-04-30T20:55:00.000Z
 date_updated: 2021-02-20T06:17:19.000Z
 tags:
   - archive
-  - anterence.blogspot.com
+  - anterenceblogspotcom
 ---
 
 Tuhinanshu 15:15
@@ -16,7 +16,7 @@ do you have a minute? 15:15
 
 James Chy 15:17
 
-Sure, how are things going 
+Sure, how are things going
 
 Tuhinanshu 15:18
 
@@ -34,15 +34,15 @@ Have you tried fiddling around using Eclipse of Netbeans or something yet? 15:19
 
 James Chy 15:20
 
-Yeah, I have not yet been able to build successfully in eclipse.. look at my blog for how to build the project from the source. 
+Yeah, I have not yet been able to build successfully in eclipse.. look at my blog for how to build the project from the source.
 
 Tuhinanshu 15:20
 
-okay 
+okay
 
 James Chy 15:20
 
-I used the provided build script 
+I used the provided build script
 
 Tuhinanshu 15:21
 
@@ -70,7 +70,7 @@ I think most of the folders have test scripts with common names causing the conf
 
 Tuhinanshu 15:25
 
-because most of these errors are in the test cases, and I'm sure that I can build it if I remove them (or at least the problematic ones) 
+because most of these errors are in the test cases, and I'm sure that I can build it if I remove them (or at least the problematic ones)
 
 James Chy 15:25
 
@@ -80,11 +80,11 @@ Right, probably just need to remove some source code directoris 15:26
 
 Tuhinanshu 15:26
 
-and Who does that? make so many classes with the same name, and then not use package identifiers to differentiate them? 
+and Who does that? make so many classes with the same name, and then not use package identifiers to differentiate them?
 
 James Chy 15:27
 
-It would be nice to be able to pull it into eclipse and the project to be organized enough for eclipse to make educated enough guesses to create a functioning project 
+It would be nice to be able to pull it into eclipse and the project to be organized enough for eclipse to make educated enough guesses to create a functioning project
 
 Tuhinanshu 15:28
 

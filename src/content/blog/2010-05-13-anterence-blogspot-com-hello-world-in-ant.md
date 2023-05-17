@@ -5,7 +5,7 @@ date_published: 2010-05-13T16:09:00.000Z
 date_updated: 2021-02-20T06:23:27.000Z
 tags:
   - archive
-  - anterence.blogspot.com
+  - anterenceblogspotcom
 ---
 
 Am going through a tutorial on Ant:[http://wiki.apache.org/ant/AntTutorialWritingTasks](http://wiki.apache.org/ant/AntTutorialWritingTasks)

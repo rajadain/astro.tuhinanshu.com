@@ -5,7 +5,7 @@ date_published: 2010-06-03T03:39:00.000Z
 date_updated: 2021-02-28T00:53:33.000Z
 tags:
   - archive
-  - anterence.blogspot.com
+  - anterenceblogspotcom
 ---
 
 Found out how to create patches without Eclipse plugins:

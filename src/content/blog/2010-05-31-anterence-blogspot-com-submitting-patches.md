@@ -5,7 +5,7 @@ date_published: 2010-06-01T02:16:00.000Z
 date_updated: 2021-02-23T02:21:45.000Z
 tags:
   - archive
-  - anterence.blogspot.com
+  - anterenceblogspotcom
 ---
 
 Having looked at [a](https://issues.apache.org/bugzilla/show_bug.cgi?id=33868)[number](https://issues.apache.org/bugzilla/show_bug.cgi?id=36270)[of](https://issues.apache.org/bugzilla/show_bug.cgi?id=40522)[bug](https://issues.apache.org/bugzilla/show_bug.cgi?id=40642)[entries](https://issues.apache.org/bugzilla/show_bug.cgi?id=40678)[with](https://issues.apache.org/bugzilla/show_bug.cgi?id=40922)[patches](https://issues.apache.org/bugzilla/show_bug.cgi?id=44220), and [some without them](https://issues.apache.org/bugzilla/show_bug.cgi?id=45316), I've realized that the correct (or at least acceptable) way to submit patches is the following:

@@ -5,7 +5,7 @@ date_published: 2010-05-03T01:45:00.000Z
 date_updated: 2021-02-20T06:17:31.000Z
 tags:
   - archive
-  - anterence.blogspot.com
+  - anterenceblogspotcom
 ---
 
 As I was looking for bugs to fix I came across an [interesting post](https://issues.apache.org/bugzilla/show_bug.cgi?id=45316) on one of the bugs. The author of the bug report had discovered the bug, and then submitted code to be committed in. Now, either this was the wrong way to submit contributions to bugs, or the Core members simply don't like him, he was ticked enough to express his frustration:
