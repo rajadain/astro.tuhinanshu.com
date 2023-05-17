@@ -1,4 +1,5 @@
 import Datetime from "./Datetime";
+import Tag from "./Tag";
 import type { BlogFrontmatter } from "@content/_schemas";
 
 export interface Props {
@@ -8,7 +9,7 @@ export interface Props {
 }
 
 export default function Card({ href, frontmatter, secHeading = true }: Props) {
-  const { title, date_published, description, ogImage } = frontmatter;
+  const { title, date_published, description, ogImage, tags } = frontmatter;
   return (
     <li className="my-6 flex items-center">
       {ogImage ? (
@@ -38,6 +39,11 @@ export default function Card({ href, frontmatter, secHeading = true }: Props) {
         </a>
         <Datetime datetime={date_published} />
         <p>{description}</p>
+        <ul className="tags-container">
+          {tags.map(tag => (
+            <Tag key={tag} name={tag} />
+          ))}
+        </ul>
       </div>
     </li>
   );
