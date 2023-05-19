@@ -8,12 +8,12 @@ tags:
   - daily-verse
 ---
 
-I did just as he asked,
-did everything he said.
-Still, in front of woman and child,
+I did just as he asked,  
+did everything he said.  
+Still, in front of woman and child,  
 four times he shot me dead.
 
-My only crime was the misfortune
-of being born in America black.
-My lasting legacy is nothing more
+My only crime was the misfortune  
+of being born in America black.  
+My lasting legacy is nothing more  
 than a week-long trending hashtag.

@@ -8,27 +8,27 @@ tags:
   - daily-verse
 ---
 
-I’ll mute you on Twitter,
-block you on Facebook,
-shut you out of my feed
+I’ll mute you on Twitter,  
+block you on Facebook,  
+shut you out of my feed  
 so I never have to look
 
-at your suffering or pain
-or logic or perspective.
-Your truth is a lie and
+at your suffering or pain  
+or logic or perspective.  
+Your truth is a lie and  
 your sources vindictive,
 
-they hate my ilk and
-despise my kind:
-if you let them
+they hate my ilk and  
+despise my kind:  
+if you let them  
 they will poison your mind.
 
-So share your damn articles,
-retweet to heart’s delight.
-Make all the noise in the world,
+So share your damn articles,  
+retweet to heart’s delight.  
+Make all the noise in the world,  
 you’ve already lost the fight.
 
-I see you shouting but all I hear
-is the comical sad trombone.
-My world doesn’t care what you say
+I see you shouting but all I hear  
+is the comical sad trombone.  
+My world doesn’t care what you say  
 in your tiny little free speech zone.

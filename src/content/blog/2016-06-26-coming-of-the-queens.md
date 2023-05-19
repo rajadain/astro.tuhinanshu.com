@@ -8,12 +8,14 @@ tags:
   - daily-verse
 ---
 
-Bereft of worthy kings
+Bereft of worthy kings  
 of honor long ago,
-Free of nuptial rings
+
+Free of nuptial rings  
 and weaker gender roles,
 
-Brave, bold, cruel, cold,
+Brave, bold, cruel, cold,  
 evoking wonder and dismay!
-Their time has come, their will be done:
+
+Their time has come, their will be done:  
 The Queens shall rule today.

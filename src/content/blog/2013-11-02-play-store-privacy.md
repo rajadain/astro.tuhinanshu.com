@@ -9,57 +9,33 @@ tags:
 
 A set of tweets about a potential way in which apps and developers can be more explicit and accountable for the permissions and access they demand of their users when installing.
 
-> Android devs should start listing *why* their app needs the permissions it does, and that description should be binding for that version
-> 
-> &mdash; Terence Tuhinanshu (@rajadain) [November 2, 2013](https://twitter.com/rajadain/status/396481730699591680)
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Android devs should start listing *why* their app needs the permissions it does, and that description should be binding for that version</p>&mdash; Terence Tuhinanshu (@rajadain) <a href="https://twitter.com/rajadain/status/396481730699591680?ref_src=twsrc%5Etfw">November 2, 2013</a></blockquote>
 
-> Only then can we have a system of transparency, accountability and ease of understanding privacy in apps [#privacy](https://twitter.com/hashtag/privacy?src=hash)[#Android](https://twitter.com/hashtag/Android?src=hash)
-> 
-> &mdash; Terence Tuhinanshu (@rajadain) [November 2, 2013](https://twitter.com/rajadain/status/396482090734456833)
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Only then can we have a system of transparency, accountability and ease of understanding privacy in apps <a href="https://twitter.com/hashtag/privacy?src=hash&amp;ref_src=twsrc%5Etfw">#privacy</a> <a href="https://twitter.com/hashtag/Android?src=hash&amp;ref_src=twsrc%5Etfw">#Android</a></p>&mdash; Terence Tuhinanshu (@rajadain) <a href="https://twitter.com/rajadain/status/396482090734456833?ref_src=twsrc%5Etfw">November 2, 2013</a></blockquote>
 
-> This information doesn&#39;t need to be front and center, but should be available for inspection by potential users in the Play Store app
-> 
-> &mdash; Terence Tuhinanshu (@rajadain) [November 2, 2013](https://twitter.com/rajadain/status/396482441613172736)
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">This information doesn&#39;t need to be front and center, but should be available for inspection by potential users in the Play Store app</p>&mdash; Terence Tuhinanshu (@rajadain) <a href="https://twitter.com/rajadain/status/396482441613172736?ref_src=twsrc%5Etfw">November 2, 2013</a></blockquote>
 
-> Starting as voluntary convention adopted by some influential developers, it should slowly become standardized and then required by Google
-> 
-> &mdash; Terence Tuhinanshu (@rajadain) [November 2, 2013](https://twitter.com/rajadain/status/396482622433812480)
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Starting as voluntary convention adopted by some influential developers, it should slowly become standardized and then required by Google</p>&mdash; Terence Tuhinanshu (@rajadain) <a href="https://twitter.com/rajadain/status/396482622433812480?ref_src=twsrc%5Etfw">November 2, 2013</a></blockquote>
 
-> Apps already use some mechanism of declaring the permissions they use (as evidenced by the prompt shown upon installation)
-> 
-> &mdash; Terence Tuhinanshu (@rajadain) [November 2, 2013](https://twitter.com/rajadain/status/396483074307153921)
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Apps already use some mechanism of declaring the permissions they use (as evidenced by the prompt shown upon installation)</p>&mdash; Terence Tuhinanshu (@rajadain) <a href="https://twitter.com/rajadain/status/396483074307153921?ref_src=twsrc%5Etfw">November 2, 2013</a></blockquote>
 
-> How hard would it be to have a text field against every permission to be filled out during app submission? Just say why you need it
-> 
-> &mdash; Terence Tuhinanshu (@rajadain) [November 2, 2013](https://twitter.com/rajadain/status/396483365547032576)
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">How hard would it be to have a text field against every permission to be filled out during app submission? Just say why you need it</p>&mdash; Terence Tuhinanshu (@rajadain) <a href="https://twitter.com/rajadain/status/396483365547032576?ref_src=twsrc%5Etfw">November 2, 2013</a></blockquote>
 
-> Eventually these reasons should become legally (or store policy wise) binding, so if a security researcher finds violations, someone answers
-> 
-> &mdash; Terence Tuhinanshu (@rajadain) [November 2, 2013](https://twitter.com/rajadain/status/396483752295407616)
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Eventually these reasons should become legally (or store policy wise) binding, so if a security researcher finds violations, someone answers</p>&mdash; Terence Tuhinanshu (@rajadain) <a href="https://twitter.com/rajadain/status/396483752295407616?ref_src=twsrc%5Etfw">November 2, 2013</a></blockquote>
 
-> Of course, laws are not always the answer. Look at the mess that is the software copyright landscape right now. With laws come trolls
-> 
-> &mdash; Terence Tuhinanshu (@rajadain) [November 2, 2013](https://twitter.com/rajadain/status/396484348595412992)
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Of course, laws are not always the answer. Look at the mess that is the software copyright landscape right now. With laws come trolls</p>&mdash; Terence Tuhinanshu (@rajadain) <a href="https://twitter.com/rajadain/status/396484348595412992?ref_src=twsrc%5Etfw">November 2, 2013</a></blockquote>
 
-> And these added regulations could make it more difficult for new people to submit their apps. But there are ways around this
-> 
-> &mdash; Terence Tuhinanshu (@rajadain) [November 2, 2013](https://twitter.com/rajadain/status/396484616603066368)
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">And these added regulations could make it more difficult for new people to submit their apps. But there are ways around this</p>&mdash; Terence Tuhinanshu (@rajadain) <a href="https://twitter.com/rajadain/status/396484616603066368?ref_src=twsrc%5Etfw">November 2, 2013</a></blockquote>
 
-> For example, especially stringent requirements could be asked of apps that exceed a certain user base.
-> 
-> &mdash; Terence Tuhinanshu (@rajadain) [November 2, 2013](https://twitter.com/rajadain/status/396484867841875969)
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">For example, especially stringent requirements could be asked of apps that exceed a certain user base.</p>&mdash; Terence Tuhinanshu (@rajadain) <a href="https://twitter.com/rajadain/status/396484867841875969?ref_src=twsrc%5Etfw">November 2, 2013</a></blockquote>
 
-> Also, you can make it so that at least a certain number of people complain, a-la Class Action, for a review to take place
-> 
-> &mdash; Terence Tuhinanshu (@rajadain) [November 2, 2013](https://twitter.com/rajadain/status/396485056438730752)
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Also, you can make it so that at least a certain number of people complain, a-la Class Action, for a review to take place</p>&mdash; Terence Tuhinanshu (@rajadain) <a href="https://twitter.com/rajadain/status/396485056438730752?ref_src=twsrc%5Etfw">November 2, 2013</a></blockquote>
 
-> Having a certain number is better than having a percentage, which might be laughable eg Facebook&#39;s policy voting system with 1/3rd turnout
-> 
-> &mdash; Terence Tuhinanshu (@rajadain) [November 2, 2013](https://twitter.com/rajadain/status/396485428561588224)
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Having a certain number is better than having a percentage, which might be laughable eg Facebook&#39;s policy voting system with 1/3rd turnout</p>&mdash; Terence Tuhinanshu (@rajadain) <a href="https://twitter.com/rajadain/status/396485428561588224?ref_src=twsrc%5Etfw">November 2, 2013</a></blockquote>
 
-> What I&#39;m describing might not happen for a year or two, but it will inevitably become a necessity as app stores mature.
-> 
-> &mdash; Terence Tuhinanshu (@rajadain) [November 2, 2013](https://twitter.com/rajadain/status/396486357453123584)
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">What I&#39;m describing might not happen for a year or two, but it will inevitably become a necessity as app stores mature.</p>&mdash; Terence Tuhinanshu (@rajadain) <a href="https://twitter.com/rajadain/status/396486357453123584?ref_src=twsrc%5Etfw">November 2, 2013</a></blockquote>
+
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ### Origin
 
