@@ -6,7 +6,10 @@ date_updated: 2021-08-08T00:38:41.000Z
 tags:
   - prose
   - writing-group
+ogImage: https://ik.imagekit.io/rajadain/on-influences.jpg?updatedAt=1684552467827
 ---
+
+![On Influences](https://ik.imagekit.io/rajadain/on-influences.jpg?updatedAt=1684552467827)
 
 Growing up, everyone who knew my father when he was young would comment on how much I was like him. In looks, in manner, in voice. And I remember feeling a great sense of pride and satisfaction in that. Because I love my father: his looks, his manner, his voice. His vision. His intelligence. His generosity. As does everyone. He inspired many. In India, at a time when reverence and deference were still in practice, many held him up, on a pedestal above the common man, and carried him forward, for he could see further than anyone they knew. And he was right. About computers, about the Internet, about technology, about the fall of education, about the rising corruption. He saw it all, and he did everything he could to give me all of his gifts, all of himself, and all the opportunity to get out of a society whose demise he could see decades ahead.
 
