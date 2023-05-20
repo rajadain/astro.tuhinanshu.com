@@ -8,22 +8,22 @@ tags:
   - daily-verse
 ---
 
-Naturally bitter,
-artificially sweet.
-A warm, welcoming,
+Naturally bitter,  
+artificially sweet.  
+A warm, welcoming,  
 intoxicating treat.
 
-Mysteriously dark, yet
-familiar and friendly.
-Liquid and solid,
+Mysteriously dark, yet  
+familiar and friendly.  
+Liquid and solid,  
 gooey and deadly.
 
-An indulgence for the happy,
-a consolation for the sad.
-An accelerant of passion;
+An indulgence for the happy,  
+a consolation for the sad.  
+An accelerant of passion;  
 aphrodisiac for the mad.
 
-A pleasure without guilt,
-a substance without abuse.
-No, I’m not addicted.
+A pleasure without guilt,  
+a substance without abuse.  
+No, I’m not addicted.  
 Yes, I’ll have that mousse.
