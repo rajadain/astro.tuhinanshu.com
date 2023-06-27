@@ -27,6 +27,10 @@ function reflectPreference() {
   document.firstElementChild.setAttribute("data-theme", themeValue);
 
   document.querySelector("#theme-btn")?.setAttribute("aria-label", themeValue);
+
+  document
+    .querySelector("#logo")
+    ?.setAttribute("src", `/assets/logo-${themeValue}.svg`);
 }
 
 // set early so no page flashes / CSS is made aware

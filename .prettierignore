@@ -11,3 +11,6 @@
 !.prettierrc
 !.eslintrc.js
 !README.md
+
+# But not these
+/public/assets/
