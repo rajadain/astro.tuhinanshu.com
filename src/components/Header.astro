@@ -3,8 +3,6 @@ import { SITE } from "@config";
 import Hr from "./Hr.astro";
 import LinkButton from "./LinkButton.astro";
 
-import logoLight from "/assets/logo-light.png";
-
 export interface Props {
   activeNav?: "posts" | "tags" | "about" | "search";
 }
@@ -17,7 +15,6 @@ const { activeNav } = Astro.props;
   <div class="nav-container">
     <div class="top-nav-wrap">
       <a href="/" class="logo">
-        <img src={logoLight} alt="Terence Tuhinanshu Logo" />
         <span>{SITE.title}</span>
       </a>
       <nav id="nav-menu">
@@ -106,6 +103,13 @@ const { activeNav } = Astro.props;
   }
   .logo {
     @apply flex items-center py-1;
+  }
+  .logo::before {
+    content: "";
+    @apply mr-1 h-16 w-16
+      bg-logo bg-logo-size
+      bg-logo-position sm:h-24 sm:w-24
+      sm:bg-logo-size-sm sm:bg-logo-position-sm;
   }
   .logo img {
     @apply mr-1 h-16 w-16 sm:h-24 sm:w-24;

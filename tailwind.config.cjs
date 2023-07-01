@@ -38,6 +38,17 @@ module.exports = {
         "card-muted": withOpacity("--color-card-muted"),
       },
     },
+    backgroundImage: {
+      logo: "url('/assets/logo-sprite.png')",
+    },
+    backgroundPosition: {
+      "logo-position": "var(--logo-position)",
+      "logo-position-sm": "var(--logo-position-sm)",
+    },
+    backgroundSize: {
+      "logo-size": "64px 128px",
+      "logo-size-sm": "96px 192px",
+    },
     outlineColor: {
       skin: {
         fill: withOpacity("--color-accent"),
