@@ -2,6 +2,8 @@
 import Hr from "./Hr.astro";
 import Socials from "./Socials.astro";
 
+import logoLight from "/assets/logo-light.png";
+
 const currentYear = new Date().getFullYear();
 
 export interface Props {
@@ -19,6 +21,9 @@ const { noMarginTop = false } = Astro.props;
       <span>Copyright &#169; {currentYear}</span>
       <span class="separator">&nbsp;|&nbsp;</span>
       <span>All rights reserved.</span>
+      <a href="/" class="logo">
+        <img src={logoLight} alt="Terence Tuhinanshu Logo" />
+      </a>
     </div>
   </div>
 </footer>
@@ -41,5 +46,8 @@ const { noMarginTop = false } = Astro.props;
   }
   .separator {
     @apply hidden sm:inline;
+  }
+  .logo img {
+    @apply mx-2 mt-2 w-12 sm:-mt-0 sm:w-8;
   }
 </style>

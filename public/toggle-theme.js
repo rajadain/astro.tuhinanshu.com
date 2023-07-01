@@ -29,8 +29,8 @@ function reflectPreference() {
   document.querySelector("#theme-btn")?.setAttribute("aria-label", themeValue);
 
   document
-    .querySelector(".logo > img")
-    ?.setAttribute("src", `/assets/logo-${themeValue}.png`);
+    .querySelectorAll(".logo > img")
+    .forEach(img => img.setAttribute("src", `/assets/logo-${themeValue}.png`));
 }
 
 // set early so no page flashes / CSS is made aware
