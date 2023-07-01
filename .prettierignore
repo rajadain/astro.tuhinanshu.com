@@ -13,4 +13,5 @@
 !README.md
 
 # But not these
+**/*.png
 /public/assets/
