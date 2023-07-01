@@ -3,7 +3,7 @@ import { SITE } from "@config";
 import Hr from "./Hr.astro";
 import LinkButton from "./LinkButton.astro";
 
-import logoLight from "/assets/logo-light.svg";
+import logoLight from "/assets/logo-light.png";
 
 export interface Props {
   activeNav?: "posts" | "tags" | "about" | "search";
@@ -17,7 +17,7 @@ const { activeNav } = Astro.props;
   <div class="nav-container">
     <div class="top-nav-wrap">
       <a href="/" class="logo">
-        <img id="logo" src={logoLight} alt="Terence Tuhinanshu Logo" />
+        <img src={logoLight} alt="Terence Tuhinanshu Logo" />
         <span>{SITE.title}</span>
       </a>
       <nav id="nav-menu">
