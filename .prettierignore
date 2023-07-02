@@ -14,4 +14,7 @@
 
 # But not these
 **/*.png
+**/*.ico
+**/*.svg
+**/*.xml
 /public/assets/
