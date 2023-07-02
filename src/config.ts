@@ -7,7 +7,7 @@ export const SITE: Site = {
   title: "Terence Tuhinanshu",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
-  postPerPage: 3,
+  postPerPage: 10,
 };
 
 export const SOCIALS: SocialObjects = [
