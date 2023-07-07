@@ -4,7 +4,7 @@ postSlug: photoshoot-2014-philadelphia
 date_published: 2014-07-20T23:00:00.000Z
 date_updated: 2014-07-20T23:00:00.000Z
 tags:
-  - modeling
+  - photoshoot
 ogImage: https://ik.imagekit.io/rajadain/modeling/2014-philadelphia/Terence09.jpg?updatedAt=1688697439102
 ---
 

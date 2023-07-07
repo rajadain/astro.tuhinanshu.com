@@ -1,10 +1,10 @@
 ---
-title: Modeling in New York 2022
-postSlug: modeling-2022-new-york
+title: Photoshoot in New York 2022
+postSlug: photoshoot-2022-new-york
 date_published: 2022-12-19T23:00:00.000Z
 date_updated: 2022-12-19T23:00:00.000Z
 tags:
-  - modeling
+  - photoshoot
 ogImage: https://ik.imagekit.io/rajadain/modeling/2022-new-york/IMG_0468.JPG?updatedAt=1688695731252
 ---
 

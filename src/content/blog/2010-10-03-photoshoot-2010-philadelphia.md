@@ -4,7 +4,7 @@ postSlug: photoshoot-2010-philadelphia
 date_published: 2010-10-10T23:00:00.000Z
 date_updated: 2010-10-10T23:00:00.000Z
 tags:
-  - modeling
+  - photoshoot
 ogImage: https://ik.imagekit.io/rajadain/modeling/2010-philadelphia/Terence-23.jpg?updatedAt=1688698340530
 ---
 

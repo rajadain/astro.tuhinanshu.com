@@ -4,7 +4,7 @@ postSlug: photoshoot-2019-philadelphia
 date_published: 2019-08-31T23:00:00.000Z
 date_updated: 2019-08-31T23:00:00.000Z
 tags:
-  - modeling
+  - photoshoot
 ogImage: https://ik.imagekit.io/rajadain/modeling/2019-philadelphia/IMG_0506.JPG?updatedAt=1688696422550
 ---
 
