@@ -1,5 +1,10 @@
 const primaryColorScheme = ""; // "light" | "dark"
 
+const colors = {
+  light: "#fbfefb",
+  dark: "#212737",
+};
+
 // Get theme data from local storage
 const currentTheme = localStorage.getItem("theme");
 
@@ -31,6 +36,10 @@ function reflectPreference() {
   document
     .querySelectorAll(".logo > img")
     .forEach(img => img.setAttribute("src", `/assets/logo-${themeValue}.png`));
+
+  document
+    .querySelector("meta[name='theme-color']")
+    .setAttribute("content", colors[themeValue]);
 }
 
 // set early so no page flashes / CSS is made aware
