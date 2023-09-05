@@ -9,7 +9,7 @@ tags:
   - thoughts
 ---
 
-*The following is republished from my old blog *[*https://tuhinanshu.blogspot.com/2011/07/web-fonts-today-what-you-see-is-not.html*](https://tuhinanshu.blogspot.com/2011/07/web-fonts-today-what-you-see-is-not.html)*. It is presented as is, with no modifications or changes. Any potentially controversial views presented herein are more than ten years old. Please do not cancel me for it.*
+_The following is republished from my old blog [https://tuhinanshu.blogspot.com/2011/07/web-fonts-today-what-you-see-is-not.html](https://tuhinanshu.blogspot.com/2011/07/web-fonts-today-what-you-see-is-not.html). It is presented as is, with no modifications or changes. Any potentially controversial views presented herein are more than ten years old. Please do not cancel me for it._
 
 ---
 
@@ -18,7 +18,7 @@ Being an amateur typography enthusiast, I am very happy with the direction in wh
 Except that it's not.
 [![](http://1.bp.blogspot.com/-_bcw4v_12DE/TiY1BOkQHWI/AAAAAAAAAE8/xQrBhZBangI/s1600/bad-fonts-google.png)](http://1.bp.blogspot.com/-_bcw4v_12DE/TiY1BOkQHWI/AAAAAAAAAE8/xQrBhZBangI/s1600/bad-fonts-google.png)
 Yeah, I don't think it's as *optimized *as you guys think.
-[IM Fell English](http://www.google.com/webfonts/specimen/IM+Fell+English), the font above in blue, is *meant* to look like that. This poster child is almost a tongue-in-cheek testament of the quality of web fonts today.
+[IM Fell English](http://www.google.com/webfonts/specimen/IM+Fell+English), the font above in blue, is _meant_ to look like that. This poster child is almost a tongue-in-cheek testament of the quality of web fonts today.
 
 The problem with web font usage right now is not different from a fundamental issue of design and development: namely the gap between the designer / developer and the end-user. The closer they come together, the better they can understand the problem and find a more meaningful solution. Web font rendering isn't uniform across browsers. I'm sure there are people out there (much smarter than me) working on this as we speak.
 
@@ -27,7 +27,7 @@ The example we use here is the home page of [PressWork](http://presswork.me/), a
 Designers, of course, work on Macs or other "superior" systems (pardon my cynicism) with the relevant fonts installed on their systems (so that they can work in Graphic Design programs with them), which render Web fonts like this:
 [![](http://4.bp.blogspot.com/-tyJnIongC7U/TiYstHGRDZI/AAAAAAAAAE0/1DmTFtWRF50/s1600/bad-fonts-designer.png)](http://4.bp.blogspot.com/-tyJnIongC7U/TiYstHGRDZI/AAAAAAAAAE0/1DmTFtWRF50/s1600/bad-fonts-designer.png)
 What the Designer Sees
- Taken on Firefox 5 (which supports native smoothing) running on Windows 7 with Clear Type on and [GDI++](http://lifehacker.com/5190607/gdi%252B%252B-adds-os-x-font-rendering-to-windows) running and [Quattrocento](http://www.google.com/webfonts/specimen/Quattrocento) installed.
+Taken on Firefox 5 (which supports native smoothing) running on Windows 7 with Clear Type on and [GDI++](http://lifehacker.com/5190607/gdi%252B%252B-adds-os-x-font-rendering-to-windows) running and [Quattrocento](http://www.google.com/webfonts/specimen/Quattrocento) installed.
 
 All content and design © [http://presswork.me](http://presswork.me/)
 
