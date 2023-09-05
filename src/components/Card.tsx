@@ -17,6 +17,9 @@ export default function Card({ href, frontmatter, secHeading = true }: Props) {
           <img
             className="h-20 w-20 rounded-lg object-cover drop-shadow-lg"
             src={ogImage}
+            // Alt tag would be same as title, specified right below.
+            // Empty alt tags are understood by screen readers to be skipped.
+            alt=""
           />
         </a>
       ) : (
