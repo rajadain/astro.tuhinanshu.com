@@ -42,18 +42,19 @@ function reflectPreference() {
     .setAttribute("content", colors[themeValue]);
 }
 
+function setupThemeButton() {
+  document.querySelector("#theme-btn")?.addEventListener("click", () => {
+    themeValue = themeValue === "light" ? "dark" : "light";
+    setPreference();
+  });
+}
+
 // set early so no page flashes / CSS is made aware
 reflectPreference();
 
 window.onload = () => {
   // set on load so screen readers can get the latest value on the button
   reflectPreference();
-
-  // now this script can find and listen for clicks on the control
-  document.querySelector("#theme-btn")?.addEventListener("click", () => {
-    themeValue = themeValue === "light" ? "dark" : "light";
-    setPreference();
-  });
 };
 
 // sync with system changes
@@ -63,3 +64,9 @@ window
     themeValue = isDark ? "dark" : "light";
     setPreference();
   });
+
+// Re-set the theme on view transition
+document.addEventListener("astro:after-swap", reflectPreference);
+
+// Re-wire the button on view transition
+document.addEventListener("astro:page-load", setupThemeButton);

@@ -2,6 +2,8 @@ import Datetime from "./Datetime";
 import Tag from "./Tag";
 import type { BlogFrontmatter } from "@content/_schemas";
 
+import slugify from "@utils/slugify";
+
 export interface Props {
   href?: string;
   frontmatter: BlogFrontmatter;
@@ -10,6 +12,8 @@ export interface Props {
 
 export default function Card({ href, frontmatter, secHeading = true }: Props) {
   const { title, date_published, description, ogImage, tags } = frontmatter;
+  const slug = slugify(frontmatter);
+
   return (
     <li className="my-6 flex items-center">
       {ogImage ? (
@@ -31,16 +35,22 @@ export default function Card({ href, frontmatter, secHeading = true }: Props) {
           className="inline-block text-lg font-medium text-skin-accent decoration-dashed underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0"
         >
           {secHeading ? (
-            <h2 className="text-lg font-medium decoration-dashed hover:underline">
+            <h2
+              className="text-lg font-medium decoration-dashed hover:underline"
+              style={{ viewTransitionName: `title-${slug}` }}
+            >
               {title}
             </h2>
           ) : (
-            <h3 className="text-lg font-medium decoration-dashed hover:underline">
+            <h3
+              className="text-lg font-medium decoration-dashed hover:underline"
+              style={{ viewTransitionName: `title-${slug}` }}
+            >
               {title}
             </h3>
           )}
         </a>
-        <Datetime datetime={date_published} />
+        <Datetime datetime={date_published} slug={slug} />
         <p>{description}</p>
         <ul className="tags-container">
           {tags.map(tag => (
