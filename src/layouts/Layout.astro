@@ -24,9 +24,11 @@ const socialImageURL = new URL(
   ogImage ? ogImage : SITE.ogImage,
   Astro.url.origin
 ).href;
+
+const bgContentOpacity = Astro.url.pathname === "/" ? 0 : 100;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -86,6 +88,13 @@ const socialImageURL = new URL(
     <script is:inline src="/toggle-theme.js"></script>
   </head>
   <body>
+    <div id="bg-content" style={{ opacity: bgContentOpacity }}></div>
     <slot />
   </body>
 </html>
+
+<style>
+  #bg-content {
+    @apply bg-content-blur bg-top bg-cover w-full h-screen fixed -z-10;
+  }
+</style>

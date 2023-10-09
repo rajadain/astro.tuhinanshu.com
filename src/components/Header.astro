@@ -10,11 +10,11 @@ export interface Props {
 const { activeNav } = Astro.props;
 ---
 
-<header>
+<header id="header">
   <a id="skip-to-content" href="#main-content">Skip to content</a>
   <div class="nav-container">
     <div class="top-nav-wrap">
-      <a href="/" class="logo">
+      <a href="/#header" class="logo">
         <span>{SITE.title}</span>
       </a>
       <nav id="nav-menu">
@@ -125,7 +125,7 @@ const { activeNav } = Astro.props;
   }
 
   nav {
-    @apply flex flex-col items-center bg-skin-fill sm:ml-2 sm:flex-row sm:justify-end sm:space-x-4 sm:py-0;
+    @apply flex flex-col items-center sm:ml-2 sm:flex-row sm:justify-end sm:space-x-4 sm:py-0;
   }
   nav ul {
     @apply mt-4 grid w-44 grid-cols-2 grid-rows-4 gap-y-2 gap-x-2 sm:mt-0 sm:ml-0 sm:w-auto sm:gap-y-0 sm:gap-x-5;

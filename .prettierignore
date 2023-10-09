@@ -17,4 +17,6 @@
 **/*.ico
 **/*.svg
 **/*.xml
+**/*.jpg
+**/*.afphoto
 /public/assets/
