@@ -37,6 +37,7 @@ module.exports = {
       },
       backgroundImage: {
         logo: "url('/assets/logo-sprite.png')",
+        "content-blur": "var(--bg-blur)",
       },
       backgroundPosition: {
         "logo-position": "var(--logo-position)",
