@@ -1,5 +1,5 @@
 ---
-title: Monkey's Slaw
+title: Monkey’s Slaw
 postSlug: monkeys-slaw
 date_published: 2023-10-30T20:00:00.000Z
 tags:
@@ -14,7 +14,7 @@ With sourdough buns and American cheese
 and thirteen slices of ham.
 
 A carton of milk that could be bad  
-and pepperjack that's now blue.  
+and pepperjack that’s now blue.  
 An apple, a pear, a gummy bear,  
 and a bottle of used up glue.
 
@@ -43,7 +43,7 @@ My friend [Jenny Fung](https://hellojfung.com) gave me the superpower prompt to 
 
 ### Prompt
 
-The featured image was generated using OpenAI's DALL-E 2, with the prompt:
+The featured image was generated using OpenAI’s DALL-E 2, with the prompt:
 
 > a Dr Seuss like illustration of an open fridge with fish, jam, milk, bread, cheese, and ice cream in it
 
