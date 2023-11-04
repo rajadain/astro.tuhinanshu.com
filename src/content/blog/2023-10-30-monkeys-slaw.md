@@ -8,6 +8,8 @@ tags:
 ogImage: https://ik.imagekit.io/rajadain/monkeys-slaw.png?updatedAt=1698716870721
 ---
 
+![a Dr Seuss like illustration of an open fridge with fish, jam, milk, bread, cheese, and ice cream in it](https://ik.imagekit.io/rajadain/monkeys-slaw.png?updatedAt=1698716870721)
+
 A fish, a fig, a cinnamon stick,  
 and half a jar of jam.  
 With sourdough buns and American cheese  
@@ -46,5 +48,3 @@ My friend [Jenny Fung](https://hellojfung.com) gave me the superpower prompt to 
 The featured image was generated using OpenAI’s DALL-E 2, with the prompt:
 
 > a Dr Seuss like illustration of an open fridge with fish, jam, milk, bread, cheese, and ice cream in it
-
-![a Dr Seuss like illustration of an open fridge with fish, jam, milk, bread, cheese, and ice cream in it](https://ik.imagekit.io/rajadain/monkeys-slaw.png?updatedAt=1698716870721)
