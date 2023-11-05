@@ -15,6 +15,6 @@ ogImage: https://ik.imagekit.io/rajadain/dalle-dataset.webp?updatedAt=1686513273
 
 > Understanding efficiency gains in a scalable, cloud-native data-processing environment unlocks an array of new possibilities when dealing with large, complex datasets such as the National Water Model. In this article, we take a deep dive into Zarr and Parquet and determine which is more performant on various time scales.
 
-This blog post recaps our research on which popular data format works better for National Water Model access over the cloud. Read the full article on the Azavea blog here: https://www.azavea.com/blog/2022/09/22/benchmarking-zarr-and-parquet-data-retrieval-using-the-national-water-model-nwm-in-a-cloud-native-environment/.
+This blog post recaps our research on which popular data format works better for National Water Model access over the cloud. [Read the full article on the Azavea blog here.](https://www.azavea.com/blog/2022/09/22/benchmarking-zarr-and-parquet-data-retrieval-using-the-national-water-model-nwm-in-a-cloud-native-environment/)
 
 Also read our follow up to this work that deals with [optimizing access to the NWM’s Prediction Dataset](/posts/using-kerchunk-to-make-noaas-national-water-model-dataset-more-accessible).
