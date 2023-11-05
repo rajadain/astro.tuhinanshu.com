@@ -1,4 +1,5 @@
 ---
+import Breadcrumbs from "@components/Breadcrumbs.astro";
 import Card from "@components/Card";
 import Layout from "@layouts/Layout.astro";
 import Header from "@components/Header.astro";
@@ -27,6 +28,7 @@ const slug = slugify(post.data);
 
 <Layout title={title} author={author} description={description} ogImage={ogUrl}>
   <Header />
+  <Breadcrumbs title={title} />
   <main id="main-content">
     <h1 class="post-title" transition:name={`title-${slug}`}>{title}</h1>
     <Datetime
