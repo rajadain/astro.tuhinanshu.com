@@ -5,7 +5,7 @@ export const SITE: Site = {
   author: "Terence Tuhinanshu",
   desc: "Personal site and blog of poet, thinker, designer, and developer Terence Tuhinanshu",
   title: "Terence Tuhinanshu",
-  ogImage: "astropaper-og.jpg",
+  ogImage: "assets/bg.jpg",
   lightAndDarkMode: true,
   postPerPage: 10,
 };
