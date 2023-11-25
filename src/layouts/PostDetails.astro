@@ -1,4 +1,5 @@
 ---
+import { SITE } from "@config";
 import Breadcrumbs from "@components/Breadcrumbs.astro";
 import Card from "@components/Card";
 import Layout from "@layouts/Layout.astro";
@@ -26,7 +27,12 @@ const ogUrl = new URL(ogImage ? ogImage : `${title}.png`, Astro.url.origin)
 const slug = slugify(post.data);
 ---
 
-<Layout title={title} author={author} description={description} ogImage={ogUrl}>
+<Layout
+  title={`${title} | ${SITE.title}`}
+  author={author}
+  description={description}
+  ogImage={ogUrl}
+>
   <Header />
   <Breadcrumbs title={title} />
   <main id="main-content">
