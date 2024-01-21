@@ -19,4 +19,5 @@
 **/*.xml
 **/*.jpg
 **/*.afphoto
+**/*.txt
 /public/assets/

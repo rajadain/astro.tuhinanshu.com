@@ -1,0 +1,54 @@
+==================================================================
+https://keybase.io/rajadain
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://tuhinanshu.com
+  * I am rajadain (https://keybase.io/rajadain) on keybase.
+  * I have a public key ASAbFLu0nNSKgJePbQ8dHB-CHbgZvjhkxdk5c-lfN-AKmQo
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0101e8b47c49153440bbd56fdda0e9edc7041c3d3ee1fc9959de2ded9548651110760a",
+            "host": "keybase.io",
+            "kid": "01201b14bbb49cd48a80978f6d0f1d1c1f821db819be3864c5d93973e95f37e00a990a",
+            "uid": "356cf81c97d43f31c94f5d75215ad200",
+            "username": "rajadain"
+        },
+        "service": {
+            "hostname": "tuhinanshu.com",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "client": {
+        "name": "keybase.io go client",
+        "version": "1.0.23"
+    },
+    "ctime": 1497125772,
+    "expire_in": 504576000,
+    "merkle_root": {
+        "ctime": 1497125729,
+        "hash": "35fd07aa2936a582f5aaf767ec62460f4a9084463d33e857b996253cbff1065c281ea0d2052be107a24517d91f9ab0f9149365942659e56b0d544feff050e3d0",
+        "seqno": 1160326
+    },
+    "prev": "2c8549e7cfc8a51bdd7d6ec9a51ba3f6196a8ed2cebb941b2417d1b416776aa6",
+    "seqno": 23,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgGxS7tJzUioCXj20PHRwfgh24Gb44ZMXZOXPpXzfgCpkKp3BheWxvYWTFAvd7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTAxZThiNDdjNDkxNTM0NDBiYmQ1NmZkZGEwZTllZGM3MDQxYzNkM2VlMWZjOTk1OWRlMmRlZDk1NDg2NTExMTA3NjBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwMWIxNGJiYjQ5Y2Q0OGE4MDk3OGY2ZDBmMWQxYzFmODIxZGI4MTliZTM4NjRjNWQ5Mzk3M2U5NWYzN2UwMGE5OTBhIiwidWlkIjoiMzU2Y2Y4MWM5N2Q0M2YzMWM5NGY1ZDc1MjE1YWQyMDAiLCJ1c2VybmFtZSI6InJhamFkYWluIn0sInNlcnZpY2UiOnsiaG9zdG5hbWUiOiJ0dWhpbmFuc2h1LmNvbSIsInByb3RvY29sIjoiaHR0cDoifSwidHlwZSI6IndlYl9zZXJ2aWNlX2JpbmRpbmciLCJ2ZXJzaW9uIjoxfSwiY2xpZW50Ijp7Im5hbWUiOiJrZXliYXNlLmlvIGdvIGNsaWVudCIsInZlcnNpb24iOiIxLjAuMjMifSwiY3RpbWUiOjE0OTcxMjU3NzIsImV4cGlyZV9pbiI6NTA0NTc2MDAwLCJtZXJrbGVfcm9vdCI6eyJjdGltZSI6MTQ5NzEyNTcyOSwiaGFzaCI6IjM1ZmQwN2FhMjkzNmE1ODJmNWFhZjc2N2VjNjI0NjBmNGE5MDg0NDYzZDMzZTg1N2I5OTYyNTNjYmZmMTA2NWMyODFlYTBkMjA1MmJlMTA3YTI0NTE3ZDkxZjlhYjBmOTE0OTM2NTk0MjY1OWU1NmIwZDU0NGZlZmYwNTBlM2QwIiwic2Vxbm8iOjExNjAzMjZ9LCJwcmV2IjoiMmM4NTQ5ZTdjZmM4YTUxYmRkN2Q2ZWM5YTUxYmEzZjYxOTZhOGVkMmNlYmI5NDFiMjQxN2QxYjQxNjc3NmFhNiIsInNlcW5vIjoyMywidGFnIjoic2lnbmF0dXJlIn2jc2lnxEB90EG3Rx/vTORMIohUg7GMUAb+83F4DGyq9xg1wpaPgviARD/AhIDqqE2Ux80+0uzJZkoCeI1jzRJg7H0JsEkLqHNpZ190eXBlIKRoYXNogqR0eXBlCKV2YWx1ZcQgGXCylpsHB53i1iiMPAixzIzlrwuyuLZGnytyDpm3cfejdGFnzQICp3ZlcnNpb24B
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/rajadain
+
+==================================================================
