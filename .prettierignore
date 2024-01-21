@@ -20,4 +20,5 @@
 **/*.jpg
 **/*.afphoto
 **/*.txt
+**/*.pdf
 /public/assets/
