@@ -73,6 +73,21 @@ const socialImageURL = new URL(
       rel="stylesheet"
     />
 
+    <!-- Google Analytics loaded via Partytown -->
+    <script
+      type="text/partytown"
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-NB91BBBKKM"></script>
+    <script type="text/partytown">
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-NB91BBBKKM");
+    </script>
+
     {
       // If PUBLIC_GOOGLE_SITE_VERIFICATION is set in the environment variable,
       // include google-site-verification tag in the heading
