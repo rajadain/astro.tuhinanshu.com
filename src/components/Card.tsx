@@ -2,6 +2,7 @@ import Datetime from "./Datetime";
 import Tag from "./Tag";
 import type { BlogFrontmatter } from "@content/_schemas";
 
+import resizeImageKitUrl from "@utils/resizeImageKitUrl";
 import slugify from "@utils/slugify";
 
 export interface Props {
@@ -20,7 +21,7 @@ export default function Card({ href, frontmatter, secHeading = true }: Props) {
         <a className="mr-4 shrink-0 basis-20" href={href}>
           <img
             className="h-20 w-20 rounded-lg object-cover drop-shadow-lg"
-            src={ogImage}
+            src={resizeImageKitUrl(ogImage)}
             // Alt tag would be same as title, specified right below.
             // Empty alt tags are understood by screen readers to be skipped.
             alt=""
