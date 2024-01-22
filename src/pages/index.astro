@@ -35,9 +35,9 @@ const featuredTags = [
   <main id="main-content">
     <section id="hero">
       <p>Creative writing, poetry, software musings, and other pursuits.</p>
-      <div class="tags-wrapper">
+      <ul class="tags-wrapper">
         {featuredTags.map(t => <Tag name={t} />)}
-      </div>
+      </ul>
       {
         // only display if at least one social link is enabled
         socialCount > 0 && (
