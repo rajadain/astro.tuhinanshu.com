@@ -76,13 +76,14 @@ const socialImageURL = new URL(
 
     <!-- Google Analytics loaded via Partytown -->
     <script
+      is:inline
       type="text/partytown"
       async
       src="https://www.googletagmanager.com/gtag/js?id=G-NB91BBBKKM"></script>
-    <script type="text/partytown">
+    <script is:inline type="text/partytown">
       window.dataLayer = window.dataLayer || [];
       function gtag() {
-        dataLayer.push(arguments);
+        window.dataLayer.push(arguments);
       }
       gtag("js", new Date());
 
