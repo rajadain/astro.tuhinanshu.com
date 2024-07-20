@@ -120,7 +120,7 @@ Aidan went into the bathroom and washed her face. She emerged a couple minutes l
 
 “One thing at a time. It’s just a day. I’ll see you when you get back.”
 
-Aidan nodded. She turned and reached for the door. With a hand on the knob, she paused, took a deep breath, stood up to her full height, filling herself with confidence and resolve, and left.
+Aidan nodded. She turned and reached for the door. With a hand on the knob, she paused, took a deep breath, stood up to her full height, and filling herself with confidence and resolve, left.
 
 ---
 
