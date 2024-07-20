@@ -1,4 +1,4 @@
-function isPositiveInteger(pathFragment: String): Boolean {
+function isPositiveInteger(pathFragment: string): Boolean {
   return /^\d+$/.test(pathFragment);
 }
 

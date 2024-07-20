@@ -11,6 +11,7 @@ import socialIcons from "@assets/socialIcons";
         href={social.href}
         className="link-button"
         title={social.linkTitle}
+        ariaLabel={social.linkTitle}
       >
         <Fragment set:html={socialIcons[social.name]} />
       </LinkButton>
