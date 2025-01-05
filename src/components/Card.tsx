@@ -18,7 +18,11 @@ export default function Card({ href, frontmatter, secHeading = true }: Props) {
   return (
     <li className="my-6 flex items-center">
       {ogImage ? (
-        <a className="mr-4 shrink-0 basis-20" href={href}>
+        <a
+          className="mr-4 shrink-0 basis-20"
+          href={href}
+          aria-labelledby={`title-${slug}`}
+        >
           <img
             className="h-20 w-20 rounded-lg object-cover drop-shadow-lg"
             src={resizeImageKitUrl(ogImage)}
@@ -37,6 +41,7 @@ export default function Card({ href, frontmatter, secHeading = true }: Props) {
         >
           {secHeading ? (
             <h2
+              id={`title-${slug}`}
               className="text-lg font-medium decoration-dashed hover:underline"
               style={{ viewTransitionName: `title-${slug}` }}
             >
@@ -44,6 +49,7 @@ export default function Card({ href, frontmatter, secHeading = true }: Props) {
             </h2>
           ) : (
             <h3
+              id={`title-${slug}`}
               className="text-lg font-medium decoration-dashed hover:underline"
               style={{ viewTransitionName: `title-${slug}` }}
             >
