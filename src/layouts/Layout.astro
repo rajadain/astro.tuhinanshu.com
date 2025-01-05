@@ -1,5 +1,5 @@
 ---
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 
 import { SITE } from "@config";
 import "@styles/base.css";
@@ -104,7 +104,7 @@ const socialImageURL = new URL(
 
     <script is:inline src="/toggle-theme.js"></script>
 
-    <ViewTransitions />
+    <ClientRouter />
   </head>
   <body>
     <div id="bg-content"></div>
