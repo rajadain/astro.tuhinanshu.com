@@ -1,7 +1,5 @@
 ---
 import { ClientRouter } from "astro:transitions";
-import Analytics from "@vercel/analytics/astro";
-import SpeedInsights from "@vercel/speed-insights/astro";
 
 import { SITE } from "@config";
 import "@styles/base.css";
@@ -106,7 +104,6 @@ const socialImageURL = new URL(
 
     <script is:inline src="/toggle-theme.js"></script>
 
-    <Analytics />
     <ClientRouter />
   </head>
   <body>
@@ -117,6 +114,5 @@ const socialImageURL = new URL(
         @apply bg-content-blur bg-top bg-cover w-full h-screen fixed -z-10;
       }
     </style>
-    <SpeedInsights />
   </body>
 </html>
