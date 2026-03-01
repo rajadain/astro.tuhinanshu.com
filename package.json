@@ -37,20 +37,20 @@
     "@tailwindcss/typography": "0.5.19",
     "@tailwindcss/vite": "^4.2.1",
     "@types/github-slugger": "^2.0.0",
-    "@types/react": "18.3.28",
+    "@types/react": "^19.2.14",
     "@typescript-eslint/parser": "^6.6.0",
     "astro-eslint-parser": "^0.15.0",
     "commitizen": "4.3.1",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "8.57.1",
     "eslint-plugin-astro": "^0.29.0",
-    "husky": "^8.0.3",
-    "lint-staged": "^14.0.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.3.1",
     "prettier": "3.8.1",
     "prettier-plugin-astro": "0.14.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
   },
   "config": {
     "commitizen": {
