@@ -1,5 +1,6 @@
 {
   "extends": "astro/tsconfigs/strict",
+  "exclude": [".astro", "dist", "node_modules", "public/instagram-embed.js"],
   "compilerOptions": {
     "baseUrl": "src",
     "jsx": "react-jsx",
