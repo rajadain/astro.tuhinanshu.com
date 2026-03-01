@@ -30,7 +30,7 @@ const { activeNav } = Astro.props;
             <div id="third-line"></div>
           </div>
         </button>
-        <ul id="menu-items" class="display-none sm:flex">
+        <ul id="menu-items" class="is-hidden">
           <li>
             <a href="/posts" class={activeNav === "posts" ? "active" : ""}>
               Posts
@@ -111,6 +111,8 @@ const { activeNav } = Astro.props;
 </header>
 
 <style>
+  @reference "../styles/base.css";
+
   #skip-to-content {
     @apply absolute -top-full left-16 z-50 bg-skin-accent py-2 px-3 text-skin-inverted transition-all focus:top-4;
   }
@@ -126,10 +128,12 @@ const { activeNav } = Astro.props;
   .logo::before {
     content: "";
     @apply mr-1 h-16 w-16
-      hover:rotate-6
-      bg-logo bg-logo-size
-      bg-logo-position sm:h-24 sm:w-24
-      sm:bg-logo-size-sm sm:bg-logo-position-sm;
+      bg-logo bg-[length:var(--logo-size)]
+      bg-[position:var(--logo-position)] sm:h-24 sm:w-24
+      sm:bg-[length:var(--logo-size-sm)] sm:bg-[position:var(--logo-position-sm)];
+  }
+  .logo:hover::before {
+    @apply rotate-6;
   }
   .logo img {
     @apply mr-1 h-16 w-16 sm:h-24 sm:w-24;
@@ -149,6 +153,9 @@ const { activeNav } = Astro.props;
   }
   nav ul {
     @apply mt-4 grid w-44 grid-cols-3 grid-rows-4 gap-y-2 gap-x-2 sm:mt-0 sm:ml-0 sm:w-auto sm:gap-y-0 sm:gap-x-5;
+  }
+  nav ul.is-hidden {
+    @apply hidden sm:!flex;
   }
   nav ul li {
     @apply col-span-3 flex items-center justify-center;
@@ -188,7 +195,7 @@ const { activeNav } = Astro.props;
     @apply h-5 w-6 flex-col items-end justify-between;
   }
   .icon-container div {
-    @apply h-0.5 bg-skin-inverted transition-all;
+    @apply h-0.5 bg-skin-base transition-all;
   }
   #first-line {
     @apply w-full;
@@ -217,24 +224,24 @@ const { activeNav } = Astro.props;
       if (menuExpanded === "false") {
         menuBtn?.setAttribute("aria-expanded", "true");
         menuBtn?.setAttribute("aria-label", "Close Menu");
-        menuItems?.remove("display-none");
+        menuItems?.remove("is-hidden");
 
         // icon animation
         iconContainer?.remove("flex");
         iconContainer?.add("relative");
         firstLine?.add("rotate-45", "absolute", "bottom-1/2");
-        thirdLine?.add("display-none");
+        thirdLine?.add("is-hidden");
         secondLine?.add("!w-full", "-rotate-45", "absolute", "bottom-1/2");
       } else {
         menuBtn?.setAttribute("aria-expanded", "false");
         menuBtn?.setAttribute("aria-label", "Open Menu");
-        menuItems?.add("display-none");
+        menuItems?.add("is-hidden");
 
         // icon animation
         iconContainer?.add("flex");
         iconContainer?.remove("relative");
         firstLine?.remove("rotate-45", "absolute", "bottom-1/2");
-        thirdLine?.remove("display-none");
+        thirdLine?.remove("is-hidden");
         secondLine?.remove("!w-full", "-rotate-45", "absolute", "bottom-1/2");
       }
     });

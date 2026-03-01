@@ -1,11 +1,11 @@
 import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
-import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 import partytown from "@astrojs/partytown";
 import remarkToc from "remark-toc";
 import remarkCollapse from "remark-collapse";
 import sitemap from "@astrojs/sitemap";
+import tailwindcss from "@tailwindcss/vite";
 import { SITE } from "./src/config";
 
 // https://astro.build/config
@@ -14,11 +14,6 @@ export default defineConfig({
   scopedStyleStrategy: "where",
   site: SITE.website,
   integrations: [
-    tailwind({
-      config: {
-        applyBaseStyles: false,
-      },
-    }),
     react(),
     sitemap(),
     mdx(),
@@ -45,6 +40,7 @@ export default defineConfig({
     extendDefaultPlugins: true,
   },
   vite: {
+    plugins: [tailwindcss()],
     optimizeDeps: {
       exclude: ["@resvg/resvg-js"],
     },
