@@ -1,6 +1,61 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --breakpoint-*: initial;
+  --breakpoint-sm: 640px;
+
+  --color-skin-base: rgb(var(--color-text-base));
+  --color-skin-accent: rgb(var(--color-accent));
+  --color-skin-inverted: rgb(var(--color-fill));
+  --color-skin-fill: rgb(var(--color-fill));
+  --color-skin-card: rgb(var(--color-card));
+  --color-skin-card-muted: rgb(var(--color-card-muted));
+  --color-skin-line: rgb(var(--color-border));
+
+  --background-image-logo: url("/assets/logo-sprite.png");
+  --background-image-content: url("/assets/bg.jpg");
+  --background-image-content-blur: var(--bg-blur);
+
+  --background-position-logo-position: var(--logo-position);
+  --background-position-logo-position-sm: var(--logo-position-sm);
+
+  --background-size-logo-size: 64px 128px;
+  --background-size-logo-size-sm: 96px 192px;
+
+  --fill-transparent: transparent;
+
+  --font-mono: Courier Prime, monospace;
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@utility display-none {
+  @apply hidden!;
+}
+
+@utility focus-outline {
+  @apply focus-visible:outline-skin-fill focus-visible:no-underline
+    focus-visible:outline-2 focus-visible:outline-offset-1
+    focus-visible:outline-dashed;
+}
 
 @layer base {
   :root,
@@ -13,6 +68,8 @@
     --color-border: 236, 233, 233;
     --logo-position: 0px -64px;
     --logo-position-sm: 0px -92px;
+    --logo-size: 64px 128px;
+    --logo-size-sm: 96px 192px;
     --bg-blur: url("/assets/bg-blur-light.jpg");
   }
   html[data-theme="dark"] {
@@ -35,48 +92,50 @@
     display: block;
   }
   body {
-    @apply flex min-h-screen flex-col bg-skin-fill font-mono text-skin-base 
-    selection:bg-skin-accent selection:bg-opacity-70 selection:text-skin-inverted;
+    @apply bg-skin-fill text-skin-base selection:bg-skin-accent/70
+      selection:text-skin-inverted
+      flex min-h-screen flex-col font-mono;
   }
   section,
   footer {
     @apply mx-auto max-w-3xl px-4;
   }
   a {
-    @apply outline-2 outline-offset-1 outline-skin-fill 
-    focus-visible:no-underline focus-visible:outline-dashed;
+    @apply focus-visible:outline-skin-fill focus-visible:no-underline
+      focus-visible:outline-2 focus-visible:outline-offset-1
+      focus-visible:outline-dashed;
   }
   svg {
-    @apply inline-block h-6 w-6 fill-skin-base group-hover:fill-skin-accent;
+    @apply fill-skin-base group-hover:fill-skin-accent
+      inline-block h-6 w-6;
   }
   svg.icon-tabler {
-    @apply inline-block h-6 w-6 scale-125 fill-transparent 
-    stroke-current stroke-2 opacity-90 group-hover:fill-transparent 
-    sm:scale-110;
+    @apply inline-block h-6 w-6 scale-125
+      fill-transparent stroke-current stroke-2 opacity-90
+      group-hover:fill-transparent sm:scale-110;
   }
   .prose {
-    @apply prose-headings:!mb-3 prose-headings:!text-skin-base 
-    prose-h3:italic prose-p:!text-skin-base 
-    prose-a:!text-skin-base prose-a:!decoration-dashed prose-a:underline-offset-8
-    hover:prose-a:text-skin-accent prose-blockquote:!border-l-skin-accent
-    prose-blockquote:border-opacity-50 prose-blockquote:opacity-80
-    prose-figcaption:!text-skin-base prose-figcaption:opacity-70
-    prose-strong:!text-skin-base
-
-    
-    prose-code:rounded prose-code:bg-skin-card 
-    prose-code:bg-opacity-75 prose-code:p-1 prose-code:!text-skin-base 
-    prose-code:before:!content-[''] prose-code:after:!content-['']
-    prose-pre:!text-skin-base prose-ol:!text-skin-base 
-    prose-ul:overflow-x-clip prose-ul:!text-skin-base prose-li:marker:!text-skin-accent
-    prose-table:text-skin-base prose-th:border
-    prose-th:border-skin-line prose-td:border 
-    prose-td:border-skin-line prose-img:mx-auto 
-    prose-img:!mt-2 prose-img:rounded-lg 
-    prose-img:drop-shadow-lg prose-hr:!border-skin-line;
+    @apply prose-headings:mb-3! prose-headings:text-skin-base!
+      prose-h3:italic prose-p:text-skin-base!
+      prose-a:text-skin-base! prose-a:decoration-dashed! prose-a:underline-offset-8
+      hover:prose-a:text-skin-accent
+      prose-blockquote:border-l-skin-accent! prose-blockquote:border-skin-accent/50
+      prose-blockquote:opacity-80
+      prose-figcaption:text-skin-base! prose-figcaption:opacity-70
+      prose-strong:text-skin-base!
+      prose-code:rounded-sm prose-code:bg-skin-card/75 prose-code:p-1 prose-code:text-skin-base!
+      prose-code:before:content-['']! prose-code:after:content-['']!
+      prose-pre:text-skin-base! prose-ol:text-skin-base!
+      prose-ul:overflow-x-clip prose-ul:text-skin-base!
+      prose-li:marker:text-skin-accent!
+      prose-table:text-skin-base
+      prose-th:border prose-th:border-skin-line
+      prose-td:border prose-td:border-skin-line
+      prose-img:mx-auto prose-img:mt-2! prose-img:rounded-lg prose-img:drop-shadow-lg
+      prose-hr:border-skin-line!;
   }
   .prose a {
-    @apply hover:!text-skin-accent;
+    @apply hover:text-skin-accent!;
   }
   .prose thead th:first-child,
   tbody td:first-child,
@@ -87,46 +146,12 @@
     @apply mb-2;
   }
   .prose details {
-    @apply inline-block cursor-pointer select-none text-skin-base;
+    @apply text-skin-base inline-block cursor-pointer select-none;
   }
   .prose summary {
     @apply focus-outline;
   }
   .prose h2#table-of-contents + p {
     @apply hidden;
-  }
-
-  /* ===== scrollbar ===== */
-  html {
-    overflow-y: scroll;
-  }
-
-  /* width */
-  ::-webkit-scrollbar {
-    @apply w-3;
-  }
-
-  /* Track */
-  ::-webkit-scrollbar-track {
-    @apply bg-skin-fill;
-  }
-
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    @apply bg-skin-card;
-  }
-
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    @apply bg-skin-card-muted;
-  }
-}
-
-@layer components {
-  .display-none {
-    @apply hidden;
-  }
-  .focus-outline {
-    @apply outline-2 outline-offset-1 outline-skin-fill focus-visible:no-underline focus-visible:outline-dashed;
   }
 }

@@ -110,8 +110,10 @@ const socialImageURL = new URL(
     <div id="bg-content"></div>
     <slot />
     <style>
+      @reference "../styles/base.css";
+
       #bg-content {
-        @apply bg-content-blur bg-top bg-cover w-full h-screen fixed -z-10;
+        @apply bg-content-blur fixed -z-10 h-screen w-full bg-cover bg-top;
       }
     </style>
   </body>

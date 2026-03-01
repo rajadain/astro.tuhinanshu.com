@@ -37,7 +37,7 @@ export default function Card({ href, frontmatter, secHeading = true }: Props) {
       <div>
         <a
           href={href}
-          className="inline-block text-lg font-medium text-skin-accent decoration-dashed underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0"
+          className="text-skin-accent inline-block text-lg font-medium decoration-dashed underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0"
         >
           {secHeading ? (
             <h2
