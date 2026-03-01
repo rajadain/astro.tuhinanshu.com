@@ -22,3 +22,4 @@
 **/*.txt
 **/*.pdf
 /public/assets/
+/public/instagram-embed.js
