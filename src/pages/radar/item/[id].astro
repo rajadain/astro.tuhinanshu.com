@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import { marked } from "marked";
 import { SITE } from "@config";
+import RadarTagList from "@components/RadarTagList.astro";
 import Layout from "@layouts/Layout.astro";
 import Main from "@layouts/Main.astro";
 import Header from "@components/Header.astro";
@@ -119,17 +120,7 @@ if (isYouTube) {
     <div class="prose mt-6 max-w-none" set:html={contextHtml} />
 
     {/* Tags */}
-    <ul class="radar-tags">
-      {
-        tags.map(tag => (
-          <li>
-            <a href={`/radar/tags/${tag.toLowerCase()}`} class="tag-pill">
-              #{tag.toLowerCase()}
-            </a>
-          </li>
-        ))
-      }
-    </ul>
+    <RadarTagList tags={tags} class="mt-6" />
   </Main>
   <Footer />
 </Layout>
