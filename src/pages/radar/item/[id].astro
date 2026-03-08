@@ -1,0 +1,178 @@
+---
+import { getCollection } from "astro:content";
+import { marked } from "marked";
+import { SITE } from "@config";
+import Layout from "@layouts/Layout.astro";
+import Main from "@layouts/Main.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+
+export async function getStaticPaths() {
+  const entries = await getCollection("radar");
+  return entries.map(entry => ({
+    params: { id: entry.data.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { id, url, timestamp, context, tags, og } = entry.data;
+
+const contextHtml = marked.parse(context);
+const dateStr = new Date(timestamp).toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+
+// Detect embeddable URLs
+const urlObj = new URL(url);
+const isYouTube =
+  urlObj.hostname.includes("youtube.com") ||
+  urlObj.hostname.includes("youtu.be");
+const isTwitter =
+  urlObj.hostname.includes("twitter.com") || urlObj.hostname.includes("x.com");
+
+let youtubeEmbedUrl = "";
+if (isYouTube) {
+  const videoId =
+    urlObj.searchParams.get("v") || urlObj.pathname.split("/").pop();
+  if (videoId) {
+    youtubeEmbedUrl = `https://www.youtube-nocookie.com/embed/${videoId}`;
+  }
+}
+---
+
+<Layout title={`${og.title || id} | Radar | ${SITE.title}`}>
+  <Header activeNav="radar" />
+  <Main pageTitle={og.title || id} breadcrumbTitle={og.title || id}>
+    <div class="detail-header">
+      <time datetime={new Date(timestamp).toISOString()}>{dateStr}</time>
+      <a
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="source-link"
+      >
+        {urlObj.hostname} ↗
+      </a>
+    </div>
+
+    {/* Embeds */}
+    {
+      isYouTube && youtubeEmbedUrl && (
+        <div class="embed-container">
+          <iframe
+            src={youtubeEmbedUrl}
+            title={og.title || "YouTube video"}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          />
+        </div>
+      )
+    }
+
+    {
+      isTwitter && (
+        <div class="embed-container tweet-embed">
+          <blockquote class="twitter-tweet">
+            <a href={url}>{url}</a>
+          </blockquote>
+          <script
+            is:inline
+            async
+            src="https://platform.twitter.com/widgets.js"
+          />
+        </div>
+      )
+    }
+
+    {/* OG Link Card Preview (for non-embeddable URLs) */}
+    {
+      !isYouTube && !isTwitter && (og.title || og.description || og.image) && (
+        <a
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="og-preview"
+        >
+          {og.image && (
+            <img
+              src={og.image}
+              alt={og.title || ""}
+              class="og-image"
+              loading="lazy"
+            />
+          )}
+          <div class="og-text">
+            {og.title && <span class="og-title">{og.title}</span>}
+            {og.description && (
+              <span class="og-description">{og.description}</span>
+            )}
+            <span class="og-url">{urlObj.hostname}</span>
+          </div>
+        </a>
+      )
+    }
+
+    {/* Context */}
+    <div class="prose mt-6 max-w-none" set:html={contextHtml} />
+
+    {/* Tags */}
+    <ul class="radar-tags">
+      {
+        tags.map(tag => (
+          <li>
+            <a href={`/radar/tags/${tag.toLowerCase()}`} class="tag-pill">
+              #{tag.toLowerCase()}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </Main>
+  <Footer />
+</Layout>
+
+<style>
+  @reference "../../../styles/base.css";
+
+  .detail-header {
+    @apply mb-6 flex flex-wrap items-center gap-3 text-sm;
+  }
+  .detail-header time {
+    @apply text-skin-base/70 font-mono;
+  }
+  .source-link {
+    @apply text-skin-accent decoration-dashed underline-offset-4 hover:underline;
+  }
+
+  /* OG Link Card */
+  .og-preview {
+    @apply border-skin-line flex overflow-hidden rounded-md border
+      no-underline transition-opacity hover:opacity-90;
+  }
+  .og-image {
+    @apply h-auto w-40 shrink-0 object-cover sm:w-52;
+  }
+  .og-text {
+    @apply flex flex-col justify-center gap-1 p-4;
+  }
+  .og-title {
+    @apply text-skin-base leading-snug font-semibold;
+  }
+  .og-description {
+    @apply text-skin-base/70 text-sm;
+  }
+  .og-url {
+    @apply text-skin-accent text-xs;
+  }
+
+  /* Embeds */
+  .embed-container {
+    @apply mb-6 overflow-hidden rounded-md;
+  }
+  .embed-container iframe {
+    @apply aspect-video h-auto w-full;
+  }
+</style>

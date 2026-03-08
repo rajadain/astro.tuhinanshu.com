@@ -1,0 +1,145 @@
+---
+import { marked } from "marked";
+import type { RadarEntry } from "@content/_schemas";
+
+export interface Props {
+  data: RadarEntry;
+  activeTag?: string;
+}
+
+const { data, activeTag } = Astro.props;
+const { id, url, timestamp, context, tags, og } = data;
+
+const contextHtml = marked.parse(context);
+const dateStr = new Date(timestamp).toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "short",
+  day: "numeric",
+});
+const urlHostname = new URL(url).hostname;
+---
+
+<li class="radar-card" id={`radar-item-${id}`}>
+  {/* OG Link Card Preview */}
+  {
+    (og.title || og.description || og.image) && (
+      <a
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="og-preview"
+      >
+        {og.image && (
+          <img
+            src={og.image}
+            alt={og.title || ""}
+            class="og-image"
+            loading="lazy"
+          />
+        )}
+        <div class="og-text">
+          {og.title && <span class="og-title">{og.title}</span>}
+          {og.description && (
+            <span class="og-description">{og.description}</span>
+          )}
+          <span class="og-url">{urlHostname}</span>
+        </div>
+      </a>
+    )
+  }
+
+  {/* Context */}
+  <div class="prose radar-context" set:html={contextHtml} />
+
+  {/* Meta row */}
+  <div class="radar-meta">
+    <a href={`/radar/item/${id}`} class="detail-link">
+      <time datetime={new Date(timestamp).toISOString()}>{dateStr}</time>
+    </a>
+  </div>
+
+  {/* Tags */}
+  <ul class="radar-tags">
+    {
+      tags.map(tag => (
+        <li>
+          <a
+            href={`/radar/tags/${tag.toLowerCase()}`}
+            class:list={[
+              "tag-pill",
+              {
+                "tag-pill-active": activeTag && tag.toLowerCase() === activeTag,
+              },
+            ]}
+          >
+            #{tag.toLowerCase()}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</li>
+
+<style>
+  @reference "../styles/base.css";
+
+  .radar-card {
+    @apply border-skin-line border-b px-5 pt-0 pb-6;
+
+    &:last-of-type {
+      @apply border-b-0;
+    }
+  }
+
+  /* OG Link Card */
+  .og-preview {
+    @apply mb-4 flex overflow-hidden rounded-md
+      no-underline transition-opacity hover:opacity-90;
+  }
+  .og-image {
+    @apply h-auto w-32 shrink-0 object-cover sm:w-40;
+  }
+  .og-text {
+    @apply flex flex-col justify-center gap-1 p-3;
+  }
+  .og-title {
+    @apply text-skin-base text-sm leading-snug font-semibold;
+  }
+  .og-description {
+    @apply text-skin-base/70 line-clamp-2 text-xs;
+  }
+  .og-url {
+    @apply text-skin-accent text-xs;
+  }
+
+  /* Context */
+  .radar-context {
+    @apply mb-3 max-w-none px-3 text-sm;
+  }
+
+  /* Meta row */
+  .radar-meta {
+    @apply text-skin-base/60 mb-2 flex items-center gap-2 px-3 text-xs;
+  }
+  .radar-meta time {
+    @apply font-mono;
+  }
+  .meta-sep {
+    @apply opacity-50;
+  }
+  .detail-link {
+    @apply text-skin-accent decoration-dashed underline-offset-4 hover:underline;
+  }
+
+  /* Tag pills */
+  .radar-tags {
+    @apply flex list-none flex-wrap gap-2 p-0;
+  }
+  .tag-pill {
+    @apply bg-skin-accent/10 text-skin-accent hover:bg-skin-accent/20 inline-block rounded-full
+      px-2.5 py-0.5 text-xs font-medium no-underline transition-colors;
+  }
+  .tag-pill-active {
+    @apply bg-skin-accent text-skin-inverted hover:bg-skin-accent/90;
+  }
+</style>
