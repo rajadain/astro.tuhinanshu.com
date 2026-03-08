@@ -6,7 +6,6 @@ import Layout from "@layouts/Layout.astro";
 import Main from "@layouts/Main.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
-import LinkButton from "@components/LinkButton.astro";
 
 export async function getStaticPaths() {
   const entries = await getCollection("radar");
@@ -131,18 +130,6 @@ if (isYouTube) {
         ))
       }
     </ul>
-
-    {/* Back link */}
-    <div class="mt-8">
-      <LinkButton href="/radar" ariaLabel="Back to Radar" className="back-link">
-        <svg xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M12.707 17.293 8.414 13H18v-2H8.414l4.293-4.293-1.414-1.414L4.586 12l6.707 6.707z"
-          ></path>
-        </svg>
-        Back to Radar
-      </LinkButton>
-    </div>
   </Main>
   <Footer />
 </Layout>
