@@ -1,0 +1,45 @@
+- id: example-astro-view-transitions
+  url: https://docs.astro.build/en/guides/view-transitions/
+  timestamp: 2025-12-15
+  context: |
+    Astro's **View Transitions** API is incredibly elegant. The way it hooks
+    into the native browser API while providing fallbacks is a great example
+    of progressive enhancement done right.
+  tags:
+    - astro
+    - web-dev
+    - frontend
+  og:
+    title: "View Transitions | Astro Docs"
+    description: "Learn how to use Astro's View Transitions API to create smooth page transitions."
+    image: https://docs.astro.build/open-graph/en/guides/view-transitions.png
+
+- id: example-htmx-essay
+  url: https://htmx.org/essays/hypermedia-apis-vs-data-apis/
+  timestamp: 2025-11-20
+  context: |
+    A compelling argument for why **hypermedia** should be the default approach
+    for web applications. The distinction between _hypermedia APIs_ and _data APIs_
+    is often overlooked.
+  tags:
+    - htmx
+    - web-dev
+    - architecture
+  og:
+    title: "Hypermedia APIs vs. Data APIs"
+    description: "An essay on the differences between hypermedia APIs and data APIs."
+
+- id: example-youtube-css-grid
+  url: https://www.youtube.com/watch?v=rg7Fvvl3taU
+  timestamp: 2025-10-05
+  context: |
+    Kevin Powell's deep dive into CSS Grid is one of the best resources
+    I've found. Great for both beginners and those who think they know Grid.
+  tags:
+    - css
+    - frontend
+    - youtube
+  og:
+    title: "Learn CSS Grid the easy way"
+    description: "CSS Grid can seem complex, but it doesn't have to be."
+    image: https://i.ytimg.com/vi/rg7Fvvl3taU/maxresdefault.jpg

@@ -1,0 +1,88 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection } from "astro:content";
+import { SITE } from "@config";
+import Layout from "@layouts/Layout.astro";
+import Main from "@layouts/Main.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import LinkButton from "@components/LinkButton.astro";
+import RadarCard from "@components/RadarCard.astro";
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const entries = await getCollection("radar");
+  const sorted = entries.sort(
+    (a, b) =>
+      new Date(b.data.timestamp).getTime() -
+      new Date(a.data.timestamp).getTime()
+  );
+  return paginate(sorted, { pageSize: 10 });
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+---
+
+<Layout title={`Radar | ${SITE.title}`}>
+  <Header activeNav="radar" />
+  <Main pageTitle="Radar" pageDesc="Links, finds, and things on my radar.">
+    <ul class="radar-list">
+      {page.data.map(entry => <RadarCard data={entry.data} />)}
+    </ul>
+  </Main>
+
+  {
+    page.lastPage > 1 && (
+      <nav class="pagination-wrapper" aria-label="Pagination">
+        <LinkButton
+          disabled={page.url.prev === undefined}
+          href={page.url.prev ?? "#"}
+          className={`mr-4 select-none ${page.url.prev === undefined ? "disabled" : ""}`}
+          ariaLabel="Previous"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class={page.url.prev === undefined ? "disabled-svg" : ""}
+          >
+            <path d="M12.707 17.293 8.414 13H18v-2H8.414l4.293-4.293-1.414-1.414L4.586 12l6.707 6.707z" />
+          </svg>
+          Prev
+        </LinkButton>
+        <LinkButton
+          disabled={page.url.next === undefined}
+          href={page.url.next ?? "#"}
+          className={`ml-4 select-none ${page.url.next === undefined ? "disabled" : ""}`}
+          ariaLabel="Next"
+        >
+          Next
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class={page.url.next === undefined ? "disabled-svg" : ""}
+          >
+            <path d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z" />
+          </svg>
+        </LinkButton>
+      </nav>
+    )
+  }
+  <Footer noMarginTop={page.lastPage > 1} />
+</Layout>
+
+<style>
+  @reference "../../styles/base.css";
+
+  .radar-list {
+    @apply flex list-none flex-col gap-8 p-0;
+  }
+
+  /* Pagination */
+  .pagination-wrapper {
+    @apply mt-auto mb-8 flex justify-center;
+  }
+  .disabled {
+    @apply hover:text-skin-base group-hover:fill-skin-base
+      pointer-events-none opacity-50 select-none;
+  }
+  .disabled-svg {
+    @apply group-hover:fill-skin-base!;
+  }
+</style>
