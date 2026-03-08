@@ -22,11 +22,13 @@ const { title = "" } = Astro.props;
     {
       breadcrumbList.map((breadcrumb, index) => {
         const isLast = index + 1 === breadcrumbList.length;
+        const accumulatedPath =
+          "/" + breadcrumbList.slice(0, index + 1).join("/");
 
         return (
           <li>
             <a
-              href={isLast ? currentUrlPath : `/${breadcrumb}`}
+              href={isLast ? currentUrlPath : accumulatedPath}
               class={!isLast || !title ? "capitalize" : ""}
             >
               {isLast ? title || breadcrumb : breadcrumb}
