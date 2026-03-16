@@ -57,3 +57,16 @@
     - design
   og:
     title: ""
+
+- id: vite-dev-blog-announcing-vite8
+  url: https://vite.dev/blog/announcing-vite8
+  timestamp: 2026-03-16
+  context: |
+    Vite 8 brings even more performance improvements. I'm thankful for AI Assistance tools now available which may help keep projects up to date with the latest in JavaScript tooling.
+  tags:
+    - web-dev
+    - frontend
+  og:
+    title: "Vite 8.0 is out!"
+    description: "Vite 8 Release Announcement"
+    image: https://vite.dev/og-image-announcing-vite8.webp
