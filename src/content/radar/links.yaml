@@ -43,3 +43,17 @@
     title: "Learn CSS Grid the easy way"
     description: "CSS Grid can seem complex, but it doesn't have to be."
     image: https://i.ytimg.com/vi/rg7Fvvl3taU/maxresdefault.jpg
+
+- id: cartoguophy-com-climate-visualized
+  url: https://cartoguophy.com/climate-visualized/
+  timestamp: 2026-03-16
+  context: |
+    Great visualizer of similar climates across the world. If you like the climate of a place, where else can you find it? It shapes so much of the culture and experience of a place. Do far away places with similar climates have other similarities? What can we learn from them?
+  tags:
+    - geospatial
+    - climate
+    - visualization
+    - web-dev
+    - design
+  og:
+    title: ""
