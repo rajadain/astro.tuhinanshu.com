@@ -56,3 +56,19 @@
     title: "Vite 8.0 is out!"
     description: "Vite 8 Release Announcement"
     image: https://vite.dev/og-image-announcing-vite8.webp
+
+- id: cartoguophy-com-climate-visualized
+  url: https://cartoguophy.com/climate-visualized/
+  timestamp: 2026-03-16
+  context: |
+    Great visualizer of similar climates across the world. If you like the climate of a place, where else can you find it? It shapes so much of the culture and experience of a place. Do far away places with similar climates have other similarities? What can we learn from them?
+  tags:
+    - geospatial
+    - climate
+    - visualization
+    - design
+    - map
+  og:
+    title: "Climate Visualized"
+    description: "An exploratory web map of Köppen-Geiger climate classification Winner of David Woodward Digital Map Award, 53rd Annual CaGIS Map Design Competition Runner-Up of Interactive Map, Wisconsin Land Information Association 2026 Map Contest"
+    image: https://cartoguophy.com/maps/climate_visualized_screenshot_0.png
