@@ -1,0 +1,156 @@
+---
+import { SITE } from "@config";
+import Layout from "@layouts/Layout.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import Main from "@layouts/Main.astro";
+---
+
+<Layout title={`Add to Radar | ${SITE.title}`}>
+  <Header activeNav="radar" />
+  <Main pageTitle="Add to Radar" pageDesc="Quick-add a link to the radar.">
+    <form id="add-form" class="radar-form">
+      <label>
+        URL
+        <input
+          type="url"
+          name="url"
+          id="field-url"
+          required
+          placeholder="https://..."
+        />
+      </label>
+
+      <label>
+        Context <span class="hint">(markdown)</span>
+        <textarea
+          name="context"
+          id="field-context"
+          required
+          rows={4}
+          placeholder="Why is this interesting?"></textarea>
+      </label>
+
+      <label>
+        Tags <span class="hint">(comma-separated)</span>
+        <input
+          type="text"
+          name="tags"
+          id="field-tags"
+          required
+          placeholder="web-dev, frontend, css"
+        />
+      </label>
+
+      <label>
+        API Token
+        <input
+          type="password"
+          name="token"
+          id="field-token"
+          required
+          placeholder="Bearer token"
+        />
+      </label>
+
+      <button type="submit" id="submit-btn">Add to Radar</button>
+
+      <div id="result" class="result" aria-live="polite"></div>
+    </form>
+  </Main>
+  <Footer />
+</Layout>
+
+<script is:inline>
+  // Pre-fill URL from query string (for bookmarklet)
+  const params = new URLSearchParams(window.location.search);
+  const urlField = document.getElementById("field-url");
+  if (params.get("url")) urlField.value = params.get("url");
+
+  // Remember token in localStorage
+  const tokenField = document.getElementById("field-token");
+  const savedToken = localStorage.getItem("radar-token");
+  if (savedToken) tokenField.value = savedToken;
+
+  const form = document.getElementById("add-form");
+  const resultDiv = document.getElementById("result");
+  const submitBtn = document.getElementById("submit-btn");
+
+  form.addEventListener("submit", async e => {
+    e.preventDefault();
+    resultDiv.textContent = "";
+    resultDiv.className = "result";
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Adding...";
+
+    const url = urlField.value.trim();
+    const context = document.getElementById("field-context").value.trim();
+    const tags = document
+      .getElementById("field-tags")
+      .value.split(",")
+      .map(t => t.trim())
+      .filter(Boolean);
+    const token = tokenField.value.trim();
+
+    // Save token for next time
+    localStorage.setItem("radar-token", token);
+
+    try {
+      const res = await fetch("/api/add-link", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + token,
+        },
+        body: JSON.stringify({ url, context, tags }),
+      });
+      const data = await res.json();
+      if (res.ok) {
+        resultDiv.textContent = "Added! " + data.url;
+        resultDiv.className = "result success";
+        form.reset();
+        tokenField.value = token; // Keep token filled
+      } else {
+        resultDiv.textContent = "Error: " + (data.error || res.statusText);
+        resultDiv.className = "result error";
+      }
+    } catch (err) {
+      resultDiv.textContent = "Network error: " + err.message;
+      resultDiv.className = "result error";
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Add to Radar";
+    }
+  });
+</script>
+
+<style>
+  @reference "../../styles/base.css";
+
+  .radar-form {
+    @apply flex max-w-xl flex-col gap-4;
+  }
+  .radar-form label {
+    @apply flex flex-col gap-1 text-sm font-medium;
+  }
+  .hint {
+    @apply text-skin-base/50 font-normal;
+  }
+  .radar-form input,
+  .radar-form textarea {
+    @apply border-skin-line bg-skin-fill text-skin-base rounded border p-2 text-sm;
+  }
+  .radar-form button {
+    @apply bg-skin-accent text-skin-inverted rounded px-4 py-2 text-sm font-semibold
+      transition-opacity hover:opacity-90 disabled:opacity-50;
+  }
+  .result {
+    @apply min-h-6 text-sm;
+  }
+  .result.success {
+    @apply text-green-600 dark:text-green-400;
+  }
+  .result.error {
+    @apply text-red-600 dark:text-red-400;
+  }
+</style>
