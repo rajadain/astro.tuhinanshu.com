@@ -5,3 +5,8 @@
   from = "/api/add-link"
   to = "/.netlify/functions/add-link"
   status = 200
+
+[[redirects]]
+  from = "/api/fetch-og"
+  to = "/.netlify/functions/fetch-og"
+  status = 200

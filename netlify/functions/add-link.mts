@@ -1,5 +1,14 @@
 import type { Context } from "@netlify/functions";
 import yaml from "js-yaml";
+import {
+  type OgMeta,
+  fetchOgMeta,
+  generateId,
+  isYouTube,
+  isTwitter,
+  extractYouTubeVideoId,
+  extractTweetId,
+} from "./shared/og.mts";
 
 const YAML_PATH = "src/content/radar/links.yaml";
 
@@ -7,12 +16,7 @@ interface AddLinkBody {
   url: string;
   context: string;
   tags: string[];
-}
-
-interface OgMeta {
-  title?: string;
-  description?: string;
-  image?: string;
+  og?: OgMeta;
 }
 
 interface RadarEntry {
@@ -31,137 +35,6 @@ function jsonResponse(body: object, status = 200): Response {
     status,
     headers: { "Content-Type": "application/json" },
   });
-}
-
-function isYouTube(url: URL): boolean {
-  return (
-    url.hostname.includes("youtube.com") || url.hostname.includes("youtu.be")
-  );
-}
-
-function isTwitter(url: URL): boolean {
-  return url.hostname.includes("twitter.com") || url.hostname.includes("x.com");
-}
-
-function extractYouTubeVideoId(url: URL): string | null {
-  if (url.hostname.includes("youtu.be")) {
-    return url.pathname.split("/").filter(Boolean)[0] || null;
-  }
-  // youtube.com/watch?v=ID, /shorts/ID, /live/ID, /embed/ID
-  const vParam = url.searchParams.get("v");
-  if (vParam) return vParam;
-  const segments = url.pathname.split("/").filter(Boolean);
-  const prefixes = ["shorts", "live", "embed", "v"];
-  const idx = segments.findIndex(s => prefixes.includes(s));
-  if (idx !== -1 && segments[idx + 1]) return segments[idx + 1];
-  return null;
-}
-
-function extractTweetId(url: URL): string | null {
-  // twitter.com/{user}/status/{id} or x.com/{user}/status/{id}
-  const segments = url.pathname.split("/").filter(Boolean);
-  const statusIdx = segments.indexOf("status");
-  if (statusIdx !== -1 && segments[statusIdx + 1]) {
-    return segments[statusIdx + 1];
-  }
-  return null;
-}
-
-function extractTwitterUsername(url: URL): string | null {
-  const segments = url.pathname.split("/").filter(Boolean);
-  return segments[0] || null;
-}
-
-function generateId(url: URL): string {
-  if (isYouTube(url)) {
-    const videoId = extractYouTubeVideoId(url);
-    if (videoId) return `youtube-${videoId}`;
-  }
-  if (isTwitter(url)) {
-    const tweetId = extractTweetId(url);
-    if (tweetId) return `tweet-${tweetId}`;
-  }
-  // Generic: slugify hostname + pathname
-  const raw = `${url.hostname}${url.pathname}`
-    .replace(/^www\./, "")
-    .replace(/\/+$/, "");
-  const slug = raw
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "")
-    .slice(0, 80);
-  return slug;
-}
-
-// --- OG Metadata Fetching ---
-
-async function fetchYouTubeOg(url: URL): Promise<OgMeta> {
-  const videoId = extractYouTubeVideoId(url);
-  if (!videoId) return {};
-  try {
-    const oembedUrl = `https://www.youtube.com/oembed?url=${encodeURIComponent(`https://www.youtube.com/watch?v=${videoId}`)}&format=json`;
-    const res = await fetch(oembedUrl);
-    if (!res.ok) return {};
-    const data = await res.json();
-    return {
-      title: data.title || undefined,
-      description: data.author_name
-        ? `Video by ${data.author_name}`
-        : undefined,
-      image: data.thumbnail_url || undefined,
-    };
-  } catch {
-    return {};
-  }
-}
-
-function buildTwitterOg(url: URL): OgMeta {
-  const username = extractTwitterUsername(url);
-  return {
-    title: username ? `Tweet by @${username}` : "Tweet",
-  };
-}
-
-async function fetchGenericOg(url: URL): Promise<OgMeta> {
-  try {
-    const res = await fetch(url.toString(), {
-      headers: {
-        "User-Agent":
-          "Mozilla/5.0 (compatible; RadarBot/1.0; +https://tuhinanshu.com)",
-      },
-      redirect: "follow",
-      signal: AbortSignal.timeout(10000),
-    });
-    if (!res.ok) return {};
-    const html = await res.text();
-    // Only look in the <head> section to avoid false matches
-    const head = html.match(/<head[\s>][\s\S]*?<\/head>/i)?.[0] || html;
-
-    const getMetaContent = (property: string): string | undefined => {
-      // Match both property="og:..." and name="og:..."
-      const re = new RegExp(
-        `<meta[^>]+(?:property|name)=["']${property}["'][^>]+content=["']([^"']*?)["']` +
-          `|<meta[^>]+content=["']([^"']*?)["'][^>]+(?:property|name)=["']${property}["']`,
-        "i"
-      );
-      const m = head.match(re);
-      return m?.[1] || m?.[2] || undefined;
-    };
-
-    return {
-      title: getMetaContent("og:title"),
-      description: getMetaContent("og:description"),
-      image: getMetaContent("og:image"),
-    };
-  } catch {
-    return {};
-  }
-}
-
-async function fetchOgMeta(url: URL): Promise<OgMeta> {
-  if (isYouTube(url)) return fetchYouTubeOg(url);
-  if (isTwitter(url)) return buildTwitterOg(url);
-  return fetchGenericOg(url);
 }
 
 // --- GitHub API ---
@@ -380,8 +253,13 @@ export default async function handler(
   }
 
   try {
-    // Fetch OG metadata
-    const og = await fetchOgMeta(parsedUrl);
+    // Fetch OG metadata (use overrides from body if provided, else auto-fetch)
+    const autoOg = await fetchOgMeta(parsedUrl);
+    const og: OgMeta = {
+      title: body.og?.title || autoOg.title,
+      description: body.og?.description || autoOg.description,
+      image: body.og?.image || autoOg.image,
+    };
 
     // Generate ID
     const id = generateId(parsedUrl);
