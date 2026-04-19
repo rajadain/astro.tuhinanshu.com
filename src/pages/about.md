@@ -1,7 +1,7 @@
 ---
 layout: ../layouts/AboutLayout.astro
 title: "About"
-ogImage: https://ik.imagekit.io/rajadain/tr:w-1200,h-630,c-maintain_ratio,fo-auto,q-80/about-photographer.jpg
+ogImage: https://ik.imagekit.io/rajadain/about-photographer-thumbnail.jpg
 ---
 
 <figure>
