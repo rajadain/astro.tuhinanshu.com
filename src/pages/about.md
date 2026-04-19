@@ -1,10 +1,15 @@
 ---
 layout: ../layouts/AboutLayout.astro
 title: "About"
-ogImage: https://ik.imagekit.io/rajadain/about-royal.JPG?updatedAt=1705374521470
+ogImage: https://ik.imagekit.io/rajadain/tr:w-1200,h-630,c-maintain_ratio,fo-auto,q-80/about-photographer.jpg
 ---
 
-![](https://ik.imagekit.io/rajadain/about-royal.JPG?updatedAt=1705374521470)
+<figure>
+  <img src="https://ik.imagekit.io/rajadain/about-photographer.jpg" alt="Terence Tuhinanshu as a photographer" />
+  <figcaption>
+    Photo by <a href="https://www.instagram.com/dodgeandbernphotography/" target="_blank">@dodgeandbernphotography</a>
+  </figcaption>
+</figure>
 
 I am a poet, thinker, designer, developer, and a citizen of the world.
 
