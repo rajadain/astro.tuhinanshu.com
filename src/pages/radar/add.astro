@@ -1,0 +1,347 @@
+---
+import { SITE } from "@config";
+import Layout from "@layouts/Layout.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import Main from "@layouts/Main.astro";
+---
+
+<Layout title={`Add to Radar | ${SITE.title}`}>
+  <Header activeNav="radar" />
+  <Main pageTitle="Add to Radar" pageDesc="Quick-add a link to the radar.">
+    <form id="add-form" class="radar-form">
+      {/* Step 1: URL + Token */}
+      <label>
+        API Token
+        <input
+          type="password"
+          name="token"
+          id="field-token"
+          required
+          placeholder="Bearer token"
+        />
+      </label>
+
+      <div class="url-row">
+        <label class="url-label">
+          URL
+          <input
+            type="url"
+            name="url"
+            id="field-url"
+            required
+            placeholder="https://..."
+          />
+        </label>
+        <button type="button" id="preview-btn" class="preview-btn">
+          Fetch Preview
+        </button>
+      </div>
+
+      {/* OG Preview (hidden until fetched) */}
+      <div id="og-preview" class="og-preview" hidden>
+        <div id="og-card" class="og-card">
+          <img id="og-card-image" class="og-card-image" alt="" hidden />
+          <div class="og-card-text">
+            <span id="og-card-title" class="og-card-title"></span>
+            <span id="og-card-desc" class="og-card-description"></span>
+            <span id="og-card-url" class="og-card-url"></span>
+          </div>
+        </div>
+
+        <details class="og-edit-details">
+          <summary>Edit OG metadata</summary>
+          <div class="og-edit-fields">
+            <label>
+              OG Title
+              <input type="text" id="field-og-title" placeholder="Page title" />
+            </label>
+            <label>
+              OG Description
+              <input
+                type="text"
+                id="field-og-desc"
+                placeholder="Page description"
+              />
+            </label>
+            <label>
+              OG Image URL
+              <input type="url" id="field-og-image" placeholder="https://..." />
+            </label>
+          </div>
+        </details>
+
+        <span id="og-generated-id" class="generated-id"></span>
+      </div>
+
+      {/* Step 2: Context + Tags */}
+      <label>
+        Context <span class="hint">(markdown)</span>
+        <textarea
+          name="context"
+          id="field-context"
+          required
+          rows={4}
+          placeholder="Why is this interesting?"></textarea>
+      </label>
+
+      <label>
+        Tags <span class="hint">(comma-separated)</span>
+        <input
+          type="text"
+          name="tags"
+          id="field-tags"
+          required
+          placeholder="web-dev, frontend, css"
+        />
+      </label>
+
+      <button type="submit" id="submit-btn">Add to Radar</button>
+
+      <div id="result" class="result" aria-live="polite"></div>
+    </form>
+  </Main>
+  <Footer />
+</Layout>
+
+<script is:inline>
+  // Pre-fill URL from query string (for bookmarklet)
+  const params = new URLSearchParams(window.location.search);
+  const urlField = document.getElementById("field-url");
+  if (params.get("url")) urlField.value = params.get("url");
+
+  // Remember token in localStorage
+  const tokenField = document.getElementById("field-token");
+  const savedToken = localStorage.getItem("radar-token");
+  if (savedToken) tokenField.value = savedToken;
+
+  const form = document.getElementById("add-form");
+  const resultDiv = document.getElementById("result");
+  const submitBtn = document.getElementById("submit-btn");
+  const previewBtn = document.getElementById("preview-btn");
+  const ogPreview = document.getElementById("og-preview");
+  const ogCardImage = document.getElementById("og-card-image");
+  const ogCardTitle = document.getElementById("og-card-title");
+  const ogCardDesc = document.getElementById("og-card-desc");
+  const ogCardUrl = document.getElementById("og-card-url");
+  const ogGeneratedId = document.getElementById("og-generated-id");
+  const ogTitleField = document.getElementById("field-og-title");
+  const ogDescField = document.getElementById("field-og-desc");
+  const ogImageField = document.getElementById("field-og-image");
+
+  function getToken() {
+    const token = tokenField.value.trim();
+    localStorage.setItem("radar-token", token);
+    return token;
+  }
+
+  function updateCardFromFields() {
+    ogCardTitle.textContent = ogTitleField.value || "";
+    ogCardDesc.textContent = ogDescField.value || "";
+    if (ogImageField.value) {
+      ogCardImage.src = ogImageField.value;
+      ogCardImage.hidden = false;
+    } else {
+      ogCardImage.hidden = true;
+    }
+  }
+
+  ogTitleField.addEventListener("input", updateCardFromFields);
+  ogDescField.addEventListener("input", updateCardFromFields);
+  ogImageField.addEventListener("input", updateCardFromFields);
+
+  // Fetch OG preview
+  previewBtn.addEventListener("click", async () => {
+    const url = urlField.value.trim();
+    const token = getToken();
+    if (!url) {
+      urlField.focus();
+      return;
+    }
+    if (!token) {
+      tokenField.focus();
+      return;
+    }
+
+    previewBtn.disabled = true;
+    previewBtn.textContent = "Fetching...";
+    resultDiv.textContent = "";
+    resultDiv.className = "result";
+
+    try {
+      const res = await fetch("/api/fetch-og", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + token,
+        },
+        body: JSON.stringify({ url }),
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        resultDiv.textContent =
+          "OG fetch error: " + (data.error || res.statusText);
+        resultDiv.className = "result error";
+        return;
+      }
+
+      const og = data.og || {};
+      ogTitleField.value = og.title || "";
+      ogDescField.value = og.description || "";
+      ogImageField.value = og.image || "";
+
+      ogCardTitle.textContent = og.title || "";
+      ogCardDesc.textContent = og.description || "";
+      try {
+        ogCardUrl.textContent = new URL(url).hostname;
+      } catch {
+        ogCardUrl.textContent = url;
+      }
+      if (og.image) {
+        ogCardImage.src = og.image;
+        ogCardImage.hidden = false;
+      } else {
+        ogCardImage.hidden = true;
+      }
+
+      ogGeneratedId.textContent = "ID: " + (data.id || "");
+      ogPreview.hidden = false;
+    } catch (err) {
+      resultDiv.textContent = "Network error: " + err.message;
+      resultDiv.className = "result error";
+    } finally {
+      previewBtn.disabled = false;
+      previewBtn.textContent = "Fetch Preview";
+    }
+  });
+
+  // Auto-fetch on load if URL is pre-filled
+  if (urlField.value && tokenField.value) {
+    previewBtn.click();
+  }
+
+  // Submit
+  form.addEventListener("submit", async e => {
+    e.preventDefault();
+    resultDiv.textContent = "";
+    resultDiv.className = "result";
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Adding...";
+
+    const url = urlField.value.trim();
+    const context = document.getElementById("field-context").value.trim();
+    const tags = document
+      .getElementById("field-tags")
+      .value.split(",")
+      .map(t => t.trim())
+      .filter(Boolean);
+    const token = getToken();
+
+    const og = {};
+    if (ogTitleField.value.trim()) og.title = ogTitleField.value.trim();
+    if (ogDescField.value.trim()) og.description = ogDescField.value.trim();
+    if (ogImageField.value.trim()) og.image = ogImageField.value.trim();
+
+    try {
+      const res = await fetch("/api/add-link", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + token,
+        },
+        body: JSON.stringify({ url, context, tags, og }),
+      });
+      const data = await res.json();
+      if (res.ok) {
+        resultDiv.textContent = "Added! " + data.url;
+        resultDiv.className = "result success";
+        form.reset();
+        tokenField.value = token;
+        ogPreview.hidden = true;
+      } else {
+        resultDiv.textContent = "Error: " + (data.error || res.statusText);
+        resultDiv.className = "result error";
+      }
+    } catch (err) {
+      resultDiv.textContent = "Network error: " + err.message;
+      resultDiv.className = "result error";
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Add to Radar";
+    }
+  });
+</script>
+
+<style>
+  @reference "../../styles/base.css";
+
+  .radar-form {
+    @apply flex max-w-xl flex-col gap-4;
+  }
+  .radar-form label {
+    @apply flex flex-col gap-1 text-sm font-medium;
+  }
+  .hint {
+    @apply text-skin-base/50 font-normal;
+  }
+  .radar-form input,
+  .radar-form textarea {
+    @apply border-skin-line bg-skin-fill text-skin-base rounded border p-2 text-sm;
+  }
+  .radar-form button[type="submit"] {
+    @apply bg-skin-accent text-skin-inverted rounded px-4 py-2 text-sm font-semibold
+      transition-opacity hover:opacity-90 disabled:opacity-50;
+  }
+  .url-row {
+    @apply flex items-end gap-2;
+  }
+  .url-label {
+    @apply flex-1;
+  }
+  .preview-btn {
+    @apply border-skin-line text-skin-accent rounded border px-3 py-2 text-sm font-medium
+      transition-opacity hover:opacity-80 disabled:opacity-50;
+  }
+  .og-preview {
+    @apply border-skin-line flex flex-col gap-3 rounded-md border p-4;
+  }
+  .og-card {
+    @apply flex overflow-hidden rounded-md;
+  }
+  .og-card-image {
+    @apply h-auto w-28 shrink-0 object-cover sm:w-36;
+  }
+  .og-card-text {
+    @apply flex flex-col justify-center gap-1 p-3;
+  }
+  .og-card-title {
+    @apply text-skin-base text-sm leading-snug font-semibold;
+  }
+  .og-card-description {
+    @apply text-skin-base/70 line-clamp-2 text-xs;
+  }
+  .og-card-url {
+    @apply text-skin-accent text-xs;
+  }
+  .og-edit-details {
+    @apply text-sm;
+  }
+  .og-edit-details summary {
+    @apply text-skin-accent cursor-pointer decoration-dashed underline-offset-4 hover:underline;
+  }
+  .og-edit-fields {
+    @apply mt-2 flex flex-col gap-2;
+  }
+  .generated-id {
+    @apply text-skin-base/50 font-mono text-xs;
+  }
+  .result {
+    @apply min-h-6 text-sm;
+  }
+  .result.success {
+    @apply text-green-600 dark:text-green-400;
+  }
+  .result.error {
+    @apply text-red-600 dark:text-red-400;
+  }
+</style>
