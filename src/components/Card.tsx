@@ -60,7 +60,7 @@ export default function Card({ href, frontmatter, secHeading = true }: Props) {
         <Datetime datetime={date_published} slug={slug} />
         <p>{description}</p>
         <ul className="tags-container">
-          {tags.map(tag => (
+          {tags.map((tag: string) => (
             <Tag key={tag} name={tag} />
           ))}
         </ul>

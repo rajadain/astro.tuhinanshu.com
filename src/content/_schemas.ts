@@ -1,10 +1,11 @@
-import { z } from "astro:content";
+import { z } from "zod";
+import type { InferEntrySchema } from "astro:content";
 
 export const blogSchema = z
   .object({
     author: z.string().optional(),
-    date_published: z.date(),
-    date_updated: z.date().optional(),
+    date_published: z.coerce.date(),
+    date_updated: z.coerce.date().optional(),
     title: z.string(),
     postSlug: z.string().optional(),
     featured: z.boolean().optional(),
@@ -15,19 +16,19 @@ export const blogSchema = z
   })
   .strict();
 
-export type BlogFrontmatter = z.infer<typeof blogSchema>;
+export type BlogFrontmatter = InferEntrySchema<"blog">;
 
 export const radarSchema = z.object({
   id: z.string(),
-  url: z.string().url(),
+  url: z.url(),
   timestamp: z.coerce.date(),
   context: z.string(),
   tags: z.array(z.string()),
   og: z.object({
     title: z.string().optional(),
     description: z.string().optional(),
-    image: z.string().url().optional(),
+    image: z.url().optional(),
   }),
 });
 
-export type RadarEntry = z.infer<typeof radarSchema>;
+export type RadarEntry = InferEntrySchema<"radar">;
