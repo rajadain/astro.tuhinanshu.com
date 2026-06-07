@@ -1,0 +1,52 @@
+---
+import { getCollection } from "astro:content";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import Layout from "@layouts/Layout.astro";
+import Main from "@layouts/Main.astro";
+import { SITE } from "@config";
+
+const entries = await getCollection("radar");
+
+// Count tag frequency
+const tagCounts = new Map<string, number>();
+for (const entry of entries) {
+  for (const tag of entry.data.tags) {
+    const key = tag.toLowerCase();
+    tagCounts.set(key, (tagCounts.get(key) ?? 0) + 1);
+  }
+}
+
+// Sort by frequency descending, then alphabetically
+const sortedTags = [...tagCounts.entries()].sort(
+  (a, b) => b[1] - a[1] || a[0].localeCompare(b[0])
+);
+---
+
+<Layout title={`Radar Tags | ${SITE.title}`}>
+  <Header activeNav="radar" />
+  <Main pageTitle="Radar Tags" pageDesc="All the tags used in radar links.">
+    <ul class="tag-list">
+      {
+        sortedTags.map(([tag, count]) => (
+          <li class="mx-1 my-3 inline-block underline-offset-8">
+            <a
+              href={`/radar/tags/${tag}`}
+              class="group hover:text-skin-accent pr-2 text-lg underline decoration-dashed"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="text-skin-base group-hover:fill-skin-accent -mr-3 h-6 w-6 scale-110 opacity-80"
+              >
+                <path d="M16.018 3.815 15.232 8h-4.966l.716-3.815-1.964-.37L8.232 8H4v2h3.857l-.751 4H3v2h3.731l-.714 3.805 1.965.369L8.766 16h4.966l-.714 3.805 1.965.369.783-4.174H20v-2h-3.859l.751-4H21V8h-3.733l.716-3.815-1.965-.37zM14.106 14H9.141l.751-4h4.966l-.752 4z" />
+              </svg>
+              &nbsp;<span>{tag}</span>
+              <span class="text-skin-base/50 text-sm">({count})</span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </Main>
+  <Footer />
+</Layout>

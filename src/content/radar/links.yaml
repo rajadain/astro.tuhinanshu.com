@@ -1,0 +1,45 @@
+- id: vite-dev-blog-announcing-vite8
+  url: https://vite.dev/blog/announcing-vite8
+  timestamp: 2026-03-16
+  context: |
+    Vite 8 brings even more performance improvements. I'm thankful for AI Assistance tools now available which may help keep projects up to date with the latest in JavaScript tooling.
+  tags:
+    - web-dev
+    - frontend
+  og:
+    title: "Vite 8.0 is out!"
+    description: "Vite 8 Release Announcement"
+    image: https://vite.dev/og-image-announcing-vite8.webp
+
+- id: cartoguophy-com-climate-visualized
+  url: https://cartoguophy.com/climate-visualized/
+  timestamp: 2026-03-16
+  context: |
+    Great visualizer of similar climates across the world. If you like the climate of a place, where else can you find it? It shapes so much of the culture and experience of a place. Do far away places with similar climates have other similarities? What can we learn from them?
+  tags:
+    - geospatial
+    - climate
+    - visualization
+    - design
+    - map
+  og:
+    title: "Climate Visualized"
+    description: "An exploratory web map of Köppen-Geiger climate classification Winner of David Woodward Digital Map Award, 53rd Annual CaGIS Map Design Competition Runner-Up of Interactive Map, Wisconsin Land Information Association 2026 Map Contest"
+    image: https://cartoguophy.com/maps/climate_visualized_screenshot_0.png
+
+- id: landcarbonlab-org-insights-mapping-trees-unprecedented-detail-ai
+  url: https://landcarbonlab.org/insights/mapping-trees-unprecedented-detail-ai/?utm_medium=socialkit&utm_source=partner&utm_campaign=treecanopyv2
+  timestamp: 2026-03-16
+  context: |
+    While groundtruthing is always ideal for all geospatial datasets, we're going to see more and more synthetic / AI assisted datasets like this one pop-up. Land Carbon Lab and WRI say they fine tuned DINOv3 by Meta to update this dataset from ~30m to ~1m, which is a huge upgrade. This will likely allow building more granular applications for decision makers. But will the caveats be surfaced? And will they be accounted for in the decisions made? Much opportunity here to build something really useful for communities around the world.
+  tags:
+    - geospatial
+    - climate
+    - open-data
+    - ai
+    - land-cover
+    - trees
+  og:
+    title: "Mapping the World’s Trees in Unprecedented Detail with AI"
+    description: "A new AI foundation model provides the world’s first global 1-meter map of tree canopy height, allowing the detection of single trees at a global scale."
+    image: https://www.datocms-assets.com/135908/1723744722-planet-and-1-meter-canopy-height-data-orchards-in-colima-mexico.png?auto=format&fit=max&w=1200

@@ -1,8 +1,14 @@
 import { defineCollection } from "astro:content";
-import { blogSchema } from "./content/_schemas";
+import { file } from "astro/loaders";
+import { blogSchema, radarSchema } from "./content/_schemas";
 
 const blog = defineCollection({
   schema: blogSchema,
 });
 
-export const collections = { blog };
+const radar = defineCollection({
+  loader: file("src/content/radar/links.yaml"),
+  schema: radarSchema,
+});
+
+export const collections = { blog, radar };

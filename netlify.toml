@@ -1,0 +1,17 @@
+[build]
+  # Skip auto-build when only links.yaml changed (radar API commits).
+  # Build hooks bypass this, so the nightly scheduled build still works.
+  ignore = "bash netlify-ignore.sh"
+
+[functions]
+  directory = "netlify/functions"
+
+[[redirects]]
+  from = "/api/add-link"
+  to = "/.netlify/functions/add-link"
+  status = 200
+
+[[redirects]]
+  from = "/api/fetch-og"
+  to = "/.netlify/functions/fetch-og"
+  status = 200

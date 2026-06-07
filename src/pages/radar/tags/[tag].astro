@@ -1,0 +1,59 @@
+---
+import { getCollection } from "astro:content";
+import { SITE } from "@config";
+import Layout from "@layouts/Layout.astro";
+import Main from "@layouts/Main.astro";
+import Header from "@components/Header.astro";
+import Footer from "@components/Footer.astro";
+import RadarCard from "@components/RadarCard.astro";
+
+export async function getStaticPaths() {
+  const entries = await getCollection("radar");
+
+  // Collect unique tags
+  const tagSet = new Set<string>();
+  for (const entry of entries) {
+    for (const tag of entry.data.tags) {
+      tagSet.add(tag.toLowerCase());
+    }
+  }
+
+  return [...tagSet].map(tag => ({
+    params: { tag },
+    props: { tag },
+  }));
+}
+
+const { tag } = Astro.props;
+
+const entries = await getCollection("radar");
+const filtered = entries
+  .filter(e => e.data.tags.some(t => t.toLowerCase() === tag))
+  .sort(
+    (a, b) =>
+      new Date(b.data.timestamp).getTime() -
+      new Date(a.data.timestamp).getTime()
+  );
+---
+
+<Layout title={`Radar Tag: ${tag} | ${SITE.title}`}>
+  <Header activeNav="radar" />
+  <Main
+    pageTitle={`Radar Tag: ${tag}`}
+    pageDesc={`All radar links tagged "${tag}".`}
+    breadcrumbTitle={tag}
+  >
+    <ul class="radar-list">
+      {filtered.map(entry => <RadarCard data={entry.data} activeTag={tag} />)}
+    </ul>
+  </Main>
+  <Footer />
+</Layout>
+
+<style>
+  @reference "../../../styles/base.css";
+
+  .radar-list {
+    @apply flex list-none flex-col gap-8 p-0;
+  }
+</style>

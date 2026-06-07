@@ -1,0 +1,46 @@
+name: Nightly Radar Build
+
+on:
+  schedule:
+    # Run at 6:00 AM UTC every day (1-2 AM ET depending on DST)
+    - cron: "0 6 * * *"
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  trigger-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check for radar changes since last build
+        id: check
+        run: |
+          # Compare the most recent commit touching links.yaml
+          # vs the most recent commit touching anything else.
+          # If links.yaml was updated more recently, there are
+          # unbatched radar entries that need a build.
+
+          RADAR_TIME=$(git log -1 --format="%ct" -- src/content/radar/links.yaml 2>/dev/null || echo "0")
+          OTHER_TIME=$(git log -1 --format="%ct" -- ':!src/content/radar/links.yaml' 2>/dev/null || echo "0")
+
+          echo "Last radar commit: $RADAR_TIME"
+          echo "Last other commit: $OTHER_TIME"
+
+          if [ "$RADAR_TIME" -gt "$OTHER_TIME" ]; then
+            echo "Radar changes detected since last non-radar commit"
+            echo "should_build=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "No new radar changes — skipping"
+            echo "should_build=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Trigger Netlify build
+        if: steps.check.outputs.should_build == 'true'
+        env:
+          NETLIFY_BUILD_HOOK: ${{ secrets.NETLIFY_BUILD_HOOK }}
+        run: |
+          echo "Triggering Netlify build hook..."
+          curl -s -X POST -d '{}' "$NETLIFY_BUILD_HOOK"
+          echo "Build triggered."
