@@ -43,3 +43,19 @@
     title: "Mapping the World’s Trees in Unprecedented Detail with AI"
     description: "A new AI foundation model provides the world’s first global 1-meter map of tree canopy height, allowing the detection of single trees at a global scale."
     image: https://www.datocms-assets.com/135908/1723744722-planet-and-1-meter-canopy-height-data-orchards-in-colima-mexico.png?auto=format&fit=max&w=1200
+
+- id: "htmx-org-essays-code-is-cheap"
+  url: "https://htmx.org/essays/code-is-cheap/"
+  timestamp: "2026-06-07"
+  context: |
+    This essay matches some of my thinking around AI-assisted engineering. I especially like the defense of coding as a skill, even in the face of its automation.
+    
+    The idea that understanding is now more valuable than before is true. Coding was how we got there. Can we get there without the necessary steps leading up to it? It makes me think of stage vs film actors: the former have the entire play to build up emotionally to the climax, but the latter have to sit and wait until the camera, set, lighting, makeup, costumes, and much else is ready, deliver full on without buildup, and get it right before everything is torn down.
+    
+    If the doing is the understanding, how much can we understand without the doing?
+  tags:
+    - "programming"
+    - "ai"
+  og:
+    title: "</> htmx ~ Code is Cheap(er)"
+    description: "In this essay, Carson Gross argues that as AI makes code cheap to produce, understanding code becomes the expensive and scarce resource. He warns of the complexity that LLM code can generate and proposes the subtractive, constraining engineer as the discipline needed to keep systems comprehensible & stable."
