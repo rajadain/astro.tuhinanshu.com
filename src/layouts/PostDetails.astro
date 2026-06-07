@@ -9,7 +9,7 @@ import Footer from "@components/Footer.astro";
 import Tag from "@components/Tag";
 import Datetime from "@components/Datetime";
 import slugify from "@utils/slugify";
-import type { CollectionEntry } from "astro:content";
+import { render, type CollectionEntry } from "astro:content";
 
 export interface Props {
   post: CollectionEntry<"blog">;
@@ -20,7 +20,7 @@ const { post, similarPosts } = Astro.props;
 
 const { title, author, description, ogImage, date_published, tags } = post.data;
 
-const { Content } = await post.render();
+const { Content } = await render(post);
 
 const ogUrl = new URL(ogImage ? ogImage : `${title}.png`, Astro.url.origin)
   .href;
