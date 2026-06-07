@@ -16,7 +16,7 @@ Set these in **Netlify → Site settings → Environment variables**:
 Create a browser bookmark with this URL
 
 ```js
-javascript: void window.open("https://deploy-preview-3--astro-tuhinanshu-com.netlify.app/radar/add?url=" + encodeURIComponent(location.href));
+javascript: void window.open("https://tuhinanshu.com/radar/add?url=" + encodeURIComponent(location.href));
 ```
 
 This opens the `/radar/add` form pre-filled with the current page URL. The form

@@ -101,16 +101,16 @@ async function commitFileToGitHub(
 function serializeEntry(entry: RadarEntry): string {
   // Hand-craft the YAML to match the existing format exactly
   const lines: string[] = [];
-  lines.push(`- id: ${entry.id}`);
-  lines.push(`  url: ${entry.url}`);
-  lines.push(`  timestamp: ${entry.timestamp}`);
+  lines.push(`- id: ${JSON.stringify(entry.id)}`);
+  lines.push(`  url: ${JSON.stringify(entry.url)}`);
+  lines.push(`  timestamp: ${JSON.stringify(entry.timestamp)}`);
   lines.push(`  context: |`);
   for (const line of entry.context.trimEnd().split("\n")) {
     lines.push(`    ${line}`);
   }
   lines.push(`  tags:`);
   for (const tag of entry.tags) {
-    lines.push(`    - ${tag}`);
+    lines.push(`    - ${JSON.stringify(tag)}`);
   }
   lines.push(`  og:`);
   if (entry.og.title) {
@@ -120,7 +120,7 @@ function serializeEntry(entry: RadarEntry): string {
     lines.push(`    description: ${JSON.stringify(entry.og.description)}`);
   }
   if (entry.og.image) {
-    lines.push(`    image: ${entry.og.image}`);
+    lines.push(`    image: ${JSON.stringify(entry.og.image)}`);
   }
   // If no og fields at all, emit empty object markers
   if (!entry.og.title && !entry.og.description && !entry.og.image) {
