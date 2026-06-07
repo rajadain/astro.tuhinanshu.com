@@ -59,3 +59,17 @@
   og:
     title: "</> htmx ~ Code is Cheap(er)"
     description: "In this essay, Carson Gross argues that as AI makes code cheap to produce, understanding code becomes the expensive and scarce resource. He warns of the complexity that LLM code can generate and proposes the subtractive, constraining engineer as the discipline needed to keep systems comprehensible & stable."
+
+- id: "youtube-lw6TaiXzHAE"
+  url: "https://youtu.be/lw6TaiXzHAE?si=fZG2u_WXQc0HuLaO"
+  timestamp: "2026-06-07"
+  context: |
+    This talk by Guy Steele is one of my all time favorite computer science lectures of all time. Would highly recommend everyone watch at least once.
+  tags:
+    - "programming"
+    - "lecture"
+    - "youtube"
+  og:
+    title: "OOPSLA Conference: Growing a Language"
+    description: "Video by Computer History Museum"
+    image: "https://i.ytimg.com/vi/lw6TaiXzHAE/hqdefault.jpg"
