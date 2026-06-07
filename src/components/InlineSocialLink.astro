@@ -1,4 +1,5 @@
 ---
+import { Icon } from "astro-icon/components";
 import socialIcons from "@assets/socialIcons";
 import type { SocialMedia } from "../types";
 
@@ -12,10 +13,6 @@ interface Props {
 
 const { href, name, title, target, rel } = Astro.props;
 const safeRel = target === "_blank" ? (rel ?? "noopener noreferrer") : rel;
-const rawIcon = socialIcons[name];
-const iconMarkup = rawIcon.includes("viewBox")
-  ? rawIcon
-  : rawIcon.replace("<svg", '<svg viewBox="0 0 24 24"');
 ---
 
 <a
@@ -25,11 +22,9 @@ const iconMarkup = rawIcon.includes("viewBox")
   rel={safeRel}
   class="inline-social-link group"
 >
-  <span
-    class="inline-social-link__icon"
-    aria-hidden="true"
-    set:html={iconMarkup}
-  />
+  <span class="inline-social-link__icon" aria-hidden="true">
+    <Icon name={socialIcons[name]} />
+  </span>
   <span><slot /></span>
 </a>
 
@@ -46,7 +41,7 @@ const iconMarkup = rawIcon.includes("viewBox")
     transform: translateY(var(--inline-social-icon-shift));
   }
 
-  .inline-social-link__icon :global(svg.icon-tabler) {
+  .inline-social-link__icon :global(svg) {
     @apply h-[1em] w-[1em] scale-100 opacity-95;
   }
 </style>

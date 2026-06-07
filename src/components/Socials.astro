@@ -1,5 +1,6 @@
 ---
 import { SOCIALS } from "@config";
+import { Icon } from "astro-icon/components";
 import LinkButton from "./LinkButton.astro";
 import socialIcons from "@assets/socialIcons";
 ---
@@ -13,7 +14,7 @@ import socialIcons from "@assets/socialIcons";
         title={social.linkTitle}
         ariaLabel={social.linkTitle}
       >
-        <Fragment set:html={socialIcons[social.name]} />
+        <Icon name={socialIcons[social.name]} aria-hidden="true" />
       </LinkButton>
     ))
   }
@@ -27,5 +28,9 @@ import socialIcons from "@assets/socialIcons";
   }
   .link-button {
     @apply p-2 hover:rotate-6 sm:p-1;
+  }
+
+  .link-button :global(svg) {
+    @apply h-6 w-6;
   }
 </style>

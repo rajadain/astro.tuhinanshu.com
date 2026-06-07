@@ -2,6 +2,7 @@ import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import react from "@astrojs/react";
 import partytown from "@astrojs/partytown";
+import icon from "astro-icon";
 import { unified } from "@astrojs/markdown-remark";
 import remarkToc from "remark-toc";
 import remarkCollapse from "remark-collapse";
@@ -15,6 +16,7 @@ export default defineConfig({
   scopedStyleStrategy: "where",
   site: SITE.website,
   integrations: [
+    icon(),
     react(),
     sitemap(),
     mdx(),
