@@ -1,0 +1,52 @@
+---
+import socialIcons from "@assets/socialIcons";
+import type { SocialMedia } from "../types";
+
+interface Props {
+  href: string;
+  name: SocialMedia;
+  title?: string;
+  target?: "_blank" | "_self" | "_parent" | "_top";
+  rel?: string;
+}
+
+const { href, name, title, target, rel } = Astro.props;
+const safeRel = target === "_blank" ? (rel ?? "noopener noreferrer") : rel;
+const rawIcon = socialIcons[name];
+const iconMarkup = rawIcon.includes("viewBox")
+  ? rawIcon
+  : rawIcon.replace("<svg", '<svg viewBox="0 0 24 24"');
+---
+
+<a
+  href={href}
+  title={title}
+  target={target}
+  rel={safeRel}
+  class="inline-social-link group"
+>
+  <span
+    class="inline-social-link__icon"
+    aria-hidden="true"
+    set:html={iconMarkup}
+  />
+  <span><slot /></span>
+</a>
+
+<style>
+  @reference "../styles/base.css";
+
+  .inline-social-link {
+    --inline-social-icon-shift: 0.2em;
+    @apply inline-flex items-baseline gap-1;
+  }
+
+  .inline-social-link__icon {
+    @apply inline-flex items-baseline leading-none;
+    transform: translateY(var(--inline-social-icon-shift));
+  }
+
+  .inline-social-link__icon :global(svg.icon-tabler) {
+    @apply h-[1em] w-[1em] scale-100 opacity-95;
+  }
+</style>
