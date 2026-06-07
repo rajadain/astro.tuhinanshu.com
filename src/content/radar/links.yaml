@@ -73,3 +73,19 @@
     title: "OOPSLA Conference: Growing a Language"
     description: "Video by Computer History Museum"
     image: "https://i.ytimg.com/vi/lw6TaiXzHAE/hqdefault.jpg"
+
+- id: "tweet-2062220865643982875"
+  url: "https://x.com/Saboo_Shubham_/status/2062220865643982875"
+  timestamp: "2026-06-07"
+  context: |
+    As much as I enjoy designing interfaces and working with people to craft something beautiful and usable, I do agree there is a big opportunity for generated interfaces. So much of what we do is not that unique: dashboards, charts, maps. And these widgets are now well defined enough that, given some data in parseable formats, AI should be able to generate UIs on the fly to help me slice it.
+  tags:
+    - "web-dev"
+    - "frontend"
+    - "programming"
+    - "design"
+    - "ai"
+  og:
+    title: "Generative UI Is the New Frontend"
+    description: "The frontend used to be a fixed thing. Designers drew it. Engineers built it. Users got what shipped. That's over."
+    image: "https://pbs.twimg.com/media/HI0zzjqbQAAcd-1?format=jpg"
