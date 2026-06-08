@@ -1,18 +1,17 @@
 ---
 import { Icon } from "astro-icon/components";
-import socialIcons from "@assets/socialIcons";
-import type { SocialMedia } from "../types";
 
 interface Props {
   href: string;
-  name: SocialMedia;
+  icon: string;
   title?: string;
   target?: "_blank" | "_self" | "_parent" | "_top";
   rel?: string;
 }
 
-const { href, name, title, target, rel } = Astro.props;
+const { href, icon, title, target, rel } = Astro.props;
 const safeRel = target === "_blank" ? (rel ?? "noopener noreferrer") : rel;
+const iconName = icon.startsWith("tabler:") ? icon : `tabler:${icon}`;
 ---
 
 <a
@@ -23,7 +22,7 @@ const safeRel = target === "_blank" ? (rel ?? "noopener noreferrer") : rel;
   class="inline-social-link group"
 >
   <span class="inline-social-link__icon" aria-hidden="true">
-    <Icon name={socialIcons[name]} />
+    <Icon name={iconName} />
   </span>
   <span><slot /></span>
 </a>
