@@ -8,10 +8,10 @@ tags:
   - software
   - azavea
   - github
-ogImage: https://ik.imagekit.io/rajadain/github-prs-2017.webp?updatedAt=1686511516096
+ogImage: /github-prs-2017.webp?updatedAt=1686511516096
 ---
 
-![GitHub Pull Requests](https://ik.imagekit.io/rajadain/github-prs-2017.webp?updatedAt=1686511516096)
+![GitHub Pull Requests](/github-prs-2017.webp?updatedAt=1686511516096)
 
 > Being a professional services team, we at Civic Apps work on a number of projects in parallel in various stages of completion. They range in age (brand new projects to 6 year old legacy codebases), size (from simple single page apps to complex multi-tier systems), and technology (JavaScript, Python, Scala, C#). We use a number of tools to maintain consistency of workflow when switching between projects, such as our own flavor of GitHub’s Scripts to Rule Them All.
 

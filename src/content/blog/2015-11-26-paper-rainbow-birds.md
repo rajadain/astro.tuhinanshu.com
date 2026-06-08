@@ -5,10 +5,10 @@ date_published: 2015-11-27T02:57:11.000Z
 date_updated: 2021-08-04T01:19:13.000Z
 tags:
   - poetry
-ogImage: https://ik.imagekit.io/rajadain/paper-rainbow-birds.jpg?updatedAt=1684467724042
+ogImage: /paper-rainbow-birds.jpg?updatedAt=1684467724042
 ---
 
-![Paper Rainbow Birds](https://ik.imagekit.io/rajadain/paper-rainbow-birds.jpg?updatedAt=1684467724042)
+![Paper Rainbow Birds](/paper-rainbow-birds.jpg?updatedAt=1684467724042)
 
 Living their lives in ignorant bliss,  
 their vision straight and narrow.  

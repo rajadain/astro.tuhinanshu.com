@@ -6,10 +6,10 @@ date_updated: 2021-08-04T00:46:41.000Z
 tags:
   - essay
   - thoughts
-ogImage: https://ik.imagekit.io/rajadain/biases-and-arguments.jpg?updatedAt=1684466823691
+ogImage: /biases-and-arguments.jpg?updatedAt=1684466823691
 ---
 
-![Biases and Arguments](https://ik.imagekit.io/rajadain/biases-and-arguments.jpg?updatedAt=1684466823691)
+![Biases and Arguments](/biases-and-arguments.jpg?updatedAt=1684466823691)
 
 I am biased. About many things. I have preferences, opinions, perspectives, notions, lenses, view-points and point-of-views. I think most of us, if not all, are biased in one way or another, but I do not speak for most of us here. I only speak for myself. And I am biased.
 

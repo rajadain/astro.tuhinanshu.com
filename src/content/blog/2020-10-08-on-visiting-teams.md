@@ -7,10 +7,10 @@ tags:
   - programming
   - software
   - azavea
-ogImage: https://ik.imagekit.io/rajadain/turbo-pterodactyl.png?updatedAt=1686512493974
+ogImage: /turbo-pterodactyl.png?updatedAt=1686512493974
 ---
 
-![Team Mascot: Turbo Pterodactyl](https://ik.imagekit.io/rajadain/turbo-pterodactyl.png?updatedAt=1686512493974)
+![Team Mascot: Turbo Pterodactyl](/turbo-pterodactyl.png?updatedAt=1686512493974)
 
 > Azavea has a number of engineering teams, which have developed expertise in different kinds of technologies, subject matters, and project formats. Typically, engineers start out on one team and stay there. From time to time, there will be an opportunity for an engineer to visit and support other teams. These visits allow for a cultural cross-pollination of ideas and practices. The visitor brings ideas and experiences of their own team, can question and learn the practices of the host team, and bring them back home.
 

@@ -5,10 +5,10 @@ date_published: 2013-01-21T00:08:52.000Z
 date_updated: 2021-08-05T04:33:18.000Z
 tags:
   - poetry
-ogImage: https://ik.imagekit.io/rajadain/the-waterfall.jpg?updatedAt=1684465070625
+ogImage: /the-waterfall.jpg?updatedAt=1684465070625
 ---
 
-![The Waterfall](https://ik.imagekit.io/rajadain/the-waterfall.jpg?updatedAt=1684465070625)
+![The Waterfall](/the-waterfall.jpg?updatedAt=1684465070625)
 
 I flow,  
 Free, fluid, fervent, fleeting,  

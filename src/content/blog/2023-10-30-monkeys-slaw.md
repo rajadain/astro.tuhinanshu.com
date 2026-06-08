@@ -5,10 +5,10 @@ date_published: 2023-10-30T20:00:00.000Z
 tags:
   - poetry
   - writing-group
-ogImage: https://ik.imagekit.io/rajadain/monkeys-slaw.png?updatedAt=1698716870721
+ogImage: /monkeys-slaw.png?updatedAt=1698716870721
 ---
 
-![a Dr Seuss like illustration of an open fridge with fish, jam, milk, bread, cheese, and ice cream in it](https://ik.imagekit.io/rajadain/monkeys-slaw.png?updatedAt=1698716870721)
+![a Dr Seuss like illustration of an open fridge with fish, jam, milk, bread, cheese, and ice cream in it](/monkeys-slaw.png?updatedAt=1698716870721)
 
 A fish, a fig, a cinnamon stick,  
 and half a jar of jam.  

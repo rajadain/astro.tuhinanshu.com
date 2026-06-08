@@ -2,6 +2,7 @@
 import { ClientRouter } from "astro:transitions";
 
 import { SITE } from "@config";
+import { toImageKitUrl } from "@utils/imageKitUrl";
 import "@styles/base.css";
 
 const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
@@ -23,7 +24,7 @@ const {
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const socialImageURL = new URL(
-  ogImage ? ogImage : SITE.ogImage,
+  toImageKitUrl(ogImage ? ogImage : SITE.ogImage),
   Astro.url.origin
 ).href;
 ---

@@ -5,10 +5,10 @@ date_published: 2012-12-02T22:49:38.000Z
 date_updated: 2021-08-04T01:27:38.000Z
 tags:
   - poetry
-ogImage: https://ik.imagekit.io/rajadain/caliginous-moon.jpg?updatedAt=1683429445162
+ogImage: /caliginous-moon.jpg?updatedAt=1683429445162
 ---
 
-![Caliginous Moon](https://ik.imagekit.io/rajadain/caliginous-moon.jpg?updatedAt=1683429445162)
+![Caliginous Moon](/caliginous-moon.jpg?updatedAt=1683429445162)
 
 Eclipsed,  
 The Sun Glow(e)rs  

@@ -6,10 +6,10 @@ date_updated: 2021-08-08T15:44:33.000Z
 tags:
   - prose
   - writing-group
-ogImage: https://ik.imagekit.io/rajadain/standing-in-the-labyrinth.jpg?updatedAt=1684550792760
+ogImage: /standing-in-the-labyrinth.jpg?updatedAt=1684550792760
 ---
 
-![Standing in the Labyrinth](https://ik.imagekit.io/rajadain/standing-in-the-labyrinth.jpg?updatedAt=1684550792760)
+![Standing in the Labyrinth](/standing-in-the-labyrinth.jpg?updatedAt=1684550792760)
 
 Life is precious. Time is precious. Youth is wasted on the young.
 

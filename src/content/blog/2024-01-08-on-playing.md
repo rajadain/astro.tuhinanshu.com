@@ -5,10 +5,10 @@ date_published: 2024-01-08T20:00:00.000Z
 tags:
   - prose
   - writing-group
-ogImage: https://ik.imagekit.io/rajadain/on-playing.jpg?updatedAt=1707012826506
+ogImage: /on-playing.jpg?updatedAt=1707012826506
 ---
 
-![An InstaX Mini photo of a holiday balloon at the Hudson Yards shopping mall in New York](https://ik.imagekit.io/rajadain/on-playing.jpg?updatedAt=1707012826506)
+![An InstaX Mini photo of a holiday balloon at the Hudson Yards shopping mall in New York](/on-playing.jpg?updatedAt=1707012826506)
 
 Over the course of the last month or so, I’ve found myself playing quite a bit. I was lucky enough to travel to L.A. for the first time with my friend David, and as we walked around the empty beaches of Santa Monica in the warm winter, I marveled at the sounds and textures of the sand and the water, how they compared to beaches in Miami and New Jersey, and played with the sand. We also saw a number of exercise structures at the famous Muscle Beach and saw highly athletic people casually swinging from ring to ring, climbing ropes, flipping around poles and playing with it. We tried to play with them too, albeit with much less success.
 

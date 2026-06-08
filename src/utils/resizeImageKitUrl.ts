@@ -1,11 +1,27 @@
-const prefix = "https://ik.imagekit.io/rajadain";
+import { getImageKitUrlEndpoint, toImageKitUrl } from "@utils/imageKitUrl";
+
+const endpoint = getImageKitUrlEndpoint();
+const endpointUrl = new URL(endpoint);
+const endpointPath = endpointUrl.pathname.replace(/\/$/, "");
 
 export default function resizeImageKitUrl(url: string, px = 160): string {
-  if (!url.startsWith(prefix)) {
+  const absoluteUrl = toImageKitUrl(url);
+
+  if (!absoluteUrl.startsWith(endpoint)) {
     return url;
   }
 
-  const suffix = url.substring(prefix.length + 1);
+  const parsed = new URL(absoluteUrl);
 
-  return `${prefix}/tr:w-${px}/${suffix}`;
+  const pathRemainder = endpointPath
+    ? parsed.pathname.slice(endpointPath.length) || "/"
+    : parsed.pathname;
+
+  if (pathRemainder.startsWith("/tr:")) {
+    return parsed.toString();
+  }
+
+  parsed.pathname = `${endpointPath}/tr:w-${px},f-auto${pathRemainder}`;
+
+  return parsed.toString();
 }

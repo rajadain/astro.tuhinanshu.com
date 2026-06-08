@@ -8,10 +8,10 @@ tags:
   - software
   - architecture
   - azavea
-ogImage: https://ik.imagekit.io/rajadain/azavea-netlify-gender-dashboard.webp?updatedAt=1686512805068
+ogImage: /azavea-netlify-gender-dashboard.webp?updatedAt=1686512805068
 ---
 
-![Gender Survey Dashboard Demo](https://ik.imagekit.io/rajadain/azavea-netlify-gender-dashboard.webp?updatedAt=1686512805068)
+![Gender Survey Dashboard Demo](/azavea-netlify-gender-dashboard.webp?updatedAt=1686512805068)
 
 > Netlify is a platform for web developers and designers that offers hosting and serverless backend services for web applications. At Azavea, we use it to build, deploy, and scale some of our web-based projects, particularly where we do not need a backend or data persistent service. We first started using Netlify when we were looking for a lightweight and performant alternative to our complex technology stack typically consisting of a database, front-end and back-end tools, and more. So far in the projects where we have used it, our clients have been particularly pleased by our applications, commenting on the responsiveness and strong visual appeal.
 

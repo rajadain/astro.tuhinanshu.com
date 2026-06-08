@@ -5,10 +5,10 @@ date_published: 2024-07-20T20:00:00.000Z
 tags:
   - prose
   - writing-group
-ogImage: https://ik.imagekit.io/rajadain/on-reflection.jpg?updatedAt=1721516562839
+ogImage: /on-reflection.jpg?updatedAt=1721516562839
 ---
 
-![A mirror in the Salmagundi Club in New York](https://ik.imagekit.io/rajadain/on-reflection.jpg?updatedAt=1721516562839)
+![A mirror in the Salmagundi Club in New York](/on-reflection.jpg?updatedAt=1721516562839)
 
 “Oh it’s you,” said Aidan, recognizing the face. “How’d you sleep?”
 

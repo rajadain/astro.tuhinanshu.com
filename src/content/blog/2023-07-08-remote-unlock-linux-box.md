@@ -8,7 +8,7 @@ tags:
   - software
   - element84
   - modelmywatershed
-ogImage: https://ik.imagekit.io/rajadain/remote-unlocking-a-linux-box.png?updatedAt=1689021777367
+ogImage: /remote-unlocking-a-linux-box.png?updatedAt=1689021777367
 ---
 
 One of the core values at my workplace, [Element 84](https://element84.com), is reliability, and part of that is security, which we take seriously. This requires that all our computers be encrypted at rest. My work laptop, a late 2021 MacBook Pro with the Apple Silicon M1 Pro chip, has disk encryption turned on. However, some of my projects, like [Model My Watershed](https://github.com/WikiWatershed/model-my-watershed), require an x86 environment for development. For these I have a Linux box at the office, which I SSH in to for development.
@@ -93,6 +93,6 @@ This creates a new session called `mmw`, or attaches to one if it already exists
 
 In addition, [iTerm2](https://iterm2.com/) has [excellent integration with `tmux`](https://iterm2.com/documentation-tmux-integration.html). This requires the `-CC` flag which gives iTerm2 complete control to treat `tmux` tabs as native iTerm2 tabs, leading to a wonderfully unified experience:
 
-![iTerm2 running tmux natively](https://ik.imagekit.io/rajadain/remote-unlocking-a-linux-box.png?updatedAt=1689021777367)
+![iTerm2 running tmux natively](/remote-unlocking-a-linux-box.png?updatedAt=1689021777367)
 
 I have that final command built into my `mmw-dev` profile, which leads to a quick hop back to my secure, encrypted development environment.

@@ -5,10 +5,10 @@ date_published: 2024-12-04T20:00:00.000Z
 tags:
   - prose
   - writing-group
-ogImage: https://ik.imagekit.io/rajadain/do-the-easy-thing.JPG?updatedAt=1736037466684
+ogImage: /do-the-easy-thing.JPG?updatedAt=1736037466684
 ---
 
-![A green fountain showing easy flow of water](https://ik.imagekit.io/rajadain/do-the-easy-thing.JPG?updatedAt=1736037466684)
+![A green fountain showing easy flow of water](/do-the-easy-thing.JPG?updatedAt=1736037466684)
 
 I don’t do things because they are easy. I do them because I thought they were going to be easy.
 

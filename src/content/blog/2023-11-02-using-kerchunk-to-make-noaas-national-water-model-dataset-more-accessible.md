@@ -8,10 +8,10 @@ tags:
   - software
   - element84
   - geospatial
-ogImage: https://ik.imagekit.io/rajadain/kerchunk-nwm.png?updatedAt=1699124196494
+ogImage: /kerchunk-nwm.png?updatedAt=1699124196494
 ---
 
-![Variation in Predicted Streamflow near Philadelphia](https://ik.imagekit.io/rajadain/kerchunk-nwm.png?updatedAt=1699124196494)
+![Variation in Predicted Streamflow near Philadelphia](/kerchunk-nwm.png?updatedAt=1699124196494)
 
 My blog post recapping our work around NOAA's National Water Model (NWM) is finally out!
 

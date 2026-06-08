@@ -9,10 +9,10 @@ tags:
   - architecture
   - azavea
   - mmw
-ogImage: https://ik.imagekit.io/rajadain/mmw-2016.webp?updatedAt=1686510877909
+ogImage: /mmw-2016.webp?updatedAt=1686510877909
 ---
 
-![Model My Watershed](https://ik.imagekit.io/rajadain/mmw-2016.webp?updatedAt=1686510877909)
+![Model My Watershed](/mmw-2016.webp?updatedAt=1686510877909)
 
 > A responsive app should always be ready to respond to the user, regardless of any background processing that may be happening. This is especially true for geoprocessing applications which often entail long-running processes. To keep the app responsive, the thread that processes user interaction must always be ready to respond, and never be blocked. To keep the app available, the thread that handles web requests must always have the capacity for new requests.
 

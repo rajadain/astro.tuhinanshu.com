@@ -5,10 +5,10 @@ date_published: 2014-04-10T01:51:18.000Z
 date_updated: 2021-08-04T00:45:58.000Z
 tags:
   - quotes
-ogImage: https://ik.imagekit.io/rajadain/conceptual-vs-perceptual.jpg?updatedAt=1684467194964
+ogImage: /conceptual-vs-perceptual.jpg?updatedAt=1684467194964
 ---
 
-![Conceptual vs Perceptual](https://ik.imagekit.io/rajadain/conceptual-vs-perceptual.jpg?updatedAt=1684467194964)
+![Conceptual vs Perceptual](/conceptual-vs-perceptual.jpg?updatedAt=1684467194964)
 
 > Our identities belong permanently to the conceptual world. They can&#8217;t be seen, heard, smelled, touched or tasted. They&#8217;re merely ideas. And everything else — at the start — belongs to the sensual world, the world outside us.
 >

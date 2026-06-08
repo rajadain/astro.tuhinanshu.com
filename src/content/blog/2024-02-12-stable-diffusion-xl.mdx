@@ -6,12 +6,12 @@ tags:
   - ai
   - play
   - instagram
-ogImage: https://ik.imagekit.io/rajadain/sdxl/2024-02-11_22-16-06_5940.png?updatedAt=1707794368080
+ogImage: /sdxl/2024-02-11_22-16-06_5940.png?updatedAt=1707794368080
 ---
 
 import InstagramEmbed from "../../components/InstagramEmbed.astro";
 
-![](https://ik.imagekit.io/rajadain/sdxl/2024-02-11_22-16-06_5940.png?updatedAt=1707794368080)
+![](/sdxl/2024-02-11_22-16-06_5940.png?updatedAt=1707794368080)
 
 I've been fascinated with text-to-image generators ever since first hearing about [DALL-E](https://openai.com/research/dall-e). I was excited to try them myself when [DALL-E 2](https://openai.com/dall-e-2) came out, and used it to, among other things, [create featured images for poetry](/posts/monkeys-slaw).
 
@@ -35,57 +35,57 @@ My attention was recently renewed when I started seeing ads for tools like [Arti
 
 After some research I found [this handy guide](https://www.youtube.com/watch?v=0ab2uOi2-3A) by [All Your Tech AI](https://www.youtube.com/@allyourtechai), which introduced me to Hugging Face's [Autotrain Advanced](https://github.com/huggingface/autotrain-advanced). While most of the documentation encourages you to run it on Google Colab or HF Spaces, I was able to run it locally once I'd installed the appropriate CUDA drivers and Python libraries. The local training is much slower, and takes about ~2 hours on my nVidia 3080 and uses up all 10GB of VRAM, for ~8 images. I trained the LoRA using Stable Diffusion Base XL as the base model, with some recent photos of me. Two hours later, I copied the `.safetensors` file into Fooocus's `loras/` directory, then ran Fooocus and selected Advanced. Under Model I selected my new LoRA and set the strength to 0.95, and asked it to generate a photo of rajadain, the keyword for the LoRA:
 
-![prompt: photo of rajadain](https://ik.imagekit.io/rajadain/sdxl/2024-02-11_15-32-38_8762.png?updatedAt=1707794359521)
+![prompt: photo of rajadain](/sdxl/2024-02-11_15-32-38_8762.png?updatedAt=1707794359521)
 
 This was very impressive! It looks almost exactly like me, but it's not me, and it's not exactly any picture in the dataset. Already it is shifting it in different directions, but is able to faithfully put my face on the generated image.
 
 Next I wanted to try out a few different art styles. This led to some unexpected results. When I tried Pre-Raphaelite painting, I got a European version of myself:
 
-![](https://ik.imagekit.io/rajadain/sdxl/2024-02-11_15-40-20_7918.png?updatedAt=1707794361475)
+![](/sdxl/2024-02-11_15-40-20_7918.png?updatedAt=1707794361475)
 
 When trying out the Ukiyo-E style, I got a Japanese version:
 
-![](https://ik.imagekit.io/rajadain/sdxl/2024-02-11_15-44-35_3785.png?updatedAt=1707794362825)
+![](/sdxl/2024-02-11_15-44-35_3785.png?updatedAt=1707794362825)
 
 In an attempt to nudge it towards a more Indian look, I overshot:
 
-![](https://ik.imagekit.io/rajadain/sdxl/2024-02-11_15-48-14_1427.png?updatedAt=1707794362466)
+![](/sdxl/2024-02-11_15-48-14_1427.png?updatedAt=1707794362466)
 
 Eventually, by tweaking a few different settings including the negative prompt and the LoRA strength, I was able to get something pretty close:
 
-![](https://ik.imagekit.io/rajadain/sdxl/2024-02-11_15-45-18_3044.png?updatedAt=1707794362660)
+![](/sdxl/2024-02-11_15-45-18_3044.png?updatedAt=1707794362660)
 
 It was also fun to discover that certain prompts and styles have a significant female bias, and will produce a girl version of me until explicitly prompted otherwise. For example, this is `rajadain in a blue scarf`:
 
-![](https://ik.imagekit.io/rajadain/sdxl/2024-02-11_15-59-44_7273.png?updatedAt=1707794360522)
+![](/sdxl/2024-02-11_15-59-44_7273.png?updatedAt=1707794360522)
 
 and `a handsome rajadain man in a blue scarf`:
 
-![](https://ik.imagekit.io/rajadain/sdxl/2024-02-11_16-00-56_2857.png?updatedAt=1707794360786)
+![](/sdxl/2024-02-11_16-00-56_2857.png?updatedAt=1707794360786)
 
 Similarly, when using prompts like "high fashion" or "fashion shoot", the bias is female until corrected:
 
-![](https://ik.imagekit.io/rajadain/sdxl/2024-02-11_16-05-25_2857.png?updatedAt=1707794360635)
+![](/sdxl/2024-02-11_16-05-25_2857.png?updatedAt=1707794360635)
 
-![](https://ik.imagekit.io/rajadain/sdxl/2024-02-11_16-06-04_2857.png?updatedAt=1707794359865)
+![](/sdxl/2024-02-11_16-06-04_2857.png?updatedAt=1707794359865)
 
 That last image shows the kind of AI artifacting that can happen when the parameters clash: I had to turn the LoRA strength up to get a better resemblance, but then my face ends up being forced onto an otherwise incongruent composition.
 
 One of the reasons why I got female outputs above is because I had trained the model to respond to "rajadain", a trigger word the model knows nothing about. One tip I've heard is to use a trigger phrase that gives the model an inkling of what you want, like a celebrity name who perhaps looks like you. I trained a second model with "hrithik roshan man", and got significantly handsomer results:
 
-![](https://ik.imagekit.io/rajadain/sdxl/2024-02-11_21-52-02_5837.png?updatedAt=1707794367643)
+![](/sdxl/2024-02-11_21-52-02_5837.png?updatedAt=1707794367643)
 
-![](https://ik.imagekit.io/rajadain/sdxl/2024-02-11_21-52-45_6029.png?updatedAt=1707794367586)
+![](/sdxl/2024-02-11_21-52-45_6029.png?updatedAt=1707794367586)
 
 However, you can see that my face was made longer as it tried to combine it with Hrithik's distinctive vertical visage.
 
 Here's some other ones that I thought turned out pretty good:
 
-![](https://ik.imagekit.io/rajadain/sdxl/2024-02-11_22-16-53_7852.png?updatedAt=1707794363009)
+![](/sdxl/2024-02-11_22-16-53_7852.png?updatedAt=1707794363009)
 
-![](https://ik.imagekit.io/rajadain/sdxl/2024-02-11_21-44-16_5183.png?updatedAt=1707794367694)
+![](/sdxl/2024-02-11_21-44-16_5183.png?updatedAt=1707794367694)
 
-![](https://ik.imagekit.io/rajadain/sdxl/2024-02-11_22-15-08_9059.png?updatedAt=1707794367963)
+![](/sdxl/2024-02-11_22-15-08_9059.png?updatedAt=1707794367963)
 
 Overall I've had a lot of fun making these. I don't know if there's a use case for this beyond that. I don't think I'd use one of these for my profile picture, because while some of these are really cool, none of them are me, and so it doesn't have the personal signifcance necessary for that purpose. I do think there's some great hairstyles in there though: I may take some of these to my stylist the next time I need a haircut!
 

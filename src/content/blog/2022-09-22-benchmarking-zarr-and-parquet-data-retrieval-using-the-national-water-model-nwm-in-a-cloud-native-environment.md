@@ -8,10 +8,10 @@ tags:
   - software
   - azavea
   - geospatial
-ogImage: https://ik.imagekit.io/rajadain/dalle-dataset.webp?updatedAt=1686513273899
+ogImage: /dalle-dataset.webp?updatedAt=1686513273899
 ---
 
-![DALL-E 2 Imagines a Slice from a Large Dataset](https://ik.imagekit.io/rajadain/dalle-dataset.webp?updatedAt=1686513273899)
+![DALL-E 2 Imagines a Slice from a Large Dataset](/dalle-dataset.webp?updatedAt=1686513273899)
 
 > Understanding efficiency gains in a scalable, cloud-native data-processing environment unlocks an array of new possibilities when dealing with large, complex datasets such as the National Water Model. In this article, we take a deep dive into Zarr and Parquet and determine which is more performant on various time scales.
 

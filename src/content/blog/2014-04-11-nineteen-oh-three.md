@@ -5,10 +5,10 @@ date_published: 2014-04-11T23:55:04.000Z
 date_updated: 2021-08-08T00:30:39.000Z
 tags:
   - music
-ogImage: https://ik.imagekit.io/rajadain/nineteen-oh-three.jpg?updatedAt=1684467328883
+ogImage: /nineteen-oh-three.jpg?updatedAt=1684467328883
 ---
 
-![Nineteen Oh Three](https://ik.imagekit.io/rajadain/nineteen-oh-three.jpg?updatedAt=1684467328883)
+![Nineteen Oh Three](/nineteen-oh-three.jpg?updatedAt=1684467328883)
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/rFqYSdF-Exg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 

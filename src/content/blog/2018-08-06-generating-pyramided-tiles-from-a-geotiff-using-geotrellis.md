@@ -8,10 +8,10 @@ tags:
   - software
   - azavea
   - geospatial
-ogImage: https://ik.imagekit.io/rajadain/geotrellis-2018.gif?updatedAt=1686511825604
+ogImage: /geotrellis-2018.gif?updatedAt=1686511825604
 ---
 
-![Pyramided Tiles](https://ik.imagekit.io/rajadain/geotrellis-2018.gif?updatedAt=1686511825604)
+![Pyramided Tiles](/geotrellis-2018.gif?updatedAt=1686511825604)
 
 > To show the appropriate detail at a certain zoom level while conserving bandwidth, images of large geographic areas are tiled to optimize delivery. In a zoomed out state, we may need only a single image to show the entire area, albeit at a very coarse resolution. In a zoomed in state, a small area should be shown in much more detail. Each zoom level has 4 times the tiles of the previous one, with Zoom Level 0 starting with exactly 1 tile. The size of each tile in the scheme is identical, most often 256px square on the web.
 
