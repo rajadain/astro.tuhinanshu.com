@@ -42,7 +42,7 @@ export default function Card({ href, frontmatter, secHeading = true }: Props) {
           {secHeading ? (
             <h2
               id={`title-${slug}`}
-              className="text-lg font-medium decoration-dashed hover:underline"
+              className="text-2xl font-medium decoration-dashed hover:underline"
               style={{ viewTransitionName: `title-${slug}` }}
             >
               {title}
@@ -50,7 +50,7 @@ export default function Card({ href, frontmatter, secHeading = true }: Props) {
           ) : (
             <h3
               id={`title-${slug}`}
-              className="text-lg font-medium decoration-dashed hover:underline"
+              className="text-2xl font-medium decoration-dashed hover:underline"
               style={{ viewTransitionName: `title-${slug}` }}
             >
               {title}

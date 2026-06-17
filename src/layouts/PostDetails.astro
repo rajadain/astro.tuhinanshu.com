@@ -43,7 +43,11 @@ const slug = slugify(post.data);
       className="my-2"
       slug={slug}
     />
-    <article id="article" role="article" class="prose mx-auto mt-8 max-w-3xl">
+    <article
+      id="article"
+      role="article"
+      class="prose mx-auto mt-8 max-w-3xl text-xl"
+    >
       <Content />
     </article>
 
@@ -76,7 +80,7 @@ const slug = slugify(post.data);
     @apply mx-auto w-full max-w-3xl px-4 py-12;
   }
   .post-title {
-    @apply text-skin-accent text-4xl font-semibold;
+    @apply text-skin-accent text-5xl font-bold;
   }
   .tags-container {
     @apply my-8;
@@ -85,6 +89,6 @@ const slug = slugify(post.data);
     @apply pt-8;
   }
   .similar-posts h2 {
-    @apply text-2xl font-semibold italic sm:text-xl;
+    @apply text-3xl font-bold italic sm:text-2xl;
   }
 </style>

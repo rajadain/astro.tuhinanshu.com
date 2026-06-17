@@ -69,6 +69,7 @@ module.exports = {
       },
       fontFamily: {
         mono: ["Courier Prime", "monospace"],
+        body: ["Cormorant Garamond", "serif"],
       },
     },
   },

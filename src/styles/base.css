@@ -27,6 +27,8 @@
   --fill-transparent: transparent;
 
   --font-mono: Courier Prime, monospace;
+
+  --font-body: Cormorant Garamond, serif;
 }
 
 /*
@@ -94,7 +96,7 @@
   body {
     @apply bg-skin-fill text-skin-base selection:bg-skin-accent/70
       selection:text-skin-inverted
-      flex min-h-screen flex-col font-mono;
+      font-body flex min-h-screen flex-col text-xl;
   }
   h1,
   h2,

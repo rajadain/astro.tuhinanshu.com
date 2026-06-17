@@ -83,21 +83,21 @@ const urlHostname = new URL(url).hostname;
     @apply h-auto w-32 shrink-0 object-cover sm:w-40;
   }
   .og-text {
-    @apply flex flex-col justify-center gap-1 p-3;
+    @apply flex flex-col justify-center gap-1 p-3 text-lg;
   }
   .og-title {
-    @apply text-skin-base text-sm leading-snug font-semibold;
+    @apply text-skin-base text-xl leading-snug font-bold;
   }
   .og-description {
-    @apply text-skin-base/70 line-clamp-2 text-xs;
+    @apply text-skin-base/70 line-clamp-2 text-lg;
   }
   .og-url {
-    @apply text-skin-accent text-xs;
+    @apply text-skin-accent font-mono text-sm;
   }
 
   /* Context */
   .radar-context {
-    @apply mb-3 max-w-none px-3 text-sm;
+    @apply mb-3 max-w-none px-3 text-xl;
   }
 
   /* Meta row */

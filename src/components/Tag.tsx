@@ -16,7 +16,7 @@ export default function Tag({ name, size = "sm" }: Props) {
         href={`/tags/${name.toLowerCase()}`}
         className={`hover:text-skin-accent pr-2 underline decoration-dashed hover:-top-0.5 focus-visible:p-1 ${
           size === "sm" ? "text-sm" : "text-lg"
-        } group`}
+        } group font-mono`}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
