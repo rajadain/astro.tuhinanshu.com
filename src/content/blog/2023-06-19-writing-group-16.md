@@ -2,13 +2,13 @@
 title: Writing Group 16
 postSlug: writing-group-16
 date_published: 2023-06-19T20:00:00.000Z
-description: As Netflix upended Hollywood’s business model: no driven by advertising or ticket sales anymore, but by more amorphous ideas like Monthly Active Users and subscription rates, the money that writers used to get dwindled and dissipated.
+description: As Netflix upended Hollywood’s business model -- not driven by advertising or ticket sales anymore, but by more amorphous ideas like Monthly Active Users and subscription rates, the money that writers used to get dwindled and dissipated.
 tags:
   - prose
   - writing-group
 ---
 
-There is a writer’s strike. As Netflix upended Hollywood’s business model: no driven by advertising or ticket sales anymore, but by more amorphous ideas like Monthly Active Users and subscription rates, the money that writers used to get dwindled and dissipated. They no longer get royalties on replays, just the contract pay for when they were working on the project. Even though what they’ve made lives on, gets replayed, finds a cult revival, and becomes viral sensation, none of this benefits them. They’re asking for their fair share.
+There is a writer’s strike. As Netflix upended Hollywood’s business model: not driven by advertising or ticket sales anymore, but by more amorphous ideas like Monthly Active Users and subscription rates, the money that writers used to get dwindled and dissipated. They no longer get royalties on replays, just the contract pay for when they were working on the project. Even though what they’ve made lives on, gets replayed, finds a cult revival, and becomes viral sensation, none of this benefits them. They’re asking for their fair share.
 
 But Netflix itself is faltering. It’s users are not growing at the pace they used to, neither is it the only platform in town. Most folks now subscribe to at least two, often more services, and find themselves switching from Amazon Prime to HBO Max to Hulu to Showtime to Netflix in search of something to watch, before defaulting to a familiar comedy show from yesteryear, a show written by writers that still get royalties. And as Netflix falters, it fails to provide for everyone affected by its disruption of Hollywood. The total loss may be greater than Netflix’s rapid gain.
 
