@@ -1,6 +1,7 @@
 export interface Props {
   datetime: string | Date;
   size?: "sm" | "lg";
+  dateOnly?: boolean;
   className?: string;
   slug?: string;
 }
@@ -8,33 +9,49 @@ export interface Props {
 export default function Datetime({
   datetime,
   size = "sm",
+  dateOnly = false,
   className,
   slug,
 }: Props) {
   return (
     <div
-      className={`flex items-center space-x-2 opacity-80 ${className}`}
+      className={`flex items-center space-x-1 opacity-80 ${className}`}
       style={{ viewTransitionName: `datetime-${slug}` }}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className={`${
-          size === "sm" ? "scale-90" : "scale-100"
-        } fill-skin-base inline-block h-6 w-6`}
-        aria-hidden="true"
+        width={24}
+        height={24}
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth={2}
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="icon icon-tabler icons-tabler-outline icon-tabler-calendar-due scale-75 pb-1"
       >
-        <path d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm0 4h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2z"></path>
-        <path d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zM19 8l.001 12H5V8h14z"></path>
+        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+        <path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2l0 -12" />
+        <path d="M16 3v4" />
+        <path d="M8 3v4" />
+        <path d="M4 11h16" />
+        <path d="M11 16a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
       </svg>
       <span className="sr-only">Posted on:</span>
       <span className={`italic ${size === "sm" ? "text-sm" : "text-base"}`}>
-        <FormattedDatetime datetime={datetime} />
+        <FormattedDatetime datetime={datetime} dateOnly={dateOnly} />
       </span>
     </div>
   );
 }
 
-const FormattedDatetime = ({ datetime }: { datetime: string | Date }) => {
+const FormattedDatetime = ({
+  datetime,
+  dateOnly,
+}: {
+  datetime: string | Date;
+  dateOnly: boolean;
+}) => {
   const myDatetime = new Date(datetime);
 
   const date = myDatetime.toLocaleDateString([], {
@@ -48,7 +65,9 @@ const FormattedDatetime = ({ datetime }: { datetime: string | Date }) => {
     minute: "2-digit",
   });
 
-  return (
+  return dateOnly ? (
+    date
+  ) : (
     <>
       {date}
       <span aria-hidden="true"> | </span>

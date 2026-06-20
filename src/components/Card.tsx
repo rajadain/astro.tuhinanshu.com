@@ -37,12 +37,12 @@ export default function Card({ href, frontmatter, secHeading = true }: Props) {
       <div>
         <a
           href={href}
-          className="text-skin-accent inline-block text-lg font-medium decoration-dashed underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0"
+          className="text-skin-accent inline-block text-lg font-semibold decoration-dashed underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0"
         >
           {secHeading ? (
             <h2
               id={`title-${slug}`}
-              className="text-lg font-medium decoration-dashed hover:underline"
+              className="text-lg decoration-dashed hover:underline"
               style={{ viewTransitionName: `title-${slug}` }}
             >
               {title}
@@ -50,14 +50,14 @@ export default function Card({ href, frontmatter, secHeading = true }: Props) {
           ) : (
             <h3
               id={`title-${slug}`}
-              className="text-lg font-medium decoration-dashed hover:underline"
+              className="text-lg decoration-dashed hover:underline"
               style={{ viewTransitionName: `title-${slug}` }}
             >
               {title}
             </h3>
           )}
         </a>
-        <Datetime datetime={date_published} slug={slug} />
+        <Datetime datetime={date_published} dateOnly={true} slug={slug} />
         <p>{description}</p>
         <ul className="tags-list">
           {tags.map((tag: string) => (
