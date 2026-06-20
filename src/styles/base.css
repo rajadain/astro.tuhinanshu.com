@@ -57,6 +57,23 @@
     focus-visible:outline-dashed;
 }
 
+@utility tag-pill {
+  @apply bg-skin-accent/10 text-skin-accent hover:bg-skin-accent/20 inline-block rounded-full
+    px-2.5 py-0.5 text-xs font-medium no-underline transition-colors;
+}
+
+@utility tag-pill-active {
+  @apply bg-skin-accent text-skin-inverted hover:bg-skin-accent/90;
+}
+
+@utility tag-pill-lg {
+  @apply px-3 py-1 text-sm;
+}
+
+@utility tags-list {
+  @apply flex list-none flex-wrap gap-2 p-0;
+}
+
 @layer base {
   :root,
   html[data-theme="light"] {

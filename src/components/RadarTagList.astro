@@ -30,13 +30,6 @@ const { tags, activeTag, class: className } = Astro.props;
   @reference "../styles/base.css";
 
   .radar-tags {
-    @apply flex list-none flex-wrap gap-2 p-0;
-  }
-  .tag-pill {
-    @apply bg-skin-accent/10 text-skin-accent hover:bg-skin-accent/20 inline-block rounded-full
-      px-2.5 py-0.5 text-xs font-medium no-underline transition-colors;
-  }
-  .tag-pill-active {
-    @apply bg-skin-accent text-skin-inverted hover:bg-skin-accent/90;
+    @apply tags-list;
   }
 </style>
