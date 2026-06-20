@@ -48,6 +48,9 @@ export default defineConfig({
   },
   vite: {
     plugins: [tailwindcss()],
+    server: {
+      allowedHosts: [".ngrok-free.app", ".ngrok.io"],
+    },
     optimizeDeps: {
       exclude: ["@resvg/resvg-js"],
     },
