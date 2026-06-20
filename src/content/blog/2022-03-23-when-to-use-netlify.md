@@ -3,6 +3,7 @@ title: When to use Netlify
 postSlug: when-to-use-netlify
 date_published: 2022-03-23T23:00:00.000Z
 date_updated: 2022-03-23T23:00:00.000Z
+description: This blog post sketches out the architectural thought when deciding if a static site host, such as Netlify, is a good fit for a project.
 tags:
   - programming
   - software

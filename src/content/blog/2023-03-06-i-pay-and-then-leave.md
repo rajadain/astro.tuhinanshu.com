@@ -2,6 +2,7 @@
 title: I Pay, And Then Leave
 postSlug: i-pay-and-then-leave
 date_published: 2023-03-06T20:00:00.000Z
+description: As I eat my diner breakfast, He walks through the door.
 tags:
   - poetry
   - writing-group

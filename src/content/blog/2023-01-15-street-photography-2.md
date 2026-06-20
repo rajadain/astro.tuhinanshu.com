@@ -3,6 +3,7 @@ title: Street Photography 2
 postSlug: street-photography-2
 date_published: 2023-01-15T23:00:00.000Z
 date_updated: 2023-01-15T23:00:00.000Z
+description: Furthering my previous expedition, this is the result of playing around with the built-in Black & White mode on my Panasonic GF5.
 tags:
   - photography
 ogImage: https://ik.imagekit.io/rajadain/street-photography-2/P1130127.JPG?updatedAt=1688348300544

@@ -3,6 +3,7 @@ title: Love is not a limited resource
 postSlug: love-is-not-a-limited-resource
 date_published: 2021-05-04T03:34:00.000Z
 date_updated: 2021-08-06T03:34:34.000Z
+description: One does not run out of love because they have loved too much.
 tags:
   - prose
   - writing-group

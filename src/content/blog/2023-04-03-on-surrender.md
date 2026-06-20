@@ -2,6 +2,7 @@
 title: On Surrender
 postSlug: on-surrender
 date_published: 2023-04-03T20:00:00.000Z
+description: Do not go gentle into that good night. Rage, rage against the dying of the light.
 tags:
   - prose
   - writing-group

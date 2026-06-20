@@ -2,6 +2,7 @@
 title: Monkey’s Slaw
 postSlug: monkeys-slaw
 date_published: 2023-10-30T20:00:00.000Z
+description: A fish, a fig, a cinnamon stick, and half a jar of jam.
 tags:
   - poetry
   - writing-group

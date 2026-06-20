@@ -2,6 +2,7 @@
 title: On Rushing
 postSlug: on-rushing
 date_published: 2023-09-11T20:00:00.000Z
+description: “Do you ever notice that anyone going slower than you is a moron and anyone going faster than you is a maniac?”
 tags:
   - prose
   - writing-group

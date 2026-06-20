@@ -2,6 +2,7 @@
 title: No Adjectives
 postSlug: no-adjectives
 date_published: 2023-05-01T20:00:00.000Z
+description: Sometimes I find myself wondering to what length of a sentence can I reach if I try to write without the use of adjectives.
 tags:
   - prose
   - writing-group

@@ -2,6 +2,7 @@
 title: Writing Group 16
 postSlug: writing-group-16
 date_published: 2023-06-19T20:00:00.000Z
+description: As Netflix upended Hollywood’s business model: no driven by advertising or ticket sales anymore, but by more amorphous ideas like Monthly Active Users and subscription rates, the money that writers used to get dwindled and dissipated.
 tags:
   - prose
   - writing-group

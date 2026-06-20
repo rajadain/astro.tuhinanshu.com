@@ -48,15 +48,11 @@ const dateStr = new Date(timestamp).toLocaleDateString("en-US", {
       <Icon name="tabler:calendar-star" class="scale-75 pb-1" />
       <span class="font-mono text-sm italic">{dateStr}</span>
     </div>
-    {og.description && <p class="description">{og.description}</p>}
+    {og.description && <p class="my-1 ml-1.5 text-sm">{og.description}</p>}
     <RadarTagList tags={tags} />
   </div>
 </li>
 
 <style>
   @reference "../styles/base.css";
-
-  .description {
-    @apply my-1 text-sm;
-  }
 </style>

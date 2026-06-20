@@ -2,6 +2,7 @@
 title: Millie’s Mistake
 postSlug: millies-mistake
 date_published: 2023-08-21T20:00:00.000Z
+description: The knife in her hand dripped red, the splatter extending from the corner of his cheek, across his handsome face, above the tufts of his chestnut curls, lazily caressing his left eyebrow.
 tags:
   - prose
   - writing-group

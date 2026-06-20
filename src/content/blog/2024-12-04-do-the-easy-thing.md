@@ -2,6 +2,7 @@
 title: Do the Easy Thing
 postSlug: do-the-easy-thing
 date_published: 2024-12-04T20:00:00.000Z
+description: I don’t do things because they are easy. I do them because I thought they were going to be easy.
 tags:
   - prose
   - writing-group

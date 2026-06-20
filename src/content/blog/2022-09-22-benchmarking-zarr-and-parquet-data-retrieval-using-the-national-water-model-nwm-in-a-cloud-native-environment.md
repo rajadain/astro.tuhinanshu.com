@@ -3,6 +3,7 @@ title: Benchmarking Zarr and Parquet Data Retrieval using the National Water Mod
 postSlug: benchmarking-zarr-and-parquet-data-retrieval-using-the-national-water-model-nwm-in-a-cloud-native-environment
 date_published: 2022-09-22T23:00:00.000Z
 date_updated: 2022-09-22T23:00:00.000Z
+description: This blog post recaps our research on which popular data format works better for National Water Model access over the cloud.
 tags:
   - programming
   - software

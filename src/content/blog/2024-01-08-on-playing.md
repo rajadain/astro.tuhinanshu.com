@@ -2,6 +2,7 @@
 title: On Playing
 postSlug: on-playing
 date_published: 2024-01-08T20:00:00.000Z
+description: Over the course of the last month or so, I’ve found myself playing quite a bit.
 tags:
   - prose
   - writing-group

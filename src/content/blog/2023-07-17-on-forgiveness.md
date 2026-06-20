@@ -2,6 +2,7 @@
 title: On Forgiveness
 postSlug: on-forgiveness
 date_published: 2023-07-17T20:00:00.000Z
+description: I like people. Certain people. Beautiful, intelligent, funny, sharp, caring, soft, strong, happy, competent, brave, innovative, imaginative, talented, knowledgeable, responsible, laid back, grounded, tactful, honest, generous, attentive, empathic, righteous, judicious, sincere, magnanimous, and loyal.
 tags:
   - prose
   - writing-group

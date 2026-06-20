@@ -3,6 +3,7 @@ title: Using Kerchunk to make NOAA’s National Water Model Dataset more accessi
 postSlug: using-kerchunk-to-make-noaas-national-water-model-dataset-more-accessible
 date_published: 2023-11-02T23:00:00.000Z
 date_updated: 2023-11-02T23:00:00.000Z
+description: My blog post recapping our work around NOAA's National Water Model (NWM) is finally out!
 tags:
   - programming
   - software

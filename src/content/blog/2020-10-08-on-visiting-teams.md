@@ -3,6 +3,7 @@ title: On Visiting Teams
 postSlug: on-visiting-teams
 date_published: 2020-10-08T23:00:00.000Z
 date_updated: 2020-10-08T23:00:00.000Z
+description: Azavea has a number of engineering teams, which have developed expertise in different kinds of technologies, subject matters, and project formats.
 tags:
   - programming
   - software

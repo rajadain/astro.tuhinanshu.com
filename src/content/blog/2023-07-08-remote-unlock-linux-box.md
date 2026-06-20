@@ -3,6 +3,7 @@ title: Remote Unlocking a Linux Box
 postSlug: remote-unlocking-a-linux-box
 date_published: 2023-07-08T23:00:00.000Z
 date_updated: 2023-07-08T23:00:00.000Z
+description: One of the core values at my workplace, Element 84, is reliability, and part of that is security, which we take seriously. This requires that all our computers be encrypted at rest.
 tags:
   - programming
   - software

@@ -3,6 +3,7 @@ title: Generating Pyramided Tiles from a GeoTiff using GDAL
 postSlug: generating-pyramided-tiles-from-a-geotiff-using-gdal
 date_published: 2020-05-08T23:00:00.000Z
 date_updated: 2020-05-08T23:00:00.000Z
+description: This blog post presents a tutorial for generating pyramided map tiles (also called Slippy Map tiles) from a GeoTIFF using GDAL, which can be used in Leaflet or OpenLayers.
 tags:
   - programming
   - software
