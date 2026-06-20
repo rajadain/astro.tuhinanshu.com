@@ -1,5 +1,6 @@
 ---
 import { marked } from "marked";
+import { Icon } from "astro-icon/components";
 import type { RadarEntry } from "@content/_schemas";
 import RadarTagList from "@components/RadarTagList.astro";
 
@@ -14,7 +15,7 @@ const { id, url, timestamp, context, tags, og } = data;
 const contextHtml = marked.parse(context);
 const dateStr = new Date(timestamp).toLocaleDateString("en-US", {
   year: "numeric",
-  month: "short",
+  month: "long",
   day: "numeric",
 });
 const urlHostname = new URL(url).hostname;
@@ -55,7 +56,12 @@ const urlHostname = new URL(url).hostname;
   {/* Meta row */}
   <div class="radar-meta">
     <a href={`/radar/item/${id}`} class="detail-link">
-      <time datetime={new Date(timestamp).toISOString()}>{dateStr}</time>
+      <div class="flex items-center space-x-1">
+        <Icon name="tabler:calendar-star" class="scale-75 pb-1" />
+        <time datetime={new Date(timestamp).toISOString()} class="italic"
+          >{dateStr}</time
+        >
+      </div>
     </a>
   </div>
 

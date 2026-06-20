@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import { Icon } from "astro-icon/components";
 import Layout from "@layouts/Layout.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
@@ -8,6 +9,7 @@ import Hr from "@components/Hr.astro";
 import Card from "@components/Card";
 import Socials from "@components/Socials.astro";
 import Tag from "@components/Tag";
+import RadarCardCompact from "@components/RadarCardCompact.astro";
 import getSortedPosts from "@utils/getSortedPosts";
 import slugify from "@utils/slugify";
 import { SOCIALS } from "@config";
@@ -16,6 +18,13 @@ const posts = await getCollection("blog");
 
 const sortedPosts = getSortedPosts(posts);
 const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
+
+const radarEntries = await getCollection("radar");
+const sortedRadar = radarEntries.sort(
+  (a, b) =>
+    new Date(b.data.timestamp).getTime() - new Date(a.data.timestamp).getTime()
+);
+const recentRadar = sortedRadar.slice(0, 4);
 
 const socialCount = SOCIALS.filter(social => social.active).length;
 
@@ -70,7 +79,7 @@ const featuredTags = [
       )
     }
 
-    <section id="recent-posts">
+    <section class="featured">
       <h2>Recent Posts</h2>
       <ul>
         {
@@ -89,11 +98,22 @@ const featuredTags = [
       <div class="all-posts-btn-wrapper">
         <LinkButton href="/posts" ariaLabel="All Posts">
           All Posts
-          <svg xmlns="http://www.w3.org/2000/svg"
-            ><path
-              d="m11.293 17.293 1.414 1.414L19.414 12l-6.707-6.707-1.414 1.414L15.586 11H6v2h9.586z"
-            ></path>
-          </svg>
+          <Icon name="tabler:arrow-right" class="pb-1" aria-hidden="true" />
+        </LinkButton>
+      </div>
+    </section>
+
+    <Hr />
+
+    <section class="featured">
+      <h2>On the Radar</h2>
+      <ul>
+        {recentRadar.map(entry => <RadarCardCompact data={entry.data} />)}
+      </ul>
+      <div class="all-posts-btn-wrapper">
+        <LinkButton href="/radar" ariaLabel="All Radar Items">
+          More on the Radar
+          <Icon name="tabler:arrow-right" class="pb-1" aria-hidden="true" />
         </LinkButton>
       </div>
     </section>
@@ -120,12 +140,10 @@ const featuredTags = [
   }
 
   /* ===== Featured & Recent Posts Sections ===== */
-  #featured,
-  #recent-posts {
+  .featured {
     @apply pt-12 pb-6;
   }
-  #featured h2,
-  #recent-posts h2 {
+  .featured h2 {
     @apply text-2xl font-semibold tracking-wide;
   }
   .all-posts-btn-wrapper {

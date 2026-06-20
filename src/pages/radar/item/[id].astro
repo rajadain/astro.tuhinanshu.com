@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import { marked } from "marked";
+import { Icon } from "astro-icon/components";
 import { SITE } from "@config";
 import RadarTagList from "@components/RadarTagList.astro";
 import Layout from "@layouts/Layout.astro";
@@ -48,7 +49,12 @@ if (isYouTube) {
   <Header activeNav="radar" />
   <Main pageTitle={og.title || id} breadcrumbTitle={og.title || id}>
     <div class="detail-header">
-      <time datetime={new Date(timestamp).toISOString()}>{dateStr}</time>
+      <div class="flex items-center space-x-1">
+        <Icon name="tabler:calendar-star" class="scale-75 pb-1" />
+        <time datetime={new Date(timestamp).toISOString()} class="italic"
+          >{dateStr}</time
+        >
+      </div>
       <a
         href={url}
         target="_blank"

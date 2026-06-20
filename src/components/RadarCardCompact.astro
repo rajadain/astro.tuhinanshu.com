@@ -1,0 +1,62 @@
+---
+import { Icon } from "astro-icon/components";
+import type { RadarEntry } from "@content/_schemas";
+import RadarTagList from "@components/RadarTagList.astro";
+
+export interface Props {
+  data: RadarEntry;
+}
+
+const { data } = Astro.props;
+const { id, timestamp, og, tags } = data;
+
+const dateStr = new Date(timestamp).toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+---
+
+<li class="my-6 flex items-center">
+  {
+    og.image ? (
+      <a
+        class="mr-4 shrink-0 basis-20"
+        href={`/radar/item/${id}`}
+        aria-labelledby={`title-${id}`}
+      >
+        <img
+          class="h-20 w-20 rounded-lg object-cover drop-shadow-lg"
+          src={og.image}
+          alt=""
+        />
+      </a>
+    ) : (
+      <div class="mr-4 h-20 shrink-0 basis-20" />
+    )
+  }
+  <div>
+    <a
+      href={`/radar/item/${id}`}
+      class="text-skin-accent inline-block text-lg font-semibold decoration-dashed underline-offset-4 focus-visible:no-underline focus-visible:underline-offset-0"
+    >
+      <h3 id={`title-${id}`} class="text-lg decoration-dashed hover:underline">
+        {og.title}
+      </h3>
+    </a>
+    <div class="flex items-center space-x-1 opacity-80">
+      <Icon name="tabler:calendar-star" class="scale-75 pb-1" />
+      <span class="font-mono text-sm italic">{dateStr}</span>
+    </div>
+    {og.description && <p class="description">{og.description}</p>}
+    <RadarTagList tags={tags} />
+  </div>
+</li>
+
+<style>
+  @reference "../styles/base.css";
+
+  .description {
+    @apply my-1 text-sm;
+  }
+</style>
