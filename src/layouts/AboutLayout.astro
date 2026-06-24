@@ -23,7 +23,9 @@ const { frontmatter } = Astro.props;
   <Header activeNav="about" />
   <Breadcrumbs />
   <main id="main-content">
-    <h1 class="text-skin-accent text-center text-6xl tracking-tighter italic">
+    <h1
+      class="text-skin-accent text-center font-mono text-6xl tracking-tighter italic"
+    >
       {SITE.title}
     </h1>
     <article id="article" role="article" class="prose mx-auto mt-8 max-w-3xl">

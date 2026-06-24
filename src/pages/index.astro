@@ -96,7 +96,11 @@ const featuredTags = [
         }
       </ul>
       <div class="all-posts-btn-wrapper">
-        <LinkButton href="/posts" ariaLabel="All Posts">
+        <LinkButton
+          className="featured-link-more"
+          href="/posts"
+          ariaLabel="All Posts"
+        >
           All Posts
           <Icon name="tabler:arrow-right" class="pb-1" aria-hidden="true" />
         </LinkButton>
@@ -111,7 +115,11 @@ const featuredTags = [
         {recentRadar.map(entry => <RadarCardCompact data={entry.data} />)}
       </ul>
       <div class="all-posts-btn-wrapper">
-        <LinkButton href="/radar" ariaLabel="All Radar Items">
+        <LinkButton
+          className="featured-link-more"
+          href="/radar"
+          ariaLabel="All Radar Items"
+        >
           More on the Radar
           <Icon name="tabler:arrow-right" class="pb-1" aria-hidden="true" />
         </LinkButton>
@@ -144,9 +152,13 @@ const featuredTags = [
     @apply pt-12 pb-6;
   }
   .featured h2 {
-    @apply text-2xl font-semibold tracking-wide;
+    @apply text-2xl font-semibold;
   }
   .all-posts-btn-wrapper {
     @apply my-8 text-center;
+  }
+
+  .featured-link-more {
+    @apply font-headings;
   }
 </style>
