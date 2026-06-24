@@ -129,13 +129,13 @@ const { activeNav } = Astro.props;
       sm:flex-row sm:py-8;
   }
   .logo {
-    @apply flex items-center py-1;
+    @apply relative inline-flex items-center py-1;
   }
   .logo::before {
     content: "";
-    @apply bg-logo mr-1 h-16
-      w-16 bg-size-(--logo-size) bg-position-(--logo-position)
-      sm:mr-2 sm:h-24 sm:w-24 sm:bg-size-(--logo-size-sm) sm:bg-position-(--logo-position-sm);
+    @apply bg-logo pointer-events-none absolute top-1/2 left-0 h-16
+      w-16 -translate-y-1/2 bg-size-(--logo-size) bg-position-(--logo-position)
+      sm:h-24 sm:w-24 sm:bg-size-(--logo-size-sm) sm:bg-position-(--logo-position-sm);
   }
   .logo:hover::before {
     @apply rotate-6;
@@ -144,7 +144,7 @@ const { activeNav } = Astro.props;
     @apply mr-1 h-16 w-16 sm:h-24 sm:w-24;
   }
   .logo span {
-    @apply text-2xl tracking-tighter italic sm:static sm:text-3xl;
+    @apply relative z-10 ml-16 text-2xl tracking-tighter italic sm:static sm:pt-2 sm:pl-6 sm:text-3xl;
   }
   .hamburger-menu {
     @apply self-center p-2 sm:hidden;
