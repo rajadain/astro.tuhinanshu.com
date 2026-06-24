@@ -1,0 +1,25 @@
+---
+interface Props {
+  images: string[];
+  group?: string;
+  altPrefix?: string;
+  fullWidth?: boolean;
+}
+
+const {
+  images,
+  group = "gallery",
+  altPrefix = "Photography by Terence Tuhinanshu",
+  fullWidth = false,
+} = Astro.props;
+---
+
+<div class:list={["gallery", { "gallery--full-width": fullWidth }]}>
+  {
+    images.map((src, index) => (
+      <a href={src} data-fancybox={group}>
+        <img src={src} alt={`${altPrefix} ${index + 1}`} loading="lazy" />
+      </a>
+    ))
+  }
+</div>

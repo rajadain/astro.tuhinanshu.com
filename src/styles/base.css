@@ -179,4 +179,16 @@
   .prose h2#table-of-contents + p {
     @apply hidden;
   }
+  .gallery {
+    @apply my-8 columns-1 gap-3 sm:columns-3;
+  }
+  .gallery.gallery--full-width {
+    @apply columns-1;
+  }
+  .gallery a {
+    @apply mb-3 block break-inside-avoid overflow-hidden text-[0];
+  }
+  .gallery img {
+    @apply m-0! block h-auto w-full object-cover opacity-90 transition-opacity duration-200 hover:opacity-100;
+  }
 }
