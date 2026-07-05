@@ -106,6 +106,21 @@ import Main from "@layouts/Main.astro";
 
       <div id="result" class="result" aria-live="polite"></div>
     </form>
+
+    <details class="bookmarklet-section">
+      <summary>Bookmarklet</summary>
+      <p class="bookmarklet-hint">
+        Drag this link to your bookmarks bar. It will open this page with the
+        current tab's URL pre-filled. Update it whenever your token changes.
+      </p>
+      <a id="bookmarklet-link" class="bookmarklet-link" href="#"
+        >+ Add to Radar</a
+      >
+      <p class="bookmarklet-hint">
+        Token is embedded from the field above. Fill in your token first, then
+        drag the link.
+      </p>
+    </details>
   </Main>
   <Footer />
 </Layout>
@@ -116,10 +131,12 @@ import Main from "@layouts/Main.astro";
   const urlField = document.getElementById("field-url");
   if (params.get("url")) urlField.value = params.get("url");
 
-  // Remember token in localStorage
+  // Remember token: query param takes priority, then localStorage
   const tokenField = document.getElementById("field-token");
+  const tokenFromParam = params.get("token");
   const savedToken = localStorage.getItem("radar-token");
-  if (savedToken) tokenField.value = savedToken;
+  if (tokenFromParam) tokenField.value = tokenFromParam;
+  else if (savedToken) tokenField.value = savedToken;
 
   const form = document.getElementById("add-form");
   const resultDiv = document.getElementById("result");
@@ -225,6 +242,20 @@ import Main from "@layouts/Main.astro";
   if (urlField.value && tokenField.value) {
     previewBtn.click();
   }
+
+  // Bookmarklet generator
+  const bookmarkletLink = document.getElementById("bookmarklet-link");
+  const baseUrl = window.location.origin + window.location.pathname;
+
+  function updateBookmarklet() {
+    const token = tokenField.value.trim();
+    const dest = baseUrl + "?url=";
+    const tokenPart = token ? "&token=" + encodeURIComponent(token) : "";
+    bookmarkletLink.href = `javascript:(function(){window.open('${dest}'+encodeURIComponent(location.href)+'${tokenPart}','_blank')})();`;
+  }
+
+  tokenField.addEventListener("input", updateBookmarklet);
+  updateBookmarklet();
 
   // Submit
   form.addEventListener("submit", async e => {
@@ -349,5 +380,19 @@ import Main from "@layouts/Main.astro";
   }
   .result.error {
     @apply text-red-600 dark:text-red-400;
+  }
+  .bookmarklet-section {
+    @apply border-skin-line mt-2 max-w-xl rounded-md border p-4 text-sm;
+  }
+  .bookmarklet-section summary {
+    @apply text-skin-accent cursor-pointer font-medium decoration-dashed underline-offset-4
+      hover:underline;
+  }
+  .bookmarklet-hint {
+    @apply text-skin-base/60 mt-2 text-xs;
+  }
+  .bookmarklet-link {
+    @apply bg-skin-fill border-skin-line text-skin-accent mt-2 inline-block cursor-grab
+      rounded border px-3 py-1.5 font-medium;
   }
 </style>
