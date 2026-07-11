@@ -89,3 +89,19 @@
     title: "Generative UI Is the New Frontend"
     description: "The frontend used to be a fixed thing. Designers drew it. Engineers built it. Users got what shipped. That's over."
     image: "https://pbs.twimg.com/media/HI0zzjqbQAAcd-1?format=jpg"
+
+- id: "owickstrom-github-io-the-proportional-web"
+  url: "https://owickstrom.github.io/the-proportional-web/"
+  timestamp: "2026-07-11"
+  context: |
+    As a typography enthusiast, and as a web developer, I'm always on the lookout for good examples that bridge the web and print experience. While I find the chosen font size a bit too small, I really love the choices of Alegraya and Courier Prime (which I am partial to myself). Great care has been taken to lay things out, think through the desktop and mobile experience, with special attention to asides, paragraphs, and decoration.
+    
+    A truly worthy follow up to the author's previous work: [The Monospace Web](https://owickstrom.github.io/the-monospace-web/)
+  tags:
+    - "design"
+    - "typography"
+    - "css"
+  og:
+    title: "The Proportional Web"
+    description: "Inspired by the \"The Elements of Typographic Style\" by Robert Bringhurst, this is an exploration of beautiful typography on the web, and a reusable stylesheet."
+    image: "https://pbs.twimg.com/media/HM2n0fBWoAADDr9?format=png"
