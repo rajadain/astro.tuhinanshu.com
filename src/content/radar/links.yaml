@@ -105,3 +105,34 @@
     title: "The Proportional Web"
     description: "Inspired by the \"The Elements of Typographic Style\" by Robert Bringhurst, this is an exploration of beautiful typography on the web, and a reusable stylesheet."
     image: "https://pbs.twimg.com/media/HM2n0fBWoAADDr9?format=png"
+
+- id: "teorth-github-io-tao-web-slides-age-of-ai-icm-2026-pdf"
+  url: "https://teorth.github.io/tao-web/slides/age-of-ai-icm-2026.pdf"
+  timestamp: "2026-07-30"
+  context: |
+    What a privilege to live in a time with Terence Tao. His clarity of thought is my favorite attribute of my favorite mathematicians.
+    
+    These quotes seemed particularly relevant, even to software:
+    
+    These statements particularly rung true:
+    
+    > However, the writing often dwells at length on trivialities, while passing very briefly through (or even obscuring) the most interesting and novel portions of the argument.
+    
+    > A proof may end up being too slickly written — with both the routine and
+    difficult parts of the argument being presented as equally easy to digest.
+    
+    > In a human-written proof, the parts of the argument that the author found
+    difficult will typically retain some natural friction that prompts the reader to slow down and pay more attention.
+    > 
+    > An excessively AI-polished proof may remove both “artificial” and “natural”
+    friction, without actually encouraging the reader to learn and understand the
+    key ideas of the argument.
+  tags:
+    - "ai"
+    - "slides"
+    - "presentation"
+    - "pdf"
+    - "maths"
+  og:
+    title: "Mathematics in the Age of AI"
+    description: "Slide PDFs by Terence Tao"
