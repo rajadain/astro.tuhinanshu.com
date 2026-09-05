@@ -15,3 +15,16 @@
   from = "/api/fetch-og"
   to = "/.netlify/functions/fetch-og"
   status = 200
+
+# Tools hosted elsewhere, proxied under tuhinanshu.com/tools/*
+[[redirects]]
+  from = "/tools/guid/*"
+  to = "https://rajadain.github.io/guid/:splat"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/tools/proposal-ledger/*"
+  to = "https://rajadain.github.io/proposal-ledger/:splat"
+  status = 200
+  force = true
