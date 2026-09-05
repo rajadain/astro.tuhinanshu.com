@@ -70,7 +70,7 @@ const next = pageNum < totalPages ? "" : "disabled";
   .pagination-wrapper {
     @apply mt-auto mb-8 flex justify-center;
   }
-  .disabled {
+  .pagination-wrapper :global(.disabled) {
     @apply hover:text-skin-base group-hover:fill-skin-base
       pointer-events-none opacity-50 select-none;
   }

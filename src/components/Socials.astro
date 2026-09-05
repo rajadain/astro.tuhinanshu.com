@@ -26,11 +26,11 @@ import socialIcons from "@assets/socialIcons";
   .social-icons {
     @apply flex-wrap justify-center gap-1;
   }
-  .link-button {
+  .social-icons :global(.link-button) {
     @apply p-2 hover:rotate-6 sm:p-1;
   }
 
-  .link-button :global(svg) {
+  .social-icons :global(.link-button svg) {
     @apply h-6 w-6;
   }
 </style>
